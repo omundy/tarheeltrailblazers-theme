@@ -39,7 +39,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						</header><!-- .entry-header -->
 
 
-<?php $trailStatus = returnTrailStatus(get_the_ID()); ?>
+
 
 
 <div class="trailInfo">
@@ -47,16 +47,22 @@ $container   = get_theme_mod( 'understrap_container_type' );
 	<div class="trailStatus">
 
 		<?php 
-		//print_r($trailStatus); 
+			$id = get_the_ID();
+			$trailStatus = returnTrailStatus($id);
+	
+
+		  $trailStatusArr = array(
+		  	'status' => $trailStatus,
+		  	'id' => $id,
+			'slug' => $trail->post_name,
+		  	'title' => $post->post_title
+		  );
+
+		  print returnTrailStatusHeader($trailStatusArr);
+
 		?>		
 
-		Current Status: 
 
-		<button class="btn <?php echo $trailStatus['statusInfo']['class']; ?>">
-			<?php echo $trailStatus['statusInfo']['text'] ?>
-		</button>
-
-		Updated <?php echo $trailStatus['updated'] ?> 
 
 	</div>
 

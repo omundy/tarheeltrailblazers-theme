@@ -27,6 +27,29 @@ h3.callout, h4.callout { font-weight: normal; }
 
 
 
+.tinyTrailStatusDot {
+  height: .95rem;
+  width: .95rem;
+  vertical-align: -.15rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin-right: 4px;
+  display: inline-block;
+}
+.tinyTrailStatusTitle {}
+.tinyTrailStatusUpdated {
+    color:#666;
+}
+
+
+.headerTrailStatus {
+}
+.headerTrailStatusUpdated {
+    color:#666;
+}
+
+
+
 /* FORM ELEMENTS
 ******************************************************************************/
 

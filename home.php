@@ -23,6 +23,66 @@ $container   = get_theme_mod('understrap_container_type');
 
 
 
+<?php
+// get all the trails
+$trails = get_all_trails();
+//var_dump($trails);
+
+// print "<pre>";
+// print_r($trails);
+// print "</pre>";
+
+if (count($trails)){
+
+?>
+
+<div class="wrapper">
+   <div class="container">
+
+   		<?php 
+
+   		foreach ($trails as $trail) {
+		  //print $trail->post_title . "<br>";
+
+			// print "<pre>";
+			// print_r($trails);
+			// print "</pre>";
+   		
+   		?>
+
+        <div class="row mb-2">
+            <div class="col-12">
+            	
+            	<?php
+
+				$id = $trail->ID;
+				$trailStatus = returnTrailStatus($id);
+
+
+				$trailStatusArr = array(
+					'status' => $trailStatus,
+					'id' => $id,
+					'slug' => $trail->post_name,
+					'title' => $trail->post_title
+				);
+
+				// print "<pre>";
+				// print_r($trailStatusArr);
+				// print "</pre>";
+
+				print returnTrailStatusTiny($trailStatusArr);
+
+            	?>
+
+            </div>
+        </div>
+
+        <?php } ?>
+
+    </div>
+</div>
+
+<?php } ?>
 
 
 

@@ -45,6 +45,73 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 // Critical Web Design: CUSTOM FUNCTIONS
 
 
+
+
+
+
+
+
+
+function get_all_trails() {
+  $arr = array();
+
+  // query
+  $args = array(
+    'posts_per_page' => 30,
+    'post_status' => 'publish',
+    'post_type' => 'page',
+    'order'=> 'ASC',
+    'orderby' => '',
+    'meta_key'   => '_wp_page_template',
+    'meta_value' => 'template-trail-page.php'
+
+  );
+  $query = new WP_Query($args);
+  $posts = $query->posts;
+
+
+  // set keys of array
+  foreach ($posts as $post) {
+    //print $post->post_title . "<br>";
+    $arr[$post->post_title] = $post;
+  }
+  // sort by new keys
+  ksort($arr);
+
+  // print "<pre>";
+  // print_r($arr);
+  // print "</pre>";
+
+
+   return $arr;
+}
+
+
+function returnTrailStatusTiny($trailStatusArr){
+  // print "<pre>";
+  // print_r($trailStatusArr);
+  // print "</pre>";
+  $str = "<div>";
+  $str .= '<span class="tinyTrailStatusDot '. $trailStatusArr['status']['statusInfo']['class'] .'"> </span>';
+  $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trailStatusArr['slug'] .'">'. $trailStatusArr['title'] .'</a></span> ';
+  $str .= '<span class="tinyTrailStatusUpdated">'. $trailStatusArr['status']['updated'] .'</span>';
+  $str .= "</div>";
+  return $str;
+}
+
+
+function returnTrailStatusHeader($trailStatusArr){
+  $str = "<div class='headerTrailStatus'>";
+  $str .= 'Current Status: ';
+  $str .= '<button class="btn '. $trailStatusArr['status']['statusInfo']['class'] .'">';
+  $str .= $trailStatusArr['status']['statusInfo']['text'];
+  $str .= '</button> ';
+  $str .= '<span class="headerTrailStatusUpdated">Updated '. $trailStatusArr['status']['updated'];
+  $str .= "</div>";
+  return $str;
+}
+
+
 function returnTrailStatus($id){
 
     // query for events
@@ -54,10 +121,14 @@ function returnTrailStatus($id){
       'post_type' => 'page',
       'order'=> 'ASC',
       'orderby' => '',
-      'id' => $id
+      'p' => $id
     );
     $query = new WP_Query($args);
     $posts = $query->posts;
+
+    // print "<pre>";
+    // print_r($posts);
+    // print "</pre>";
 
     // get meta for this trail
     $parking_lot = get_post_meta( $id, 'parking_lot', true );
