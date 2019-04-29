@@ -78,11 +78,9 @@ function returnTrailStatus($id){
       //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
       "updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
     );
-    //print_r($arr);
-
-
-    // header('Content-Type: application/json');
-    // echo json_encode($arr);
+    // print "<pre>";
+    // print_r($arr);
+    // print "</pre>";
 
     return $arr;
 }
@@ -95,13 +93,13 @@ function returnTrailStatusInfo($status){
         'text' => "OPEN / ALL CLEAR!",
     );
 
-    if ($trailStatus['status'] == "Caution"){
-        $class = "bg-warning";
-        $text = "CAUTION / SOME MUDDY AREAS";
+    if ($status == "Caution"){
+        $arr['class'] = "bg-warning";
+        $arr['text'] = "CAUTION / SOME MUDDY AREAS";
     }
-    else if ($trailStatus['status'] == "Closed"){
-        $class = "bg-danger";
-        $text = "CLOSED / TOO WET";
+    else if ($status == "Closed"){
+        $arr['class'] = "bg-danger";
+        $arr['text'] = "CLOSED / TOO WET";
     }
 
     return $arr;
