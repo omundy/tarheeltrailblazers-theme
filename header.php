@@ -88,7 +88,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="headerCloseSearch">X</div>
 						</div>
 					</li>
-					<li><a class="btn btn-primary nav-link header-join-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>join-us">GIVE TODAY</a></li>
+					<!--<li><a class="btn btn-primary nav-link header-join-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>join-us">GIVE TODAY</a></li>-->
 				</ul>
 
 
