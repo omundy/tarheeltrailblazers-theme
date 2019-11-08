@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="wrapper wrapper-dark-green" id="wrapper-footer">
+<div class="wrapper wrapper-dark-grey" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
