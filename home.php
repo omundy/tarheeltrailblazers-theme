@@ -23,7 +23,14 @@ $container   = get_theme_mod('understrap_container_type');
 
 
 
+
+
 <?php
+
+
+//get_usnwc_status();
+
+
 // get all the trails
 $trails = get_all_trails();
 //var_dump($trails);

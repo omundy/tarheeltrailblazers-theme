@@ -62,16 +62,15 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		?>		
 
-
-
 	</div>
 
-	<?php if (isset($trailStatus['lat_lng'])){ ?>
-		<a href="https://maps.google.com/?daddr=<?php echo $trailStatus['lat_lng']; ?>" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>
-	<?php } ?>
-
-
 </div>
+
+
+
+
+
+
 
 
 
@@ -86,6 +85,30 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						</div><!-- .entry-content -->
 
 						<footer class="entry-footer">
+
+
+<div class="trailInfo">
+	
+	<div class="trailStatus">
+
+	<?php if (isset($trailStatus['lat_lng'])){ ?>
+		<a href="https://maps.google.com/?daddr=<?php echo $trailStatus['lat_lng']; ?>" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>
+	<?php } ?>
+
+
+	<?php if (isset($trailStatus['mtb_project_page'])){ ?>
+		<a href="<?php echo $trailStatus['mtb_project_page']; ?>" target="_blank" class="btn btn-primary">MTB Project</a>
+	<?php } ?>
+
+
+	<?php if (isset($trailStatus['trailforks_page'])){ ?>
+		<a href="<?php echo $trailStatus['trailforks_page']; ?>" target="_blank" class="btn btn-primary">Trailforks</a>
+	<?php } ?>
+
+	</div>
+
+</div>
+
 
 
 							<?php if (isset($trailStatus['mtb_project_iframe'])){ ?>

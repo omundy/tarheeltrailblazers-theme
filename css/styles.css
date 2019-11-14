@@ -19,6 +19,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Lato', sans-serif !important; font-weight: 700
 h3.callout, h4.callout { font-weight: normal; }
 
 
+
 .dark-green { color: #337357 !important; }
 .light-green { color: #6d9f71 !important; }
 .tan { color: #f4f3e7 !important; }
@@ -314,6 +315,12 @@ a.menu:after, .dropdown-toggle:after {
 .wrapper-hero {
   padding: 0px !important; }
 
+
+.wrapper-dark-grey {
+    background-color: #222;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif !important;
+}
 .wrapper-dark-green {
     background-color: #337357;
     color: #ffffff;
