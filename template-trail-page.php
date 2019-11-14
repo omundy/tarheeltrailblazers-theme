@@ -27,7 +27,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 				<?php while ( have_posts() ) : the_post(); ?>
 
 
-					
+
 
 
 					<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -43,13 +43,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 <div class="trailInfo">
-	
+
 	<div class="trailStatus">
 
-		<?php 
+		<?php
 			$id = get_the_ID();
 			$trailStatus = returnTrailStatus($id);
-	
+
 
 		  $trailStatusArr = array(
 		  	'status' => $trailStatus,
@@ -60,7 +60,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		  print returnTrailStatusHeader($trailStatusArr);
 
-		?>		
+		?>
 
 	</div>
 
@@ -88,20 +88,20 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 <div class="trailInfo">
-	
+
 	<div class="trailStatus">
 
-	<?php if (isset($trailStatus['lat_lng'])){ ?>
+	<?php if (isset($trailStatus['lat_lng']) && !empty($trailStatus['lat_lng']) ){ ?>
 		<a href="https://maps.google.com/?daddr=<?php echo $trailStatus['lat_lng']; ?>" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>
 	<?php } ?>
 
 
-	<?php if (isset($trailStatus['mtb_project_page'])){ ?>
+	<?php if (isset($trailStatus['mtb_project_page']) && !empty($trailStatus['mtb_project_page']) ){ ?>
 		<a href="<?php echo $trailStatus['mtb_project_page']; ?>" target="_blank" class="btn btn-primary">MTB Project</a>
 	<?php } ?>
 
 
-	<?php if (isset($trailStatus['trailforks_page'])){ ?>
+	<?php if (isset($trailStatus['trailforks_page']) && !empty($trailStatus['trailforks_page']) ){ ?>
 		<a href="<?php echo $trailStatus['trailforks_page']; ?>" target="_blank" class="btn btn-primary">Trailforks</a>
 	<?php } ?>
 
@@ -111,7 +111,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 
-							<?php if (isset($trailStatus['mtb_project_iframe'])){ ?>
+							<?php if (isset($trailStatus['mtb_project_iframe']) && !empty($trailStatus['mtb_project_iframe'])){ ?>
 
 							<!-- BEGIN MTB Project -->
 							<iframe style="width:100%; max-width:1200px; height:410px;" frameborder="0" scrolling="no" src="<?php echo $trailStatus['mtb_project_iframe']; ?>"></iframe>
