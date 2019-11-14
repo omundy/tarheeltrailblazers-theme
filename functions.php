@@ -46,6 +46,22 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 
 
+function get_usnwc_status(){
+//https://stackoverflow.com/questions/584826/scrape-web-page-contents
+
+$pagecontent = file_get_contents('http://usnwc.org/visit/facility-map/');
+$doc = new DOMDocument();
+$doc->loadHTML($pagecontent);
+echo $doc->saveHTML();
+
+
+// $doc = new DOMDocument();
+// $doc->loadHTML($html);
+// echo $doc->saveHTML();
+//trail-status
+
+}
+
 
 
 
@@ -141,6 +157,7 @@ function returnTrailStatus($id){
     // create array w/data
     $arr = array(
       "mtb_project_page" => get_post_meta( $id, 'mtb_project_page', true ),
+      "trailforks_page" => get_post_meta( $id, 'trailforks_page', true ),
       "mtb_project_iframe" => get_post_meta( $id, 'mtb_project_iframe', true ),
       "parking_lot" => $parking_lot,
       "lat_lng" => $parking_lot['lat'] .','. $parking_lot['lng'],
