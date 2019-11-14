@@ -21,12 +21,12 @@ function theme_enqueue_styles() {
 	$the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
-	
-	
+
+
     wp_enqueue_style('critical-web-design-styles', get_stylesheet_directory_uri() . '/css/styles.css', $the_theme->get('Version'));
     wp_enqueue_script('critical-web-design-scripts', get_stylesheet_directory_uri() . '/js/main.js', array(), $the_theme->get('Version'), true);
 
-	
+
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -142,13 +142,19 @@ function returnTrailStatus($id){
     $arr = array(
       "mtb_project_page" => get_post_meta( $id, 'mtb_project_page', true ),
       "mtb_project_iframe" => get_post_meta( $id, 'mtb_project_iframe', true ),
-      "parking_lot" => $parking_lot,
-      "lat_lng" => $parking_lot['lat'] .','. $parking_lot['lng'],
-      "status" => $status, 
-      "statusInfo" => returnTrailStatusInfo($status), 
+      "status" => $status,
+	  "parking_lot" => null,
+	  "lat_lng" => null,
+      "statusInfo" => returnTrailStatusInfo($status),
       //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
       "updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
     );
+	if ($parking_lot){
+		$arr["parking_lot"] = $parking_lot;
+		if ($parking_lot['lat'] && $parking_lot['lng']){
+			$arr["lat_lng"] = $parking_lot['lat'] .','. $parking_lot['lng'];
+		}
+	}
     // print "<pre>";
     // print_r($arr);
     // print "</pre>";
@@ -175,8 +181,3 @@ function returnTrailStatusInfo($status){
 
     return $arr;
 }
-
-
-
-
-
