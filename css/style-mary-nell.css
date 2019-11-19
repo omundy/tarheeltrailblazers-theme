@@ -1,0 +1,145 @@
+/* css */
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.section-events {
+  background-image: url("../img/3-home/section-events/Itusi-Trail_PC-color.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #d6e5e3;
+  height: 90vh;
+}
+
+.data {
+  background-color: #005a30;
+  color: #d6e5e3;
+}
+
+.signup-callout {
+  background-color: #252525;
+  color: #d6e5e3;
+}
+
+.news {
+  background-image: url(../img/3-home/news/Layer22.png);
+  background-color: #153040;
+}
+
+.footer1 {
+  background-color: #252525;
+  color: #d6e5e3;
+}
+
+.footer2 {
+  background-color: #252525;
+  color: #d6e5e3;
+}
+
+.footer2text{
+  font-size: 0.8rem;
+}
+
+.news {
+  color: #d6e5e3;
+}
+
+.socialbtns {
+  color: #f79520;
+}
+
+.data h1 {
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.white-line {
+  height: 2px;
+  width: 90%;
+  background-color: #fff;
+}
+
+.green-line {
+  height: 5px;
+  width: 100%;
+  background-color: #8dc63f;
+}
+
+.dark-green-line {
+  height: 5px;
+  width: 100%;
+  background-color: #347458;
+}
+
+.data h1.xl {
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.data h4 {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  margin: -2.2vh auto 2vh auto;
+}
+
+.data div.xl {
+  display: none;
+}
+
+.data div.normal {
+  display: block;
+}
+
+.date{
+  background-color: rgb(242, 102, 48);
+  height: 5rem;
+  font-weight: bold;
+}
+
+#section-events .card h5, .date h4, .date p {
+  font-weight: 600;
+}
+
+#section-events .card h5{
+  font-size: 1.4rem;
+}
+
+@media (max-width: 576px) {
+  .data h1, .data h1.xl {
+    font-size: 3rem;
+    line-height: 1.5rem;
+  }
+
+  .data h4 {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin: -1.6vh auto 5vh auto;
+  }
+
+  .date h4{
+    font-size:1.2rem;
+  }
+
+  .date p{
+    font-size: 0.8rem;
+  }
+
+  .adress{
+    font-size: 0.9rem;
+  }
+
+  .data div.normal {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .data div.xl {
+    display: block;
+  }
+
+  .data div.normal {
+    display: none;
+  }
+}

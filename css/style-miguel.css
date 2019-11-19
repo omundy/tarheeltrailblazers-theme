@@ -1,0 +1,380 @@
+/* css */
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  background-color: rgb(37, 37, 37)
+}
+
+.tarheelnav {
+  background-color: rgba(32, 32, 32, 0.5)
+}
+
+.thin-td{
+  width: 45%;
+}
+
+.thick-td{
+  width: 55%;
+}
+
+.darknavitem {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.btn-primary.orange {
+  background-color: rgb(242, 102, 48) !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.btn-primary.orange:hover {
+  background-color: rgb(200, 58, 0) !important;
+}
+
+.card-two {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.news .carousel-item .card-two {
+  margin-left: 27.5%;
+}
+
+.card-two p {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+#Footer1 .darknavitem {
+  padding-top: 0 !important;
+}
+
+p.social-link {
+  margin-left: 1rem !important;
+  font-size: 1.2rem;
+  color: rgb(242, 102, 48);
+}
+
+p.social-link a {
+  color: rgb(242, 102, 48);
+}
+
+p.social-link a:hover {
+  color: rgb(200, 58, 0);
+}
+
+a.darknavitem:hover, button.darknavitem:hover {
+  color: #707070 !important;
+}
+
+.imgcont {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  padding: 0;
+}
+
+.card-one {
+  position: absolute;
+  right: 0;
+  top: 25rem;
+  background-color: rgba(32, 32, 32, .5);
+  color: #fff;
+  font-size: 1.2rem;
+  width: 25rem;
+}
+
+.card-one h5 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.pics {
+  height: 100%;
+  overflow: hidden;
+  max-height: 45rem;
+}
+
+.callout {
+  background-color: rgb(242, 102, 48);
+  text-align: center;
+}
+
+.callout p {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+
+.img-c {
+  display: block;
+  min-width: 100vw;
+  overflow: hidden;
+}
+
+.trail-status {
+  background-color: rgb(37, 37, 37);
+  padding-top: 2vh;
+}
+
+li.available {
+  list-style-type: disc;
+  font-size: 2.2rem;
+  line-height: 1.2rem;
+  color: rgb(40, 167, 68);
+  padding: 0 1vw 0 1vw;
+}
+
+li.questionable {
+  list-style-type: disc;
+  font-size: 2.2rem;
+  line-height: 1.1rem;
+  color: rgb(255, 193, 5);
+  padding: 0 1vw 0 1vw;
+}
+
+li.unavailable {
+  list-style-type: disc;
+  font-size: 2.2rem;
+  line-height: 1.1rem;
+  color: rgb(220, 53, 69);
+  padding: 0 1vw 0 1vw;
+}
+
+.trail-name {
+  position: relative;
+  left: -1vh;
+  top: -0.8vh;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
+.time-info {
+  position: relative;
+  left: -1vh;
+  top: -0.8vh;
+  color: rgb(141, 141, 141);
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
+.link-icon {
+  display: inline;
+}
+
+.participate {
+  background-image: url('../img/bg-texture.png'), linear-gradient(rgb(37, 37, 37), rgb(25, 25, 25))
+}
+
+.participate h4 {
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.participate p {
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.participate button {
+  margin-bottom: 1rem;
+}
+
+.carousel-inner.header>.item {
+  /*disables white flash*/
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  -o-transition: -o-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+.carousel-inner.header {
+  /*just incase the flash (style above) comes back*/
+  background: rgb(37, 37, 37);
+}
+
+.extra-news {
+  display: flex;
+}
+
+.small-news {
+  display: none;
+}
+
+.small-nav {
+  display: none;
+}
+
+.section-event-card{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 992px) {
+  .phone-slider, .tablet-slider {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .tarheelnav {
+    background-color: rgb(37, 37, 37);
+  }
+
+  .small-nav {
+    display: flex;
+  }
+
+  .small-news {
+    display: block;
+  }
+
+  .imgcont {
+    position: inherit;
+    z-index: inherit;
+  }
+
+  .card-one {
+    width: 18rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -7rem 0 0 -9rem;
+    z-index: 1;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .card-one h5 {
+    font-weight: 600;
+    font-size: 1.6rem
+  }
+
+  .pics {
+    min-height: 90vh;
+  }
+
+  .img-c {
+    object-fit: cover;
+    height: 90vh;
+  }
+
+  .callout span {
+    font-size: 1.3rem;
+  }
+
+  .extra {
+    display: none;
+  }
+
+  .tablet-slider {
+    display: block;
+  }
+
+  .tablet-slider li {
+    position: relative;
+    left: 12vw;
+  }
+
+  .phone-slider li {
+    position: relative;
+    left: 12vw;
+  }
+
+  .carousel-inner.header>.item {
+    /*disables white flash*/
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    -o-transition: -o-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+  }
+
+  .extra-news {
+    display: none;
+  }
+
+  .small-news .carousel-item {
+    width: 100%;
+  }
+
+  #Footer1 .darknavitem {
+    color: #fff;
+    font-size: 1.3rem !important;
+  }
+
+  #Footer1 .navbar.navbar-expand-lg {
+    padding-right: inherit !important;
+    padding-left: inherit !important;
+  }
+
+  #Footer1 p.social-link {
+    margin-left: inherit !important;
+  }
+
+  p.social-link a {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+  }
+
+  p.social-link a:hover {
+    color: rgb(200, 200, 200);
+  }
+}
+
+@media (max-width:482px) {
+  .tablet-slider {
+    display: none;
+  }
+
+  .phone-slider {
+    display: block;
+  }
+
+  .trail-name {
+    line-height: 0.6rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-two {
+    height: 70%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width:483px) {
+  .phone-slider {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  #Footer1 .darknavitem {
+    color: #fff;
+    font-size: 1rem;
+    padding-right: 0.39rem;
+  }
+
+  #Footer1 .navbar.navbar-expand-lg {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #Footer1 p.social-link {
+    margin-left: 0 !important;
+  }
+
+  #Footer1 .extra-news div.col-5.col-xl-6 {
+    padding-right: 0 !important;
+  }
+
+  #Footer1 .xl {
+    display: none;
+  }
+}
