@@ -116,6 +116,23 @@ function returnTrailStatusTiny($trailStatusArr){
 }
 
 
+function returnTrailStatusTinyNew($trailStatusArr){
+// <li class="available"><span class="trail-name">Uwharrie</span> <span class="time-info">8/23-10:59 am</span></li>
+
+$str = '<li>';
+$str .= '<span class="tinyTrailStatusDot '. $trailStatusArr['status']['statusInfo']['class'] .'"> </span>';
+$str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trailStatusArr['slug'] .'">'. $trailStatusArr['title'] .'</a></span> ';
+$str .= '<span class="tinyTrailStatusUpdated">'. $trailStatusArr['status']['updated'] .'</span>';
+$str .= '</li>';
+
+return $str;
+
+}
+
+
+
+
+
 function returnTrailStatusHeader($trailStatusArr){
   $str = "<div class='headerTrailStatus'>";
   $str .= 'Current Status: ';
