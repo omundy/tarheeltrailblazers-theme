@@ -100,4 +100,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		</nav><!-- .site-navigation -->
 
+		<nav class="navbar navbar-expand-lg tarheelnav"><a class="navbar-brand" href="#"><img alt="Tarheel Trailblazers logo" height="50" src="./assets/img/ttb-logo-full.svg" width="200" /> </a><button aria-controls="navbarTogglerDemo02"
+				aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-dark bg-dark" data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button"></button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+				<ul class="navbar-nav mr-2 mt-2 mt-lg-0">
+					<li class="nav-item active"><a class="nav-link darknavitem" href="#">About</a></li>
+					<li class="nav-item"><a class="nav-link darknavitem" href="#">Trails</a></li>
+					<li class="nav-item"><a class="nav-link darknavitem" href="#">News</a></li>
+					<li class="nav-item"><a class="nav-link darknavitem" href="#">Events</a></li>
+					<li class="nav-item"><a class="nav-link darknavitem" href="#">Shop </a></li>
+					<li class="nav-item"><a class="nav-link darknavitem" href="#">Get Involved</a></li>
+				</ul>
+				<button class="btn btn-outline-light darknavitem mb-2 mb-lg-0" type="button">JOIN TODAY</button>
+			</div>
+		</nav>
+
 	</div><!-- #wrapper-navbar end -->
