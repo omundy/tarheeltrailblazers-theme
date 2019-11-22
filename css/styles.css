@@ -6,7 +6,7 @@ html {
     font-family: 'Lato', sans-serif !important;
 }
 a {
-    color: #347458 !important;
+    color: #347458 ;
     text-decoration: none !important;
     background-color: transparent !important;
 }
@@ -108,6 +108,7 @@ h3.callout, h4.callout { font-weight: normal; }
 
 .navbar {
     margin: 10px auto;
+    background-color: rbga(0,0,0,.8);
 }
 .navbar a {
     /* color: #347458 !important;
@@ -223,7 +224,7 @@ a.menu:after, .dropdown-toggle:after {
     cursor: pointer;
 }
 .form-control:focus {
-    border-color: #347458;
+    border-color: transparent;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(109, 159, 113, 0.25);
 }

@@ -3,6 +3,10 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.headerSearchDiv{
+  z-index: 1;
+}
+
 .section-events {
   background-image: url("../img/3-home/section-events/Itusi-Trail_PC-color.png");
   background-repeat: no-repeat;
@@ -10,6 +14,10 @@
   position: relative;
   color: #d6e5e3;
   height: 90vh;
+}
+
+.nav-link{
+  color: white !important;
 }
 
 .data {
@@ -97,6 +105,10 @@
   font-weight: bold;
 }
 
+.card{
+  background-color: rgba(5,5,5,.4) !important;
+}
+
 #section-events .card h5, .date h4, .date p {
   font-weight: 600;
 }
@@ -142,4 +154,8 @@
   .data div.normal {
     display: none;
   }
+}
+
+body{
+  background-color: rgba(5,5,5,.9) !important;
 }
