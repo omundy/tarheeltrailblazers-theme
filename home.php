@@ -26,7 +26,7 @@ $container   = get_theme_mod('understrap_container_type');
 	</ol>
 
 	<div class="carousel-inner header">
-		<div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="/img/3-home/section-events/Itusi-Trail_PC-color.png" />
+		<div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
 			<div class="card card-one">
 				<div class="green-line extra-news"></div>
 
@@ -39,7 +39,7 @@ $container   = get_theme_mod('understrap_container_type');
 			</div>
 		</div>
 
-		<div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="/img/work_one.jpeg" />
+		<div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
 			<div class="card card-one">
 				<div class="green-line extra-news"></div>
 
@@ -52,7 +52,7 @@ $container   = get_theme_mod('understrap_container_type');
 			</div>
 		</div>
 
-		<div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="/img/bike_one.jpeg" />
+		<div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
 			<div class="card card-one">
 				<div class="green-line extra-news"></div>
 
@@ -139,19 +139,19 @@ $container   = get_theme_mod('understrap_container_type');
 </div>
 
 <div class="row">
-<div class="col-5 col-lg-3 offset-1 offset-lg-0"><img alt="Workers Working" class="img-fluid" src="./img/workers.png" />
+<div class="col-5 col-lg-3 offset-1 offset-lg-0"><img alt="Workers Working" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workers.png" />
 <p>Volunteer</p>
 </div>
 
-<div class="col-5 col-lg-3"><img alt="First Person Biker" class="img-fluid" src="./img/bike-handle.png" />
+<div class="col-5 col-lg-3"><img alt="First Person Biker" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bike-handle.png" />
 <p>Become a member</p>
 </div>
 
-<div class="col-5 col-lg-3 offset-1 offset-lg-0"><img alt="Workers with Bike" class="img-fluid" src="./img/fix-bike.png" />
+<div class="col-5 col-lg-3 offset-1 offset-lg-0"><img alt="Workers with Bike" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/fix-bike.png" />
 <p>Join a meeting</p>
 </div>
 
-<div class="col-5 col-lg-3"><img alt="Workers Posing" class="img-fluid" src="./img/workers-donation.png" />
+<div class="col-5 col-lg-3"><img alt="Workers Posing" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workers-donation.png" />
 <p>Make a donation</p>
 </div>
 </div>
@@ -282,54 +282,71 @@ Protected for Trails</h4>
 <!--News-->
 
 <div class="container-fluid news pt-4 pb-4 justify-content-center" id="news">
-<div class="container">
-<div class="row extra-news justify-content-center">
-<div class="col">
-<div class="card card-two pb-2" style="width: 100%; height:100%"><img alt="become a member" class="card-img-top" src="./img/3-home/news/become-a-member/Layer-19-color.png" />
-<div class="card-body text-center">
-<div style="height: 65%;">
-<p class="card-text text-left">We have a new logo and gear!</p>
-</div>
+  <div class="container">
+    <div class="d-none d-lg-inline row extra-news justify-content-center">
 
-<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
-</div>
+      <div class="row">
+        <div class="card card-two pb-2 col-4" style="width: 100%; height:100%"><img alt="become a member" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/become-a-member/Layer-19-color.png" />
+          <div class="card-body text-center">
+            <div style="height: 65%;">
+              <p class="card-text text-left">We have a new logo and gear!</p>
+            </div>
 
-<div class="col">
-<div class="card card-two pb-2" style="width: 100%; height:100%"><img alt="give monthly" class="card-img-top" src="./img/3-home/news/give-monthly/Layer-20-color.jpg" />
-<div class="card-body text-center">
-<div style="height: 65%;">
-<p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-</div>
+            <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
+          </div>
+        </div>
+        <div class="card card-two pb-2 col-4" style="width: 100%; height:100%"><img alt="give monthly" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/give-monthly/Layer-20-color.jpg" />
+          <div class="card-body text-center">
+            <div style="height: 65%;">
+              <p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
+            </div>
 
-<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
-</div>
+            <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
+          </div>
+        </div>
+        <div class="card card-two pb-2 col-4" style="width: 100%; height:100%"><img alt="volunteer" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/volunteer/Layer-21-color.png" />
+          <div class="card-body text-center">
+            <div style="height: 65%;">
+              <p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
+            </div>
 
-<div class="col">
-<div class="card card-two pb-2" style="width: 100%; height:100%"><img alt="volunteer" class="card-img-top" src="./img/3-home/news/volunteer/Layer-21-color.png" />
-<div class="card-body text-center">
-<div style="height: 65%;">
-<p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-</div>
+            <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
+          </div>
+        </div>
+      </div>
 
-<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
+      <div class="row">
+
+      </div>
+
+<div class="row">
+
 </div>
 </div>
 
 <div class="row small-news">
 <div class="carousel slide" data-ride="carousel" id="carouselNewsControls">
 <div class="carousel-inner small-news">
-<div class="carousel-item active">
+<div class="carousel-item justify-content-center">
 <div class="justify-content-center" style="width:100%;">
-<div class="card card-two" style="max-width: 45%; min-height:20rem;"><img alt="become a member" class="card-img-top" src="./img/3-home/news/become-a-member/Layer-19-color.png" />
+<div class="card card-two" style="max-width: 45%; min-height:20rem;"><img alt="become a member" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/become-a-member/Layer-19-color.png" />
 <div class="card-body text-center">
 <div style="height: 65%;">
 <p class="card-text text-left">We have a new logo and gear!</p>
+</div>
+
+<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="carousel-item active justify-content-center">
+<div class="justify-content-center" style="width: 100% !important;">
+<div class="card card-two" style="max-width: 45%;"><img alt="give monthly" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/give-monthly/Layer-20-color.jpg" />
+<div class="card-body text-center">
+<div style="height: 65%;">
+<p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
 </div>
 
 <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
@@ -339,21 +356,7 @@ Protected for Trails</h4>
 </div>
 
 <div class="carousel-item justify-content-center">
-<div class="justify-content-center" style="width: 100% !important;">
-<div class="card card-two" style="max-width: 45%;"><img alt="give monthly" class="card-img-top" src="./img/3-home/news/give-monthly/Layer-20-color.jpg" />
-<div class="card-body text-center">
-<div style="height: 65%;">
-<p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-</div>
-
-<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="carousel-item">
-<div class="card card-two" style="max-width: 45%; min-height:20rem;"><img alt="volunteer" class="card-img-top" src="./img/3-home/news/volunteer/Layer-21-color.png" />
+<div class="card card-two" style="max-width: 45%; min-height:20rem;"><img alt="volunteer" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/volunteer/Layer-21-color.png" />
 <div class="card-body">
 <p class="card-text">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
 <a class="btn btn-primary orange" href="#">READ MORE</a></div>
