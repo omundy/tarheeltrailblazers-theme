@@ -25,46 +25,88 @@ $container   = get_theme_mod('understrap_container_type');
 		<li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
 	</ol>
 
-	<div class="carousel-inner header">
-		<div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
-			<div class="card card-one">
-				<div class="green-line extra-news"></div>
+  <div class="carousel-inner header">
+    <div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
+      <div class="card card-one">
+        <div class="green-line extra-news"></div>
 
-				<div class="card-body">
-					<h5 class="card-title">Plan Your Ride</h5>
+        <div class="card-body">
+          <h5 class="card-title">Plan Your Ride</h5>
 
-					<p class="card-text">With over 150 miles of trail across 18 systems, we&#39;ve got a trail for you.</p>
-					<button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
-				</div>
-			</div>
-		</div>
+          <p class="card-text">With over 150 miles of trail across 18 systems, we&#39;ve got a trail for you.</p>
+          <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
+        </div>
+      </div>
+    </div>
 
-		<div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
-			<div class="card card-one">
-				<div class="green-line extra-news"></div>
+    <div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
+      <div class="card card-one">
+        <div class="green-line extra-news"></div>
 
-				<div class="card-body">
-					<h5 class="card-title">Get Dirty</h5>
+        <div class="card-body">
+          <h5 class="card-title">Get Dirty</h5>
 
-					<p class="card-text">Find a local ride, come dig with us, or get the latest updates at our monthly meeting.</p>
-					<button class="btn btn-outline-light darknavitem" type="button">VIEW MORE EVENTS</button>
-				</div>
-			</div>
-		</div>
+          <p class="card-text">Find a local ride, come dig with us, or get the latest updates at our monthly meeting.</p>
+          <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE EVENTS</button>
+        </div>
+      </div>
+    </div>
 
-		<div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
-			<div class="card card-one">
-				<div class="green-line extra-news"></div>
+    <div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
+      <div class="card card-one">
+        <div class="green-line extra-news"></div>
 
-				<div class="card-body">
-					<h5 class="card-title">Get Flow</h5>
+        <div class="card-body">
+          <h5 class="card-title">Get Flow</h5>
 
-					<p class="card-text">Cedar Valley Bike Park is the newest addition to the Fisher Farm Trail system, and currently offers two miles of jumps, flow, and more jumps.</p>
-					<button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
-				</div>
-			</div>
-</div>
-</div>
+          <p class="card-text">Cedar Valley Bike Park is the newest addition to the Fisher Farm Trail system, and currently offers two miles of jumps, flow, and more jumps.</p>
+          <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--<div class="carousel-inner header">
+  <div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
+    <div class="card card-one">
+      <div class="green-line extra-news"></div>
+
+      <div class="card-body">
+        <h5 class="card-title">Plan Your Ride</h5>
+
+        <p class="card-text">With over 150 miles of trail across 18 systems, we&#39;ve got a trail for you.</p>
+        <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
+    <div class="card card-one">
+      <div class="green-line extra-news"></div>
+
+      <div class="card-body">
+        <h5 class="card-title">Get Dirty</h5>
+
+        <p class="card-text">Find a local ride, come dig with us, or get the latest updates at our monthly meeting.</p>
+        <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE EVENTS</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
+    <div class="card card-one">
+      <div class="green-line extra-news"></div>
+
+      <div class="card-body">
+        <h5 class="card-title">Get Flow</h5>
+
+        <p class="card-text">Cedar Valley Bike Park is the newest addition to the Fisher Farm Trail system, and currently offers two miles of jumps, flow, and more jumps.</p>
+        <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
+      </div>
+    </div>
+  </div>
+</div>-->
+
 </div>
 
 <div class="container-fluid callout">
@@ -83,51 +125,14 @@ $container   = get_theme_mod('understrap_container_type');
 
 
 
-<div class="container-fluid trail-status">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-4">
-<ul>
-	<li class="unavailable"><span class="trail-name">Anne Springs</span> <span class="time-info">7/16-7:17 am</span></li>
-	<li class="available"><span class="trail-name">Backyard Trails</span> <span class="time-info">8/23-10:57 am</span></li>
-	<li class="unavailable"><span class="trail-name">Ballantyne District Park</span> <span class="time-info">8/23-10:57 am</span></li>
-	<li class="questionable"><span class="trail-name">Big Leaf Slopes Park</span> <span class="time-info">8/23-10:58 am</span></li>
-	<li class="available"><span class="trail-name">Cedar Valley Bike Park</span> <span class="time-info">8/29-5:31 am</span></li>
-	<li class="available"><span class="trail-name">Col. Francis Beatty Park</span> <span class="time-info">8/23-10:58 am</span></li>
-	<li class="available"><span class="trail-name">Fisher Farm Park</span> <span class="time-info">8/16-7:17 am</span></li>
-	<li class="available"><span class="trail-name">Harrisburg Half</span> <span class="time-info">8/23-10:59 am</span></li>
-</ul>
-</div>
 
-<div class="col-lg-4">
-<ul>
-	<li class="available"><span class="trail-name">Huntersville Elem. School </span> <span class="time-info">7/16-7:17 am</span></li>
-	<li class="available"><span class="trail-name">Jetton Park</span> <span class="time-info">8/23-10:57 am</span></li>
-	<li class="available"><span class="trail-name">Lake Norman State Park</span> <span class="time-info">8/23-10:57 am</span></li>
-	<li class="available"><span class="trail-name">Mazeppa Park</span> <span class="time-info">8/23-10:58 am</span></li>
-	<li class="questionable"><span class="trail-name">Mountain Island Park</span> <span class="time-info">8/29-5:31 am</span></li>
-	<li class="unavailable"><span class="trail-name">North Mecklenburg Park</span> <span class="time-info">8/23-10:58 am</span></li>
-	<li class="available"><span class="trail-name">Park Road Park</span> <span class="time-info">8/16-7:17 am</span></li>
-	<li class="unavailable"><span class="trail-name">Purser Hulsey Park</span> <span class="time-info">8/23-10:59 am</span></li>
-</ul>
-</div>
+<?php 
+include(get_theme_file_path() . '/sections/section-trail-status.php'); 
+// include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php'); 
+?>
 
-<div class="col-lg-4">
-<ul>
-	<li class="unavailable"><span class="trail-name">Renaissance Park</span> <span class="time-info">7/16-7:17 am</span></li>
-	<li class="available"><span class="trail-name">Rocky Branch Trail</span> <span class="time-info">8/23-10:57 am</span></li>
-	<li class="unavailable"><span class="trail-name">Rocky River Trail</span> <span class="time-info">8/23-10:57 am</span></li>
-	<li class="questionable"><span class="trail-name">Sherman Branch</span> <span class="time-info">8/23-10:58 am</span></li>
-	<li class="available"><span class="trail-name">Signal Hill</span> <span class="time-info">8/29-5:31 am</span></li>
-	<li class="available"><span class="trail-name">Southwest District Park</span> <span class="time-info">8/23-10:58 am</span></li>
-	<li class="available"><span class="trail-name">USNWC</span> <span class="time-info">8/16-7:17 am</span></li>
-	<li class="available"><span class="trail-name">Uwharrie</span> <span class="time-info">8/23-10:59 am</span></li>
-</ul>
-</div>
-</div>
 
-</div>
-</div>
+
 
 
 <div class="container-fluid participate">
@@ -163,67 +168,13 @@ $container   = get_theme_mod('understrap_container_type');
 </div>
 
 
-<div class="container-fluid section-events" id="section-events">
-<div class="container pt-5">
-<div class="row mt-5">
-<div class="col-10 col-md-8 col-lg-5 col-xl-4 offset-1 offset-md-2 offset-lg-7 offset-xl-8">
-<div class="card section-event-card">
-<div class="dark-green-line"></div>
 
-<div class="card-body">
-<h5 class="card-title text-center">Tarheel Trailblazer Events</h5>
 
-<p class="card-text"></p>
 
-<div class="row event">
-<div class="col-2 date text-center mb-4 pr-0 pl-0 mt-1">
-<h4>01</h4>
+<?php include(get_theme_file_path() . '/sections/section-events-full.php'); ?>
 
-<p>SEP</p>
-</div>
 
-<div class="col-10 adress">
-<p>Mountain island Lake Trail Workday</p>
 
-<p class="mb-0">400 Mountain Island Rd., Mt. Holly, NC</p>
-</div>
-</div>
-
-<div class="row event">
-<div class="col-2 date text-center mb-4 pr-0 pl-0 mt-1">
-<h4>01</h4>
-
-<p>SEP</p>
-</div>
-
-<div class="col-10 adress">
-<p>Mountain island Lake Trail Workday</p>
-
-<p class="mb-0">North Mecklenburg Park, Huntersville, NC</p>
-</div>
-</div>
-
-<div class="row event">
-<div class="col-2 date text-center pr-0 pl-0 mt-1">
-<h4>04</h4>
-
-<p>SEP</p>
-</div>
-
-<div class="col-10 adress">
-<p>Club Meeting</p>
-
-<p class="mb-0">NC Velo, Charlotte, NC</p>
-</div>
-</div>
-
-<div class="row d-flex justify-content-center"><button class="btn btn-outline-light dark rounded-0 mt-4" name="allevents" type="button">SEE ALL EVENTS</button></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
 <div class="container-fluid data">
@@ -281,90 +232,10 @@ Protected for Trails</h4>
 </div>
 <!--News-->
 
-<div class="container-fluid news pt-4 pb-4 justify-content-center" id="news">
-  <div class="container">
-    <div class="d-none d-lg-inline row extra-news justify-content-center">
 
-      <div class="row">
-        <div class="card card-two pb-2 col-4" style="width: 100%; height:100%"><img alt="become a member" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/become-a-member/Layer-19-color.png" />
-          <div class="card-body text-center">
-            <div style="height: 65%;">
-              <p class="card-text text-left">We have a new logo and gear!</p>
-            </div>
+<?php include(get_theme_file_path() . '/sections/section-news.php'); ?>
 
-            <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-          </div>
-        </div>
-        <div class="card card-two pb-2 col-4" style="width: 100%; height:100%"><img alt="give monthly" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/give-monthly/Layer-20-color.jpg" />
-          <div class="card-body text-center">
-            <div style="height: 65%;">
-              <p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-            </div>
 
-            <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-          </div>
-        </div>
-        <div class="card card-two pb-2 col-4" style="width: 100%; height:100%"><img alt="volunteer" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/volunteer/Layer-21-color.png" />
-          <div class="card-body text-center">
-            <div style="height: 65%;">
-              <p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-            </div>
-
-            <div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-
-      </div>
-
-<div class="row">
-
-</div>
-</div>
-
-<div class="row small-news">
-<div class="carousel slide" data-ride="carousel" id="carouselNewsControls">
-<div class="carousel-inner small-news">
-<div class="carousel-item justify-content-center">
-<div class="justify-content-center" style="width:100%;">
-<div class="card card-two" style="max-width: 45%; min-height:20rem;"><img alt="become a member" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/become-a-member/Layer-19-color.png" />
-<div class="card-body text-center">
-<div style="height: 65%;">
-<p class="card-text text-left">We have a new logo and gear!</p>
-</div>
-
-<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="carousel-item active justify-content-center">
-<div class="justify-content-center" style="width: 100% !important;">
-<div class="card card-two" style="max-width: 45%;"><img alt="give monthly" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/give-monthly/Layer-20-color.jpg" />
-<div class="card-body text-center">
-<div style="height: 65%;">
-<p class="card-text text-left">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-</div>
-
-<div class="mt-2" style="height:35%;"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="carousel-item justify-content-center">
-<div class="card card-two" style="max-width: 45%; min-height:20rem;"><img alt="volunteer" class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/news/volunteer/Layer-21-color.png" />
-<div class="card-body">
-<p class="card-text">The rain has missed us so far. Kids ride is still on for Purser Hulsey.</p>
-<a class="btn btn-primary orange" href="#">READ MORE</a></div>
-</div>
-</div>
-<a class="carousel-control-prev" data-slide="prev" href="#carouselNewsControls" role="button"><span class="sr-only">Previous</span> </a> <a class="carousel-control-next" data-slide="next" href="#carouselNewsControls" role="button"> <span class="sr-only">Next</span> </a></div>
-</div>
-</div>
 
 <div class="row mt-4">
 <div class="col-12 text-center"><button class="btn btn-outline-light darknavitem mb-2 mb-lg-0 pl-2 pr-2" type="button">MORE NEWS</button></div>
