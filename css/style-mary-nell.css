@@ -90,6 +90,10 @@ a.darknavitem:hover, button.darknavitem:hover {
   font-size: 1.5rem;
 }
 
+.card-body{
+  padding-bottom: 5em;
+}
+
 .pics {
   height: 100%;
   overflow: hidden;
@@ -241,13 +245,13 @@ li.unavailable {
 
   .card-one {
     width: 18rem;
-    position: absolute;
+    position: absolute !important;
     left: 50%;
     top: 50%;
-    margin: -7rem 0 0 -9rem;
     z-index: 1;
     text-align: center;
     font-size: 1.3rem;
+    padding-bottom: 1em !important;
   }
 
   .card-one h5 {
@@ -255,13 +259,39 @@ li.unavailable {
     font-size: 1.6rem
   }
 
-  .pics {
-    min-height: 90vh;
+  .carousel-item.pic1 {
+    background-image: url(../img/hero_bike_one.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-item.pic2 {
+    background-image: url(../img/hero_bike_two.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-item.pic3 {
+    background-image: url(../img/hero_work_one.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
   }
 
   .img-c {
     object-fit: cover;
-    height: 90vh;
+    height: 100%;
   }
 
   .callout span {
