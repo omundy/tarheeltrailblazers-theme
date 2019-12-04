@@ -1,4 +1,5 @@
 
+
 <?php
 
 
@@ -20,13 +21,14 @@ if (count($trails)){
 
 
 
-<div class="wrapper">
-   <div class="container">
+<div class="container-fluid trail-status">
+<div class="container">
+<div class="row align-items-center">
 
         <?php
 
-      $col = 1;
-      $row = 1;
+      $col = 0;
+      $row = 0;
 
         foreach ($trails as $trail) {
           //print $trail->post_title . "<br>";
@@ -39,12 +41,13 @@ if (count($trails)){
 
         ?>
 
-        <div class="row mb-2">
+        
 
 
-              <?php if ($row == 1){ ?>
+              <?php if ($row == 0){ ?>
 
-                  <div class="col-4">
+                <div class="col-lg-4">
+                <ul>
 
               <?php }
 
@@ -69,15 +72,14 @@ if (count($trails)){
               $row ++;
 
 
-              print "row=".$row."/col=".$col;
 
 
               if ($row >= 8){
-
+                print "</ul>";
                 print "</div>";
 
                 $col++;
-                $row=1;
+                $row=0;
               }
 
           }

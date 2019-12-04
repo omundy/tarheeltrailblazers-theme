@@ -6,7 +6,7 @@ html {
     font-family: 'Lato', sans-serif !important;
 }
 a {
-    color: #347458 ;
+    color: #fff ;
     text-decoration: none !important;
     background-color: transparent !important;
 }
@@ -24,7 +24,9 @@ h3.callout, h4.callout { font-weight: normal; }
 .light-green { color: #6d9f71 !important; }
 .tan { color: #f4f3e7 !important; }
 
-
+li{
+    height: 60px;
+}
 
 
 
