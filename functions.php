@@ -120,7 +120,7 @@ function returnTrailStatusTinyNew($trailStatusArr){
 // <li class="available"><span class="trail-name">Uwharrie</span> <span class="time-info">8/23-10:59 am</span></li>
 
 $str = '<li>';
-$str .= '<span class="tinyTrailStatusDot '. $trailStatusArr['status']['statusInfo']['class'] .'"> </span>';
+$str .= '<span class="tinyTrailStatusDot '. $trailStatusArr['status']['statusInfo']['class'] .'"> </span> ';
 $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trailStatusArr['slug'] .'">'. $trailStatusArr['title'] .'</a></span> ';
 $str .= '<span class="tinyTrailStatusUpdated">'. $trailStatusArr['status']['updated'] .'</span>';
 $str .= '</li>';
@@ -181,7 +181,8 @@ function returnTrailStatus($id){
 	  "lat_lng" => null,
       "statusInfo" => returnTrailStatusInfo($status),
       //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
-      "updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
+      //"updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
+      "updated" => $date->format('n/d') .'-'. $date->format('g:ia') // 4/23-3:36pm
     );
 	if ($parking_lot){
 		$arr["parking_lot"] = $parking_lot;

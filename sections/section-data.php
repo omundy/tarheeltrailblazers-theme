@@ -5,6 +5,7 @@
 
 <div class="container-fluid data">
     <div class="container pb-2 pb-sm-4 pt-5">
+
         <div class="row align-top">
 
             <div class="col-lg-3 col-6 text-center">
@@ -40,6 +41,7 @@
             </div>
 
         </div>
+        
     </div>
 </div>
 

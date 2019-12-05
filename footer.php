@@ -23,19 +23,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="containter-fluid footer1" id="Footer1">
+<div class="containter-fluid footer" id="Footer1">
 	<div class="container pt-4 pb-2 pb-lg-4">
 		<div class="row extra-news">
 			<div class="col-5 col-xl-6">
 				<div>
 					<nav class="d-none d-lg-block navbar navbar-expand-lg">
 						<ul class="navbar-nav mr-2">
-							<li class="nav-item"><a class="nav-link darknavitem" href="#">About</a></li>
-							<li class="nav-item"><a class="nav-link darknavitem" href="#">Trails</a></li>
-							<li class="nav-item"><a class="nav-link darknavitem" href="#">News</a></li>
-							<li class="nav-item"><a class="nav-link darknavitem" href="#">Events</a></li>
-							<li class="nav-item"><a class="nav-link darknavitem" href="#">Shop </a></li>
-							<li class="nav-item"><a class="nav-link darknavitem" href="#">Get Involved</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Trails</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">News</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Shop </a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Get Involved</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -70,16 +70,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row small-nav">
 			<div class="col-6">
 				<ul class="d-lg-none navbar-nav mr-2 mt-2 mt-lg-0">
-					<li class="nav-item"><a class="nav-link darknavitem" href="#Footer1">About</a></li>
-					<li class="nav-item"><a class="nav-link darknavitem" href="#Footer1">Trails</a></li>
-					<li class="nav-item"><a class="nav-link darknavitem" href="#Footer1">News</a></li>
-					<li class="nav-item"><a class="nav-link darknavitem" href="#Footer1">Events</a></li>
-					<li class="nav-item"><a class="nav-link darknavitem" href="#Footer1">Shop </a></li>
-					<li class="nav-item"><a class="nav-link darknavitem" href="#Footer1">Get Involved</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Footer1">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Footer1">Trails</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Footer1">News</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Footer1">Events</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Footer1">Shop </a></li>
+					<li class="nav-item"><a class="nav-link" href="#Footer1">Get Involved</a></li>
 				</ul>
 			</div>
 
-			<div class="d-lg-none offset-sm-1 col-5 col-sm-4 darknavitem mt-2 mt-sm-0">
+			<div class="d-lg-none offset-sm-1 col-5 col-sm-4 mt-2 mt-sm-0">
 				<p>Get our latest news and stay up to date about events!</p>
 				<button class="btn btn-outline-light pl-3 pr-3" type="button">SIGNUP</button>
 			</div>
@@ -92,7 +92,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div>
 <!--Footer 2-->
 
-<div class="container-fluid footer2">
+<div class="container-fluid footer">
 	<div class="container" id="Footer2">
 		<div class="row mb-1">
 			<div class="col white-line"></div>
@@ -116,6 +116,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 	</div>
 </div>
+
+
+
+
+
 
 
 </div><!-- #page we need this extra closing tag here -->

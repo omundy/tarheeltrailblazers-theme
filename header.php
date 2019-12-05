@@ -82,6 +82,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<ul class="nav nabar-nav mr-auto">
 
+                    
+
+                    <li class="menu-item">
+                        <a class="nav-link" href="https://shopify.com" target="_blank">Shop <i class="fas fa-external-link-alt"></i></a>
+                    </li>
+
 					<li class="menu-item headerOpenSearch">
 	                    <a class="nav-link header-search-btn" href="#"><i class="fa fa-search headerSearchIcon"></i></a>
 	                </li>

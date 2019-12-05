@@ -1,20 +1,12 @@
-/* css */
-* {
-  font-family: 'Source Sans Pro', sans-serif;
-}
 
-.headerSearchDiv{
-  z-index: 1;
-}
 
-.section-events {
-  background-image: url("../img/3-home/section-events/Itusi-Trail_PC-color.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  color: #d6e5e3;
-  padding-bottom: 5em;
-}
+
+
+
+
+
+
+
 
 .nav-link{
   color: white !important;
@@ -22,40 +14,18 @@
 
 .data {
   background-color: #005a30;
-  color: #d6e5e3;
+
 }
 
 .signup-callout {
   background-color: #252525;
-  color: #d6e5e3;
+
 }
 
-.news {
-  background-image: url(../img/3-home/news/Layer22.png);
-  background-color: #153040;
-}
 
-.footer1 {
-  background-color: #252525;
-  color: #d6e5e3;
-}
 
-.footer2 {
-  background-color: #252525;
-  color: #d6e5e3;
-}
 
-.footer2text{
-  font-size: 0.8rem;
-}
 
-.news {
-  color: #d6e5e3;
-}
-
-.socialbtns {
-  color: #f79520;
-}
 
 .data h1 {
   font-weight: 600;
@@ -99,23 +69,7 @@
   display: block;
 }
 
-.date{
-  background-color: rgb(242, 102, 48);
-  height: 5rem;
-  font-weight: bold;
-}
 
-.card{
-  background-color: rgba(5,5,5,.4) !important;
-}
-
-#section-events .card h5, .date h4, .date p {
-  font-weight: 600;
-}
-
-#section-events .card h5{
-  font-size: 1.4rem;
-}
 
 @media (max-width: 576px) {
   .data h1, .data h1.xl {
@@ -156,6 +110,4 @@
   }
 }
 
-body{
-  background-color: rgba(5,5,5,.9) !important;
-}
+

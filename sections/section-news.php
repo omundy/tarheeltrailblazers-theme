@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid news pt-4 pb-4 justify-content-center" id="news">
+<div class="container-fluid wrapper-news-section pt-4 pb-4 justify-content-center">
     <div class="container">
 
 
