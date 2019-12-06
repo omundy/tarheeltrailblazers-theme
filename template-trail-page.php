@@ -141,9 +141,10 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 
-<?php 
-include(get_theme_file_path() . '/sections/section-trail-status.php'); 
-// include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php'); 
+<!-- Section: Trail status -->
+<?php
+//include(get_theme_file_path() . '/sections/section-trail-status.php');
+include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php');
 ?>
 
 
