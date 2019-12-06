@@ -153,9 +153,9 @@ h3.callout, h4.callout { font-weight: normal; }
 
 
 
-.navbar-nav>.dropdown {
+.navbar-nav>.menu-item {
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 6px;
 }
 .dropdown-menu {
   top: 80%;
@@ -189,7 +189,7 @@ h3.callout, h4.callout { font-weight: normal; }
     .header-logo {
         width: 170px !important;
     }
-    .navbar-nav>.dropdown { padding: 3px; font-size: 80%; }
+    .navbar-nav>.menu-item { padding: 3px; font-size: 80%; }
     .navbar .btn-primary {
         padding:4px 5px;
         font-size:90%;
@@ -268,25 +268,7 @@ a.menu:after, .dropdown-toggle:after {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.home-hero {
-    /* background-image: url("../img/hero-Kids-Looking-in-Water.jpg"); */
-    background-image: url("../../../uploads/2019/01/Kids-Looking-in-Water.jpg");
-}
-.conserve-hero {
-    background-image:url("../../../uploads/2016/07/Mott-landscape.jpg")
-}
-.conserve-map-hero {
-    background-image:url("../../../uploads/2019/01/davidson-hall.jpg")
-}
-.conserve-map-section {
-    background-image:url("../img/davidsonmap.png")
-}
-.join-hero {
-    background-image:url("../../../uploads/2019/03/people-on-dock-hero.jpg")
-}
-.about-hero {
-    background-image:url("../img/about-page-butterfly-1800w.jpg")
-}
+
 
 
 .hero-content {
@@ -305,12 +287,7 @@ a.menu:after, .dropdown-toggle:after {
 
 
 
-.conserve-map-section .text-background-light {
-    background-color: rgb(255,255,255,.5);
-}
-.conserve-map-section .map-description {
-    color: #000;
-}
+
 
 
 /* NUMBER ROW
