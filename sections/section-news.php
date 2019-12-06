@@ -1,3 +1,58 @@
+<?php
+/**
+ *  A custom script to show events from The Event Calendar plugin as a full-width section
+ */
+// query for events
+$args = array(
+    'posts_per_page' => 3,
+    'post_status' => 'publish',
+    // 'post_type' => 'tribe_events',
+    'order'=> 'ASC',
+    'orderby' => '',
+    // 'meta_query' => array(
+    //     array(
+    //         'key' => '_EventOrigin',
+    //         'value' => 'events-calendar',
+    //         'compare' => '=',
+    //     )
+    // ),
+);
+$query = new WP_Query($args);
+$posts = $query->posts;
+// print_r($query);
+
+// if there are posts, display the section
+if (count($posts) > 0){ 
+
+
+
+foreach ( $posts as $post ){
+
+            // var for the background image from the post
+        $bgimage = "";
+        // check if the post has a Post Thumbnail assigned to it.
+        if ( has_post_thumbnail($recent['ID']) ) {
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent['ID'] ), 'single-post-thumbnail' );
+            //print_r($image);
+            $bgimage = "style='background-image:url(". $image[0] .");'";
+        }
+
+
+print_r($image);
+
+// print_r($post);
+
+}
+
+}
+
+?>
+
+
+
+
+
+
 
 
 <div class="container-fluid wrapper-news-section pt-4 pb-4 justify-content-center">
