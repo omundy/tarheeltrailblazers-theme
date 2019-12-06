@@ -200,19 +200,21 @@ function returnTrailStatus($id){
 function returnTrailStatusInfo($status){
     if (!isset($status)) return;
 
+    // defaults
     $arr = array(
         'class' => "bg-success",
         'text' => "OPEN / ALL CLEAR!",
     );
-
-    if ($status == "Caution"){
-        $arr['class'] = "bg-warning";
-        $arr['text'] = "CAUTION / SOME MUDDY AREAS";
-    }
-    else if ($status == "Closed"){
+    if ($status == "Closed"){
         $arr['class'] = "bg-danger";
         $arr['text'] = "CLOSED / TOO WET";
     }
+    // they decided they don't want yellow status
+    // else if ($status == "Caution"){
+    //     $arr['class'] = "bg-warning";
+    //     $arr['text'] = "CAUTION / SOME MUDDY AREAS";
+    // }
+     
 
     return $arr;
 }
