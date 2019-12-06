@@ -27,7 +27,7 @@ $container   = get_theme_mod('understrap_container_type');
 
   <div class="carousel-inner header">
     <div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
-      <div class="card card-one">
+      <div class="card card-one col-12 col-md-6">
         <div class="green-line extra-news"></div>
 
         <div class="card-body">
@@ -40,7 +40,7 @@ $container   = get_theme_mod('understrap_container_type');
     </div>
 
     <div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
-      <div class="card card-one">
+      <div class="card card-one col-12 col-md-6 offset-md-3">
         <div class="green-line extra-news"></div>
 
         <div class="card-body">
@@ -53,7 +53,7 @@ $container   = get_theme_mod('understrap_container_type');
     </div>
 
     <div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
-      <div class="card card-one">
+      <div class="card card-one  col-12 col-md-6 offset-md-3">
         <div class="green-line extra-news"></div>
 
         <div class="card-body">
@@ -118,9 +118,9 @@ $container   = get_theme_mod('understrap_container_type');
 <?php include(get_theme_file_path() . '/sections/section-callout-donate-orange'); ?>
 
 <!-- Section: Trail status -->
-<?php 
-//include(get_theme_file_path() . '/sections/section-trail-status.php'); 
-include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php'); 
+<?php
+//include(get_theme_file_path() . '/sections/section-trail-status.php');
+include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php');
 ?>
 
 <!-- Section: Support circles -->

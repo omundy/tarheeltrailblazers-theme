@@ -216,3 +216,51 @@ function returnTrailStatusInfo($status){
 
     return $arr;
 }
+
+
+
+
+
+
+
+/**
+ *  Trim string to nearest sentence based on limit
+ *  Source: https://stackoverflow.com/a/42613482/441878
+ */
+function sentenceTrim($str, $maxLength = 300) {
+    $str = preg_replace('/\s+/', ' ', trim($str)); // Replace new lines (optional)
+    $str = removeTags($str);
+    if (mb_strlen($str) >= $maxLength) {
+        $str = mb_substr($str, 0, $maxLength);
+        $puncs  = array('. ','.<', '! ', '? '); // Possible endings of sentence
+        $maxPos = 0;
+        foreach ($puncs as $punc) {
+            $pos = mb_strrpos($str, $punc);
+            if ($pos && $pos > $maxPos) {
+                $maxPos = $pos;
+            }
+        }
+        if ($maxPos) {
+            return mb_substr($str, 0, $maxPos + 1);
+        }
+        return rtrim($str) . '&hellip;';
+    } else {
+        return $str;
+    }
+}
+function removeTags($str){
+    // remove all link and link content
+    $str = preg_replace('#<a.*?>.*?</a>#i','', $str);
+    // remove all tags
+    $str = strip_tags($str);
+    return $str;
+}
+function getYear($date){
+    return date("Y", strtotime($date));
+}
+function getMonthShort($date){
+    return date("M", strtotime($date));
+}
+function getDayWithZero($date){
+    return date("d", strtotime($date));
+}
