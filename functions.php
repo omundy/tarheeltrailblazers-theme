@@ -67,7 +67,10 @@ echo $doc->saveHTML();
 
 
 
-
+/**
+ * Gets all data for all (published) trails (ignoring mobile and json views)
+ * @return Array
+ */
 function get_all_trails() {
   $arr = array();
 
@@ -80,7 +83,6 @@ function get_all_trails() {
     'orderby' => '',
     'meta_key'   => '_wp_page_template',
     'meta_value' => 'template-trail-page.php'
-
   );
   $query = new WP_Query($args);
   $posts = $query->posts;
@@ -103,7 +105,7 @@ function get_all_trails() {
 }
 
 
-function returnTrailStatusTiny($trailStatusArr){
+function returnTrailStatusHtmlTiny($trailStatusArr){
   // print "<pre>";
   // print_r($trailStatusArr);
   // print "</pre>";
@@ -116,7 +118,7 @@ function returnTrailStatusTiny($trailStatusArr){
 }
 
 
-function returnTrailStatusTinyNew($trailStatusArr){
+function returnTrailStatusHtmlTinyNew($trailStatusArr){
 // <li class="available"><span class="trail-name">Uwharrie</span> <span class="time-info">8/23-10:59 am</span></li>
 
 $str = '<li>';
@@ -133,19 +135,19 @@ return $str;
 
 
 
-function returnTrailStatusHeader($trailStatusArr){
-  $str = "<div class='headerTrailStatus'>";
-  $str .= 'Current Status: ';
-  $str .= '<button class="btn '. $trailStatusArr['status']['statusInfo']['class'] .'">';
-  $str .= $trailStatusArr['status']['statusInfo']['text'];
-  $str .= '</button> ';
-  $str .= '<span class="headerTrailStatusUpdated">Updated '. $trailStatusArr['status']['updated'];
-  $str .= "</div>";
-  return $str;
+function returnTrailStatusHtmlHeader($trailStatusArr){
+    $str = "<div class='headerTrailStatus'>";
+    $str .= 'Current Status: ';
+    $str .= '<button class="btn '. $trailStatusArr['status']['statusInfo']['class'] .'">';
+    $str .= $trailStatusArr['status']['statusInfo']['text'];
+    $str .= '</button> ';
+    $str .= '<span class="headerTrailStatusUpdated">Updated '. $trailStatusArr['status']['updated'];
+    $str .= "</div>";
+    return $str;
 }
 
 
-function returnTrailStatus($id){
+function returnTrailStatusData($id){
 
     // query for events
     $args = array(

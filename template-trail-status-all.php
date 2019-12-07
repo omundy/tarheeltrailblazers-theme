@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Trail status (JSON) (ALL)
+ * Template Name: Trail status (ALL)
  * Template Post Type: page
 */
 
@@ -73,7 +73,7 @@ echo json_encode($arr); ?>
 
 		<?php
 			$id = get_the_ID();
-			$trailStatus = returnTrailStatus($id);
+			$trailStatus = returnTrailStatusData($id);
 
 
 		  $trailStatusArr = array(
@@ -83,7 +83,7 @@ echo json_encode($arr); ?>
 		  	'title' => $post->post_title
 		  );
 
-		  print returnTrailStatusHeader($trailStatusArr);
+		  print returnTrailStatusHtmlHeader($trailStatusArr);
 
 		?>
 

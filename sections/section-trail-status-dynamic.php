@@ -41,7 +41,7 @@ if (count($trails)){
 
         // get id and trail status 
         $id = $trail->ID;
-        $trailStatus = returnTrailStatus($id);
+        $trailStatus = returnTrailStatusData($id);
 
         // create array for printing html 
         $trailStatusArr = array(
@@ -56,7 +56,7 @@ if (count($trails)){
         // print "</pre>";
 
         // print returned html 
-        print returnTrailStatusTinyNew($trailStatusArr);
+        print returnTrailStatusHtmlTinyNew($trailStatusArr);
 
         // move to next row
         $row ++;

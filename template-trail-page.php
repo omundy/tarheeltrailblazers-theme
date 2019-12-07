@@ -48,7 +48,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		<?php
 			$id = get_the_ID();
-			$trailStatus = returnTrailStatus($id);
+			$trailStatus = returnTrailStatusData($id);
 
 
 		  $trailStatusArr = array(
@@ -58,7 +58,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		  	'title' => $post->post_title
 		  );
 
-		  print returnTrailStatusHeader($trailStatusArr);
+		  print returnTrailStatusHtmlHeader($trailStatusArr);
 
 		?>
 
