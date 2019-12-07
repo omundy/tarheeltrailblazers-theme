@@ -27,16 +27,19 @@ $posts = $query->posts;
 // if there are posts, display the section
 if (count($posts) > 0){ ?>
 
-    <div class="wrapper-hero wrapper-light-green px-0">
+    <div class="wrapper-hero section-events px-0">
        <div class="container">
             <div class="row py-3">
-                <div class="col-md-6 col-lg-7 col-xl-8 d-none d-md-block pl-0">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Protect-Monarch-Butterflies-1500w.jpg" alt="">
+
+
+                <div class="offset-1 col-10 offset-sm-2 col-sm-8 offset-md-3 col-md-6 offset-lg-7 col-lg-5 offset-xl-8 col-xl-4 green-divider">
+
                 </div>
-                <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+                <div class="offset-1 col-10 offset-sm-2 col-sm-8 offset-md-3 col-md-6 offset-lg-7 col-lg-5 offset-xl-8 col-xl-4 section-event-card">
+
                     <div class="row mt-2">
                         <div class="col-12">
-                            <h3>DLC Events</h3>
+                            <h5 class="card-title text-center">Tarheel Trailblazer Events</h5>
                         </div>
                     </div>
 <?php
@@ -50,27 +53,27 @@ if (count($posts) > 0){ ?>
             //setup_postdata( $post );
 ?>
                     <a href="<?php the_permalink(); ?>" class="event-link" title="<?php the_title(); ?>">
-                        <div class="row date-event">
+                        <div class="row date-event ">
                             <div class="col-2">
-                                <div class="date-box">
+                                <div class="date-box date">
                                     <div class="date-day text-center">
-                                        <?php echo getDayWithZero($post->EventStartDate); ?>
+                                    <h4><?php echo getDayWithZero($post->EventStartDate); ?></h4>
                                     </div>
                                     <div class="date-month text-center">
-                                        <?php echo getMonthShort($post->EventStartDate); ?>
+                                    <p>    <?php echo getMonthShort($post->EventStartDate); ?> </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-10 pl-md-4">
-                                <div class="event-title">
-                                    <?php the_title(); ?>
+                                <div>
+                                    <p class="event-text"><?php the_title(); ?> </p>
                                 </div>
                                 <div class="event-content">
                                     <?php
                                         if ($post->post_excerpt == '') {
-                                            echo '<p>'. sentenceTrim($post->post_content,100) .'</p>';
+                                            echo '<p class= "mb-0 event-text">'. sentenceTrim($post->post_content,100) .'</p>';
                                         } else {
-                                           echo '<p>'. sentenceTrim($post->post_excerpt,100) .'</p>';
+                                           echo '<p class= "event-text">'. sentenceTrim($post->post_excerpt,100) .'</p>';
                                         }
                                     ?>
                                 </div>
@@ -82,7 +85,7 @@ if (count($posts) > 0){ ?>
 
                     <div class="row my-4">
                         <div class="col-12 d-flex justify-content-center">
-                            <a class="btn btn-primary" href="<?php echo esc_url( home_url( '/' ) ); ?>events" title="Events">SEE ALL EVENTS</a>
+                            <a class="btn btn-outline-light dark rouded-0 mt-4" href="<?php echo esc_url( home_url( '/' ) ); ?>events" title="Events">SEE ALL EVENTS</a>
                         </div>
                     </div>
 
@@ -102,14 +105,14 @@ if (count($posts) > 0){ ?>
 
 
 
-
+<!--
 
 <div class="container-fluid section-events" id="section-events">
 <div class="container pt-5">
 <div class="row mt-5">
 <div class="col-10 col-md-8 col-lg-5 col-xl-4 offset-1 offset-md-2 offset-lg-7 offset-xl-8">
 <div class="card section-event-card">
-<div class="dark-green-line"></div>
+
 
 <div class="card-body">
 <h5 class="card-title text-center">Tarheel Trailblazer Events</h5>
@@ -165,3 +168,4 @@ if (count($posts) > 0){ ?>
 </div>
 </div>
 </div>
+-->

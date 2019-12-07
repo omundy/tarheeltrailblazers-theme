@@ -54,13 +54,21 @@ p.social-link a:hover {
 
 .card-one {
   position: absolute !important;
-  right: 0;
-  top: 25rem;
+  top: 45%;
+  z-index: 1;
+  text-align: center;
+  font-size: 1.3rem;
   background-color: rgba(32, 32, 32, .5);
   color: #fff;
   font-size: 1.2rem;
-  width: 25rem;
+
 }
+
+.card-one h5 {
+  font-weight: 600;
+  font-size: 1.6rem
+}
+
 
 .card-one h5 {
   font-weight: 600;
@@ -135,7 +143,7 @@ li.unavailable {
 }
 
 .participate {
-  background-image: url('../img/bg-texture.png'), linear-gradient(rgb(37, 37, 37), rgb(25, 25, 25))
+  background-image: url('../img/bg-texture.jpg'), linear-gradient(rgb(37, 37, 37), rgb(25, 25, 25))
 }
 
 .participate h4 {
@@ -184,6 +192,7 @@ li.unavailable {
 
 .section-event-card{
   background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 5em;
 }
 
 @media (min-width: 992px) {
@@ -210,19 +219,10 @@ li.unavailable {
     z-index: inherit;
   }
 
-  .card-one {
-    position: absolute !important;
-    top: 30%;
-    z-index: 1;
-    text-align: center;
-    font-size: 1.3rem;
-  }
 
 
-  .card-one h5 {
-    font-weight: 600;
-    font-size: 1.6rem
-  }
+
+
 
   .carousel-item.pic1 {
     background-image: url(../img/hero_bike_one.jpg);
@@ -336,8 +336,11 @@ li.unavailable {
 
 @media (max-width: 991px) {
   .card-two {
-    height: 70%;
+
     font-size: 0.8rem;
+  }
+  .card-one{
+    top: 15%;
   }
 }
 

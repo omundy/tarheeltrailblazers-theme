@@ -148,8 +148,8 @@ include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php');
 ?>
 
 
-
-<?php include(get_theme_file_path() . '/sections/section-news.php'); ?>
+<!-- Section: Trail status
+<?php include(get_theme_file_path() . '/sections/section-news.php'); ?> -->
 
 
 <?php include(get_theme_file_path() . '/sections/section-events-full.php'); ?>

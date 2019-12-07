@@ -32,7 +32,11 @@ a.darknavitem:hover, button.darknavitem:hover {
 
 
 
-
+.green-divider{
+  background-color: #005a30;
+  height: .3em;
+  margin-top: 5em;
+}
 
 
 
@@ -488,6 +492,7 @@ a.menu:after, .dropdown-toggle:after {
     padding: 6px 0 18px 0;
     width: 60px;
     margin:0 auto 6px;
+    margin-right: 200px;
 }
 .date-day {
     font-size: 2rem !important;
@@ -507,7 +512,9 @@ a.menu:after, .dropdown-toggle:after {
     color: #f4f3e7 !important;
 }
 
-
+p.event-text{
+  padding-left: 1rem;
+}
 
 .event-sidebar {
     padding: 10px 20px;
@@ -531,12 +538,13 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .section-events {
-  background-image: url("../img/3-home/section-events/Itusi-Trail_PC-color.png");
+  background-image: url("../img/itusi-trail_PC-color.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-position: center;
 
-  padding-bottom: 5em;
+
+  padding-bottom: 15em;
 }
 #section-events .card h5, .date h4, .date p {
   font-weight: 600;
