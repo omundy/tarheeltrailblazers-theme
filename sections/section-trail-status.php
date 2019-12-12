@@ -6,7 +6,7 @@
 
 // get all the trails
 $trails = om_get_all_trails();
-//var_dump($trails);
+
 // print "<pre>";
 // print_r($trails);
 // print "</pre>";

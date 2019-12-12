@@ -68,9 +68,19 @@ echo $doc->saveHTML();
  * Gets all data for *ONE* trail
  * @return Array
  */
-function om_get_one_trail() {
-    $arr = array();
-    
+function om_get_one_trail($id) {
+    // get the post
+    $post = get_post($id);
+    // save all the post metadata
+    $post->meta = om_return_post_meta($post->ID);        
+    // save all the post metadata
+    $post->thumbnail = om_return_post_thumbnail($post->ID);        
+
+    // print "<pre>";
+    // print_r($post);
+    // print "</pre>";
+
+    return $post; 
 }
 
 
@@ -99,11 +109,9 @@ function om_get_all_trails() {
         //print $post->post_title . "<br>";
 
         // save all the post metadata
-        $post->meta = om_return_post_meta($post->ID);
-        
+        $post->meta = om_return_post_meta($post->ID);        
         // save all the post metadata
-        $post->thumbnail = om_return_post_thumbnail($post->ID);
-        
+        $post->thumbnail = om_return_post_thumbnail($post->ID);        
         // store post with key
         $arr[$post->post_name] = $post;
     }
@@ -230,32 +238,27 @@ function om_return_trail_status_html_tiny($trail){
 }
 
 // the trail status in the head of a page
-function om_return_trail_status_html_header($trailStatusArr){
+function om_return_trail_status_html_header($trail){
     $str = "<div class='headerTrailStatus'>";
     $str .= 'Current Status: ';
-    $str .= '<button class="btn '. $trailStatusArr['status']['statusInfo']['class'] .'">';
-    $str .= $trailStatusArr['status']['statusInfo']['text'];
+    $str .= '<button class="btn '. $trail->meta['statusInfo']['class'] .'">';
+    $str .= $trail->meta['statusInfo']['text'];
     $str .= '</button> ';
-    $str .= '<span class="headerTrailStatusUpdated">Updated '. $trailStatusArr['status']['updated'];
+    $str .= '<span class="headerTrailStatusUpdated">Updated '. $trail->meta['updated'];
     $str .= "</div>";
     return $str;
 }
 
+// the trail info and thumbnail
+function om_return_trail_card_html($trail){
 
-
-
-
-
-
-function returnTrailCard($trail){
-
-    print_r($trail);
+    // print_r($trail);
 
     $str = '<div>';
-    $str .= '<div class="trail-card-img"><img src="'. $trail['thumbnail'] .'" /></div>';
-    $str .= '<span class="tinyTrailStatusDot '. $trail['status']['statusInfo']['class'] .'"> </span> ';
-    $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail['slug'] .'">'. $trail['title'] .'</a></span> ';
-    $str .= '<span class="tinyTrailStatusUpdated">'. $trail['status']['updated'] .'</span>';
+    $str .= '<div class="trail-card-img"><img src="'. $trail->thumbnail[0] .'" /></div>';
+    $str .= '<span class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+    $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
+    $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
     $str .= '</div>';
 
     return $str;

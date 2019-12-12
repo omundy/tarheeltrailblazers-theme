@@ -46,21 +46,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	<div class="trailStatus">
 
-		<?php
-			$id = get_the_ID();
-			$trailStatus = returnTrailStatusData($id);
+		<?php 
 
+        $trail = om_get_one_trail( get_the_ID() );
 
-		  $trailStatusArr = array(
-		  	'status' => $trailStatus,
-		  	'id' => $id,
-			'slug' => $trail->post_name,
-		  	'title' => $post->post_title
-		  );
+        print om_return_trail_status_html_header($trail); 
 
-		  print om_return_trail_status_html_header($trailStatusArr);
-
-		?>
+        ?>
 
 	</div>
 
@@ -91,18 +83,18 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	<div class="trailStatus">
 
-	<?php if (isset($trailStatus['lat_lng']) && !empty($trailStatus['lat_lng']) ){ ?>
-		<a href="https://maps.google.com/?daddr=<?php echo $trailStatus['lat_lng']; ?>" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>
+	<?php if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){ ?>
+		<a href="https://maps.google.com/?daddr=<?php echo $trail->meta['lat_lng']; ?>" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>
 	<?php } ?>
 
 
-	<?php if (isset($trailStatus['mtb_project_page']) && !empty($trailStatus['mtb_project_page']) ){ ?>
-		<a href="<?php echo $trailStatus['mtb_project_page']; ?>" target="_blank" class="btn btn-primary">MTB Project</a>
+	<?php if (isset($trail->meta['mtb_project_page']) && !empty($trail->meta['mtb_project_page']) ){ ?>
+		<a href="<?php echo $trail->meta['mtb_project_page']; ?>" target="_blank" class="btn btn-primary">MTB Project</a>
 	<?php } ?>
 
 
-	<?php if (isset($trailStatus['trailforks_page']) && !empty($trailStatus['trailforks_page']) ){ ?>
-		<a href="<?php echo $trailStatus['trailforks_page']; ?>" target="_blank" class="btn btn-primary">Trailforks</a>
+	<?php if (isset($trail->meta['trailforks_page']) && !empty($trail->meta['trailforks_page']) ){ ?>
+		<a href="<?php echo $trail->meta['trailforks_page']; ?>" target="_blank" class="btn btn-primary">Trailforks</a>
 	<?php } ?>
 
 	</div>
@@ -111,10 +103,10 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 
-							<?php if (isset($trailStatus['mtb_project_iframe']) && !empty($trailStatus['mtb_project_iframe'])){ ?>
+							<?php if (isset($trail->meta['mtb_project_iframe']) && !empty($trail->meta['mtb_project_iframe'])){ ?>
 
 							<!-- BEGIN MTB Project -->
-							<iframe style="width:100%; max-width:1200px; height:410px;" frameborder="0" scrolling="no" src="<?php echo $trailStatus['mtb_project_iframe']; ?>"></iframe>
+							<iframe style="width:100%; max-width:1200px; height:410px;" frameborder="0" scrolling="no" src="<?php echo $trail->meta['mtb_project_iframe']; ?>"></iframe>
 							<!-- END MTB Project -->
 
 							<?php } ?>
@@ -144,10 +136,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 <!-- Section: Trail status -->
 <?php include(get_theme_file_path() . '/sections/section-trail-status.php'); ?>
 
-<!-- Section: News
-<?php include(get_theme_file_path() . '/sections/section-news.php'); ?> -->
-
-
+<!-- Section: Events -->
 <?php include(get_theme_file_path() . '/sections/section-events-full.php'); ?>
 
 
