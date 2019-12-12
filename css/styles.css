@@ -471,6 +471,18 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 
+.trail-status-mobile-btn {
+    position: relative;
+}
+.trail-status-mobile-btn i {
+    position: absolute;
+    font-size: 130%;
+    color: rgba(255,255,255,.5);
+    top: 200px;
+    right: 20px;
+}
+
+
 /* CALENDAR > SEE SEPARATE CSS
 ******************************************************************************/
 
