@@ -99,13 +99,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 		<div class="row align-middle mt-4">
-			<div class="col-6 col-md-4 align-middle"><img alt="Tarheel Trailblazers Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/footer/Footer2/ttb-logo-full-white-clear.png" /></div>
+			<div class="col-6 col-md-4 align-middle">
+                <img alt="Tarheel Trailblazers Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est-1000w.png" />
+            </div>
 
-			<div class="col-6 col-md-4 align-middle pt-1"><img alt="Work X Ride Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/footer/Footer2/ttb-wXr-only-white-clear.png" /></div>
+			<div class="col-6 col-md-4 align-middle pt-1">
+                <img alt="Work X Ride Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-wXr-only-white-clear.png" />
+            </div>
 
-			<div class="col-6 col-md-3 align-middle pt-4 pt-md-0"><img alt="IMBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/footer/Footer2/imba-logo-white-clear.png" /></div>
+			<div class="col-6 col-md-3 align-middle pt-4 pt-md-0">
+                <img alt="IMBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/imba-logo-white-clear.png" />
+            </div>
 
-			<div class="col-3 col-md-1 align-middle offset-3 offset-md-0 pt-1" style="height: 65%;"><img alt="SORBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3-home/footer/Footer2/sorba-logo.png" /></div>
+			<div class="col-3 col-md-1 align-middle offset-3 offset-md-0 pt-1" style="height: 65%;">
+                <img alt="SORBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/sorba-logo.png" />
+            </div>
 		</div>
 
 		<div class="row">

@@ -54,6 +54,13 @@ h3.callout, h4.callout { font-weight: normal; }
 
 
 
+
+
+
+/* TRAIL STATUS
+******************************************************************************/
+
+
 .tinyTrailStatusDot {
   height: .95rem;
   width: .95rem;
@@ -145,7 +152,7 @@ h3.callout, h4.callout { font-weight: normal; }
     line-height: 1.4rem;
 }
 .header-logo {
-    width: 230px !important;
+    width: 260px !important;
 }
 .bg-primary {
     background-color: #fff !important;
@@ -179,7 +186,7 @@ h3.callout, h4.callout { font-weight: normal; }
 }
 @media (min-width: 576px) {
     .header-logo {
-        width: 230px !important;
+        width: 260px !important;
 
     }
     .navbar .btn-primary {
@@ -397,7 +404,7 @@ a.menu:after, .dropdown-toggle:after {
 
 
 .wrapper-news-section {
-    background-image: url(../img/3-home/news/Layer22.png);
+    background-image: url(../img/bg-topo.png);
     background-color: #153040;
 }
 .wrapper-news-section {
