@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 header('Content-Type: application/json');
 
 // get all the trails
-$trails = get_all_trails();
+$trails = om_get_all_trails();
 
 // only proceed if trails are found
 if (count($trails)){
@@ -24,19 +24,17 @@ if (count($trails)){
     // array to hold output
     $arr = array();
 
-    // only include non-public information 
+    // only include public information 
     foreach ( $trails as $trail ){
-        
-        $status = returnTrailStatusData($trail->ID);
 
         $arr[$trail->post_name] = array(
             'title' => $trail->post_title,
             'slug' => $trail->post_name,
-            'url' => $trail->post_name,
-            'lat_lng' => $status['lat_lng'],
-            'status' => $status['status'],
+            'url' => esc_url( home_url( '/' ) ) . $trail->post_name,
+            'lat_lng' => $trail->meta['lat_lng'],
+            'status' => $trail->meta['status'],
             'updated' => $trail->post_modified,
-            'updated-tiny' => $status['updated'],
+            'updated-tiny' => $trail->meta['updated'],
         );       
     }
 

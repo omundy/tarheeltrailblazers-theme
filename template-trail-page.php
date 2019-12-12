@@ -58,7 +58,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		  	'title' => $post->post_title
 		  );
 
-		  print returnTrailStatusHtmlHeader($trailStatusArr);
+		  print om_return_trail_status_html_header($trailStatusArr);
 
 		?>
 

@@ -5,7 +5,7 @@
 
 
 // get all the trails
-$trails = get_all_trails();
+$trails = om_get_all_trails();
 //var_dump($trails);
 // print "<pre>";
 // print_r($trails);
@@ -40,24 +40,8 @@ if (count($trails)){
             print '<ul class="my-0">';
         }
 
-        // get id and trail status 
-        $id = $trail->ID;
-        $trailStatus = returnTrailStatusData($id);
-
-        // create array for printing html 
-        $trailStatusArr = array(
-            'status' => $trailStatus,
-            'id' => $id,
-            'slug' => $trail->post_name,
-            'title' => $trail->post_title
-        );
-
-        // print "<pre>";
-        // print_r($trailStatusArr);
-        // print "</pre>";
-
         // print returned html 
-        print returnTrailStatusHtmlTinyNew($trailStatusArr);
+        print om_return_trail_status_html_tiny($trail);
 
         // move to next row
         $row ++;

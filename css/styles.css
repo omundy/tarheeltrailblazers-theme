@@ -9,7 +9,6 @@ html,body {
     font-family: 'Source Sans Pro', sans-serif !important;
     background-color: #252525 !important;
     color: #d6e5e3 !important;
-
 }
 
 a {
@@ -31,6 +30,7 @@ a.darknavitem:hover, button.darknavitem:hover {
 }
 
 
+pre { color: #090 !important; }
 
 .green-divider{
   background-color: #005a30;

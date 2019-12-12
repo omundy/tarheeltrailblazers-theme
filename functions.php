@@ -64,106 +64,85 @@ echo $doc->saveHTML();
 
 
 
-
+/**
+ * Gets all data for *ONE* trail
+ * @return Array
+ */
+function om_get_one_trail() {
+    $arr = array();
+    
+}
 
 
 /**
- * Gets all data for all (published) trails (ignoring mobile and json views)
+ * Gets all data for all (published) trails
  * @return Array
  */
-function get_all_trails() {
-  $arr = array();
+function om_get_all_trails() {
+    $arr = array();
 
-  // query
-  $args = array(
-    'posts_per_page' => 30,
-    'post_status' => 'publish',
-    'post_type' => 'page',
-    'order'=> 'ASC',
-    'orderby' => '',
-    'meta_key'   => '_wp_page_template',
-    'meta_value' => 'template-trail-page.php'
-  );
-  $query = new WP_Query($args);
-  $posts = $query->posts;
-
-
-  // set keys of array
-  foreach ($posts as $post) {
-    //print $post->post_title . "<br>";
-    $arr[$post->post_title] = $post;
-  }
-  // sort by new keys
-  ksort($arr);
-
-  // print "<pre>";
-  // print_r($arr);
-  // print "</pre>";
-
-
-   return $arr;
-}
-
-
-function returnTrailStatusHtmlTiny($trailStatusArr){
-  // print "<pre>";
-  // print_r($trailStatusArr);
-  // print "</pre>";
-  $str = "<div>";
-  $str .= '<span class="tinyTrailStatusDot '. $trailStatusArr['status']['statusInfo']['class'] .'"> </span>';
-  $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trailStatusArr['slug'] .'">'. $trailStatusArr['title'] .'</a></span> ';
-  $str .= '<span class="tinyTrailStatusUpdated">'. $trailStatusArr['status']['updated'] .'</span>';
-  $str .= "</div>";
-  return $str;
-}
-
-
-function returnTrailStatusHtmlTinyNew($trailStatusArr){
-// <li class="available"><span class="trail-name">Uwharrie</span> <span class="time-info">8/23-10:59 am</span></li>
-
-$str = '<li>';
-$str .= '<span class="tinyTrailStatusDot '. $trailStatusArr['status']['statusInfo']['class'] .'"> </span> ';
-$str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trailStatusArr['slug'] .'">'. $trailStatusArr['title'] .'</a></span> ';
-$str .= '<span class="tinyTrailStatusUpdated">'. $trailStatusArr['status']['updated'] .'</span>';
-$str .= '</li>';
-
-return $str;
-
-}
-
-
-
-
-
-function returnTrailStatusHtmlHeader($trailStatusArr){
-    $str = "<div class='headerTrailStatus'>";
-    $str .= 'Current Status: ';
-    $str .= '<button class="btn '. $trailStatusArr['status']['statusInfo']['class'] .'">';
-    $str .= $trailStatusArr['status']['statusInfo']['text'];
-    $str .= '</button> ';
-    $str .= '<span class="headerTrailStatusUpdated">Updated '. $trailStatusArr['status']['updated'];
-    $str .= "</div>";
-    return $str;
-}
-
-
-function returnTrailStatusData($id){
-
-    // query for events
+    // query
     $args = array(
-      'posts_per_page' => 1,
-      'post_status' => 'publish',
-      'post_type' => 'page',
-      'order'=> 'ASC',
-      'orderby' => '',
-      'p' => $id
+        'posts_per_page' => 30,
+        'post_status' => 'publish',
+        'post_type' => 'page',
+        'order'=> 'ASC',
+        'orderby' => '',
+        'meta_key'   => '_wp_page_template',
+        'meta_value' => 'template-trail-page.php'
     );
     $query = new WP_Query($args);
     $posts = $query->posts;
 
+    // store additional data and set array key
+    foreach ($posts as $post) {
+        //print $post->post_title . "<br>";
+
+        // save all the post metadata
+        $post->meta = om_return_post_meta($post->ID);
+        
+        // save all the post metadata
+        $post->thumbnail = om_return_post_thumbnail($post->ID);
+        
+        // store post with key
+        $arr[$post->post_name] = $post;
+    }
+
+    // sort by new keys
+    ksort($arr);
+
     // print "<pre>";
-    // print_r($posts);
+    // print_r($arr);
     // print "</pre>";
+
+    return $arr;
+}
+
+
+/**
+ * Return the thumbnail for a post
+ * @return Array
+ */
+function om_return_post_thumbnail($id){
+    $arr = "";
+
+    // if it has a thumbnail image
+    if ( has_post_thumbnail($id) ) {
+        // print get_post_thumbnail_id( $id ) ."<br>";
+
+        // store thumbnail and resolution data
+        $arr = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
+    }
+    return $arr;
+}
+
+
+
+/**
+ * Return all meta data for a post
+ * @return Array
+ */
+function om_return_post_meta($id){
 
     // get meta for this trail
     $parking_lot = get_post_meta( $id, 'parking_lot', true );
@@ -175,23 +154,23 @@ function returnTrailStatusData($id){
 
     // create array w/data
     $arr = array(
-      "mtb_project_page" => get_post_meta( $id, 'mtb_project_page', true ),
-      "trailforks_page" => get_post_meta( $id, 'trailforks_page', true ),
-      "mtb_project_iframe" => get_post_meta( $id, 'mtb_project_iframe', true ),
-      "status" => $status,
-	  "parking_lot" => null,
-	  "lat_lng" => null,
-      "statusInfo" => returnTrailStatusInfo($status),
-      //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
-      //"updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
-      "updated" => $date->format('n/d') .'-'. $date->format('g:ia') // 4/23-3:36pm
+        "mtb_project_page" => get_post_meta( $id, 'mtb_project_page', true ),
+        "trailforks_page" => get_post_meta( $id, 'trailforks_page', true ),
+        "mtb_project_iframe" => get_post_meta( $id, 'mtb_project_iframe', true ),
+        "status" => $status,
+        "parking_lot" => null,
+        "lat_lng" => null,
+        "statusInfo" => om_return_trail_status_info($status),
+        //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
+        //"updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
+        "updated" => $date->format('n/d') .'-'. $date->format('g:ia') // 4/23-3:36pm
     );
-	if ($parking_lot){
-		$arr["parking_lot"] = $parking_lot;
-		if ($parking_lot['lat'] && $parking_lot['lng']){
-			$arr["lat_lng"] = $parking_lot['lat'] .','. $parking_lot['lng'];
-		}
-	}
+    if ($parking_lot){
+        $arr["parking_lot"] = $parking_lot;
+        if ($parking_lot['lat'] && $parking_lot['lng']){
+            $arr["lat_lng"] = $parking_lot['lat'] .','. $parking_lot['lng'];
+        }
+    }
     // print "<pre>";
     // print_r($arr);
     // print "</pre>";
@@ -199,7 +178,12 @@ function returnTrailStatusData($id){
     return $arr;
 }
 
-function returnTrailStatusInfo($status){
+
+/**
+ * Returns the trail status display info
+ * @return Array
+ */
+function om_return_trail_status_info($status){
     if (!isset($status)) return;
 
     // defaults
@@ -217,9 +201,69 @@ function returnTrailStatusInfo($status){
     //     $arr['text'] = "CAUTION / SOME MUDDY AREAS";
     // }
      
-
     return $arr;
 }
+
+
+
+
+
+
+
+
+
+/* VIEWS */
+
+
+// the trail status section
+function om_return_trail_status_html_tiny($trail){
+    // print "<pre>";
+    // print_r($trail);
+    // print "</pre>";
+    
+    $str = '<li>';
+    $str .= '<span class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+    $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
+    $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
+    $str .= '</li>';
+    return $str;
+}
+
+// the trail status in the head of a page
+function om_return_trail_status_html_header($trailStatusArr){
+    $str = "<div class='headerTrailStatus'>";
+    $str .= 'Current Status: ';
+    $str .= '<button class="btn '. $trailStatusArr['status']['statusInfo']['class'] .'">';
+    $str .= $trailStatusArr['status']['statusInfo']['text'];
+    $str .= '</button> ';
+    $str .= '<span class="headerTrailStatusUpdated">Updated '. $trailStatusArr['status']['updated'];
+    $str .= "</div>";
+    return $str;
+}
+
+
+
+
+
+
+
+function returnTrailCard($trail){
+
+    print_r($trail);
+
+    $str = '<div>';
+    $str .= '<div class="trail-card-img"><img src="'. $trail['thumbnail'] .'" /></div>';
+    $str .= '<span class="tinyTrailStatusDot '. $trail['status']['statusInfo']['class'] .'"> </span> ';
+    $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail['slug'] .'">'. $trail['title'] .'</a></span> ';
+    $str .= '<span class="tinyTrailStatusUpdated">'. $trail['status']['updated'] .'</span>';
+    $str .= '</div>';
+
+    return $str;
+
+}
+
+
+
 
 
 

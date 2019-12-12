@@ -2,7 +2,7 @@
 /**
  * Template Name: Empty regular width page
  * Template Post Type: page, post, event
-*/
+ */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
