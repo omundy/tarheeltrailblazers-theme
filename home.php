@@ -124,10 +124,7 @@ $container   = get_theme_mod('understrap_container_type');
 <?php include(get_theme_file_path() . '/sections/section-callout-donate-orange'); ?>
 
 <!-- Section: Trail status -->
-<?php
-//include(get_theme_file_path() . '/sections/section-trail-status.php');
-include(get_theme_file_path() . '/sections/section-trail-status-dynamic.php');
-?>
+<?php include(get_theme_file_path() . '/sections/section-trail-status.php'); ?>
 
 <!-- Section: Support circles -->
 <?php include(get_theme_file_path() . '/sections/section-support-circles.php'); ?>
