@@ -44,7 +44,7 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 // Critical Web Design: CUSTOM FUNCTIONS
 
-// a hook so WP Cron can access the function, runs every 15 min
+// a hook so WP Cron can access the function, runs every 5 min
 add_action( 'om_get_usnwc_status_hook', 'om_get_usnwc_status' );
 
 /**
