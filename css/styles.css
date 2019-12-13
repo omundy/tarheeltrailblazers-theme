@@ -437,49 +437,18 @@ a.menu:after, .dropdown-toggle:after {
 /* Trail status
 ******************************************************************************/
 
-
-
-.trail-status {
+.trail-status-wrapper {
     background-color: rgb(37, 37, 37);
-    padding-top: 2vh;
-}
-
-.trail-status ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-.trail-status li {
-    margin: 1px 0;
-}
-
-.trail-name {
     position: relative;
-    left: -1vh;
-    top: -0.8vh;
-    color: rgb(255, 255, 255);
-    font-size: 1rem;
-    line-height: 1.1rem;
 }
-
-@media (max-width:482px) {
-
-    .trail-name {
-        line-height: 0.6rem;
-    }
-
-}
-
-
 .trail-status-mobile-btn {
-    position: relative;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
 }
 .trail-status-mobile-btn i {
-    position: absolute;
     font-size: 130%;
     color: rgba(255,255,255,.5);
-    top: 200px;
-    right: -20px;
 }
 
 
@@ -492,7 +461,7 @@ a.menu:after, .dropdown-toggle:after {
 
 
 .section-events-image {
-    background-image: url("../img/Protect-Monarch-Butterflies-1500w.jpg");
+    /*background-image: url("../img/Protect-Monarch-Butterflies-1500w.jpg");*/
     background-position: center center;
     background-color: transparent;
     background-repeat: no-repeat;

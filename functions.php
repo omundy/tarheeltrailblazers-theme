@@ -229,11 +229,9 @@ function om_return_trail_status_html_tiny($trail){
     // print_r($trail);
     // print "</pre>";
     
-    // $str = '<li>';
     $str .= '<span class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
-    // $str .= '</li>';
     return $str;
 }
 
@@ -251,8 +249,9 @@ function om_return_trail_status_html_header($trail){
 
 // the trail info and thumbnail
 function om_return_trail_card_html($trail){
-
+    // print "<pre>";
     // print_r($trail);
+    // print "</pre>";
 
     $str = '<div>';
     $str .= '<div class="trail-card-img"><img src="'. $trail->thumbnail[0] .'" /></div>';
@@ -260,9 +259,7 @@ function om_return_trail_card_html($trail){
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
     $str .= '</div>';
-
     return $str;
-
 }
 
 
