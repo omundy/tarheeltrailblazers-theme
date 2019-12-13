@@ -229,11 +229,11 @@ function om_return_trail_status_html_tiny($trail){
     // print_r($trail);
     // print "</pre>";
     
-    $str = '<li>';
+    // $str = '<li>';
     $str .= '<span class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
-    $str .= '</li>';
+    // $str .= '</li>';
     return $str;
 }
 

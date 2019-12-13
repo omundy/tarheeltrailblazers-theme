@@ -1,14 +1,7 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package understrap
+ * Template Name: Home
+ * Template Post Type: page
  */
 if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -120,7 +113,7 @@ $container   = get_theme_mod('understrap_container_type');
 
 
 
-<!-- Section: Events -->
+<!-- Section: Donate Callout -->
 <?php include(get_theme_file_path() . '/sections/section-callout-donate-orange'); ?>
 
 <!-- Section: Trail status -->
