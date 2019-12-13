@@ -44,28 +44,66 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 // Critical Web Design: CUSTOM FUNCTIONS
 
+// a hook so WP Cron can access the function, runs every 15 min
+add_action( 'om_get_usnwc_status_hook', 'om_get_usnwc_status' );
 
+/**
+ * Scrape the USNWC trail status and saves in WP DB
+ */
+function om_get_usnwc_status(){
 
-function get_usnwc_status(){
-//https://stackoverflow.com/questions/584826/scrape-web-page-contents
+    // url to grab
+    $url = 'http://usnwc.org/visit/facility-map/';
+    // create DOM obj
+    $doc = new DOMDocument();
+    // load file, @ = suppresses warnings
+    @$doc->loadHTMLFile($url);
+    // create xpath obj    
+    $xpath = new DOMXPath($doc);
+    // get all matching elements
+    $nodes = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " trails-current ")]/a/img/@src');  
 
-$pagecontent = file_get_contents('http://usnwc.org/visit/facility-map/');
-$doc = new DOMDocument();
-$doc->loadHTML($pagecontent);
-echo $doc->saveHTML();
+    // testing
+    // print "<pre>";
+    // var_dump($nodes);
+    // print "</pre>";
 
+    $i = 0;
+    // default
+    $status = "Closed";
 
-// $doc = new DOMDocument();
-// $doc->loadHTML($html);
-// echo $doc->saveHTML();
-//trail-status
+    foreach ($nodes as $node) { 
+        // for some reason their site uses the trails-current class on the activity schedule link
+        if ($i++ == 0) continue;
 
+        // testing
+        // print "<pre>";
+        // print_r($node->nodeValue);
+        // print "</pre>";
+
+        // if the 
+        if (strpos($node->nodeValue, 'Trails_Open') !== false) {
+            // echo 'trails Open';
+            $status = "Open";
+        } else {
+            // echo 'trails Closed';
+            $status = "Closed";
+        }
+
+    } 
+
+    // update post meta
+    update_post_meta(80,'trail-status',$status);
+
+    // update post_modified date/time on post
+    $update = array( 'ID' => 80 );
+    wp_update_post( $update );
 }
 
 
 
 /**
- * Gets all data for *ONE* trail
+ * Get all data for *ONE* trail
  * @return Array
  */
 function om_get_one_trail($id) {
@@ -85,7 +123,7 @@ function om_get_one_trail($id) {
 
 
 /**
- * Gets all data for all (published) trails
+ * Get all data for all (published) trails
  * @return Array
  */
 function om_get_all_trails() {
@@ -126,7 +164,6 @@ function om_get_all_trails() {
     return $arr;
 }
 
-
 /**
  * Return the thumbnail for a post
  * @return Array
@@ -144,8 +181,6 @@ function om_return_post_thumbnail($id){
     return $arr;
 }
 
-
-
 /**
  * Return all meta data for a post
  * @return Array
@@ -156,9 +191,13 @@ function om_return_post_meta($id){
     $parking_lot = get_post_meta( $id, 'parking_lot', true );
     $status = get_post_meta( $id, 'trail-status', true );
     // get date (in UTC)
-    $date = new DateTime($posts[0]->post_modified, new DateTimeZone('UTC'));
-    // change date to local time
-    $date->setTimezone(new DateTimeZone('America/New_York'));
+    $date = new DateTime( get_post_modified_time( 'F j, Y g:i a', null, $id ), new DateTimeZone('UTC'));
+    // print "<pre>";
+    // print_r(get_post_meta( $id, 'mtb_project_page', true ));
+    // print_r($date);
+    // print "</pre>";
+    // change date to local time (I think this didn't work)
+    // $date->setTimezone(new DateTimeZone('America/New_York'));
 
     // create array w/data
     $arr = array(
@@ -171,7 +210,7 @@ function om_return_post_meta($id){
         "statusInfo" => om_return_trail_status_info($status),
         //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
         //"updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
-        "updated" => $date->format('n/d') .'-'. $date->format('g:ia') // 4/23-3:36pm
+        "updated" => $date->format('n/d - g:ia') // 4/23-3:36pm
     );
     if ($parking_lot){
         $arr["parking_lot"] = $parking_lot;
@@ -185,7 +224,6 @@ function om_return_post_meta($id){
 
     return $arr;
 }
-
 
 /**
  * Returns the trail status display info
@@ -268,7 +306,7 @@ function om_return_trail_card_html($trail){
 
 
 
-
+/* HELPER FUNCTIONS */
 
 
 /**
@@ -312,3 +350,5 @@ function getMonthShort($date){
 function getDayWithZero($date){
     return date("d", strtotime($date));
 }
+
+

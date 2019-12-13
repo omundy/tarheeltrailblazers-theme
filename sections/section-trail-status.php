@@ -1,9 +1,5 @@
 <?php
 
-// will do this later ...
-// om_get_usnwc_status();
-
-
 // get all the trails
 $trails = om_get_all_trails();
 
@@ -20,10 +16,6 @@ if (count($trails)){
     print '<div class="trail-status-mobile-btn"><a href="/trail-status-mobile/"><i class="fa fa-mobile" aria-hidden="true"></i></a></div>';
     print '<div class="container">';
     print '<div class="row align-items-center">';
-
-    // starting position 
-    $col = 0;
-    $row = 0;
 
     // loop through all the trails
     foreach ($trails as $trail) {
