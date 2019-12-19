@@ -79,6 +79,7 @@ h3.callout, h4.callout { font-weight: normal; }
 .headerTrailStatus {
 }
 .headerTrailStatusUpdated {
+    margin-left: 10px;
     color:#666;
 }
 
@@ -141,8 +142,8 @@ h3.callout, h4.callout { font-weight: normal; }
 ******************************************************************************/
 
 .navbar {
-    margin: 10px auto;
-    background-color: rbga(0,0,0,.8);
+    margin: 0 auto 10px;
+    background-color: #202020;
 }
 .navbar a {
     /* color: #347458 !important;
@@ -566,39 +567,17 @@ p.event-text{
 /* FOOTER
 ******************************************************************************/
 
-#wrapper-footer {
-    font-family: 'Lato', sans-serif !important;
+.wrapper-footer {
     font-weight: 400;
 }
-#wrapper-footer a {
-    color: #e4e3d3 !important;
+.wrapper-footer a {
     text-decoration: none !important;
     background-color: transparent !important;
 }
-#wrapper-footer a:hover {
-    color: #e4e3d3;
+.wrapper-footer a:hover {
     text-decoration: underline;
 }
 
-ul.footer-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-li.footer-menu-item-header { font-weight: 400; }
-li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
-
-
-#wrapper-footer ul.share_links {
-    list-style: none;
-    padding-left: 0;
-    display: block;
-}
-#wrapper-footer ul.share_links li {
-    display: inline-block;
-    margin-right: 10px;
-}
-#wrapper-footer ul.share_links li i { font-size: 180%; }
 
 
 .footer-email-signup {
@@ -610,17 +589,511 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
 
 
 
-/* miguel */
 
-.footer {
+
+
+ul.footer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.footer-menu li {
+    float: left;
+    margin-right: 20px;
+}
+li.footer-menu-item-header { font-weight: 400; }
+li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-footer ul.share_links {
+    list-style: none;
+    padding-left: 0;
+    display: block;
+    clear: both;
+}
+.wrapper-footer ul.share_links li {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 1rem !important;
+    font-size: 1.0rem;
+    /*color: rgb(242, 102, 48);*/
+}
+.wrapper-footer ul.share_links li a {
+    color: #f26630 !important;
+}
+.wrapper-footer ul.share_links li i { font-size: 180%; }
+
+
+
+.colophon{
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* the last of the code segments from miguel's CSS - need to incorporate / merge / delete */
+
+.nav-link{
+  color: white !important;
+}
+
+.data {
+  background-color: #005a30;
+
+}
+
+.signup-callout {
   background-color: #252525;
-}
-.footer2text{
-  font-size: 0.8rem;
+
 }
 
-.socialbtns {
-  color: #f79520;
+
+.data h1 {
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.white-line {
+  height: 2px;
+  width: 90%;
+  background-color: #fff;
+}
+
+.green-line {
+  height: 5px;
+  width: 100%;
+  background-color: #8dc63f;
+}
+
+.dark-green-line {
+  height: 5px;
+  width: 100%;
+  background-color: #347458;
+}
+
+.data h1.xl {
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.data h4 {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  margin: -2.2vh auto 2vh auto;
+}
+
+.data div.xl {
+  display: none;
+}
+
+.data div.normal {
+  display: block;
+}
+
+
+
+@media (max-width: 576px) {
+  .data h1, .data h1.xl {
+    font-size: 3rem;
+    line-height: 1.5rem;
+  }
+
+  .data h4 {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin: -1.6vh auto 5vh auto;
+  }
+
+  .date h4{
+    font-size:1.2rem;
+  }
+
+  .date p{
+    font-size: 0.8rem;
+  }
+
+  .adress{
+    font-size: 0.9rem;
+  }
+
+  .data div.normal {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .data div.xl {
+    display: block;
+  }
+
+  .data div.normal {
+    display: none;
+  }
 }
 
 /* /miguel */
+
+
+
+
+
+
+
+
+
+
+
+/* the last of the code segments from mary nell's CSS - need to incorporate / merge / delete */
+
+.thin-td{
+  width: 45%;
+}
+
+.thick-td{
+  width: 55%;
+}
+
+
+
+
+
+.card-two {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.news .carousel-item .card-two {
+  margin-left: 27.5%;
+}
+
+.card-two p {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+
+
+
+
+
+
+.imgcont {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  padding: 0;
+}
+
+.card-one {
+  position: absolute !important;
+  top: 45%;
+  z-index: 1;
+  text-align: center;
+  font-size: 1.3rem;
+  background-color: rgba(32, 32, 32, .5);
+  color: #fff;
+  font-size: 1.2rem;
+
+}
+
+.card-one h5 {
+  font-weight: 600;
+  font-size: 1.6rem
+}
+
+
+.card-one h5 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.card-body{
+  padding-bottom: 5em;
+}
+
+.pics {
+  height: 100%;
+  overflow: hidden;
+  max-height: 45rem;
+}
+
+.callout {
+  background-color: rgb(242, 102, 48);
+  text-align: center;
+}
+
+.callout p {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+
+.img-c {
+  display: block;
+  min-width: 100vw;
+  overflow: hidden;
+}
+
+
+
+li.available {
+  list-style-type: disc;
+  font-size: 2.2rem;
+  line-height: 1.2rem;
+  color: rgb(40, 167, 68);
+  padding: 0 1vw 0 1vw;
+}
+
+li.questionable {
+  list-style-type: disc;
+  font-size: 2.2rem;
+  line-height: 1.1rem;
+  color: rgb(255, 193, 5);
+  padding: 0 1vw 0 1vw;
+}
+
+li.unavailable {
+  list-style-type: disc;
+  font-size: 2.2rem;
+  line-height: 1.1rem;
+  color: rgb(220, 53, 69);
+  padding: 0 1vw 0 1vw;
+}
+
+
+
+.time-info {
+  position: relative;
+  left: -1vh;
+  top: -0.8vh;
+  color: rgb(141, 141, 141);
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
+.link-icon {
+  display: inline;
+}
+
+.participate {
+  background-image: url('../img/bg-texture.jpg'), linear-gradient(rgb(37, 37, 37), rgb(25, 25, 25))
+}
+
+.participate h4 {
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.participate p {
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.participate button {
+  margin-bottom: 1rem;
+}
+
+.carousel-inner.header>.item {
+  /*disables white flash*/
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  -o-transition: -o-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+.carousel-inner.header {
+  /*just incase the flash (style above) comes back*/
+  background: rgb(37, 37, 37);
+}
+
+.extra-news {
+  display: flex;
+}
+
+.small-news {
+  display: none;
+}
+
+.small-nav {
+  display: none;
+}
+
+.section-event-card{
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 5em;
+}
+
+@media (min-width: 992px) {
+  .phone-slider, .tablet-slider {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .tarheelnav {
+    background-color: rgb(37, 37, 37);
+  }
+
+  .small-nav {
+    display: flex;
+  }
+
+  .small-news {
+    display: block;
+  }
+
+  .imgcont {
+    position: inherit;
+    z-index: inherit;
+  }
+
+
+
+
+
+
+  .carousel-item.pic1 {
+    background-image: url(../img/hero_bike_one.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-item.pic2 {
+    background-image: url(../img/hero_bike_two.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-item.pic3 {
+    background-image: url(../img/hero_work_one.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+  }
+
+  .img-c {
+    object-fit: cover;
+    min-height: 32em;
+  }
+
+  .callout span {
+    font-size: 1.3rem;
+  }
+
+  .extra {
+    display: none;
+  }
+
+  .tablet-slider {
+    display: block;
+  }
+
+  .tablet-slider li {
+    position: relative;
+    left: 12vw;
+  }
+
+  .phone-slider li {
+    position: relative;
+    left: 12vw;
+  }
+
+  .carousel-inner.header>.item {
+    /*disables white flash*/
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    -o-transition: -o-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+  }
+
+  .extra-news {
+    display: none;
+  }
+
+  .small-news .carousel-item {
+    width: 100%;
+  }
+
+
+
+
+}
+
+@media (max-width:482px) {
+  .tablet-slider {
+    display: none;
+  }
+
+  .phone-slider {
+    display: block;
+  }
+
+
+}
+
+@media (max-width: 991px) {
+  .card-two {
+
+    font-size: 0.8rem;
+  }
+  .card-one{
+    top: 15%;
+  }
+}
+
+@media (min-width:483px) {
+  .phone-slider {
+    display: none;
+  }
+}
+
+
+
+/* / mary nell */

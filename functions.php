@@ -235,11 +235,11 @@ function om_return_trail_status_info($status){
     // defaults
     $arr = array(
         'class' => "bg-success",
-        'text' => "OPEN / ALL CLEAR!",
+        'text' => "OPEN",
     );
     if ($status == "Closed"){
         $arr['class'] = "bg-danger";
-        $arr['text'] = "CLOSED / TOO WET";
+        $arr['text'] = "CLOSED";
     }
     // they decided they don't want yellow status
     // else if ($status == "Caution"){
@@ -275,12 +275,16 @@ function om_return_trail_status_html_tiny($trail){
 
 // the trail status in the head of a page
 function om_return_trail_status_html_header($trail){
+    // print "<pre>";
+    // print_r($trail);
+    // print "</pre>";
+
     $str = "<div class='headerTrailStatus'>";
-    $str .= 'Current Status: ';
+    // $str .= 'Current Status: ';
     $str .= '<button class="btn '. $trail->meta['statusInfo']['class'] .'">';
     $str .= $trail->meta['statusInfo']['text'];
     $str .= '</button> ';
-    $str .= '<span class="headerTrailStatusUpdated">Updated '. $trail->meta['updated'];
+    $str .= '<span class="headerTrailStatusUpdated">'. $trail->meta['updated'];
     $str .= "</div>";
     return $str;
 }

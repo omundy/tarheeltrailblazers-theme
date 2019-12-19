@@ -68,7 +68,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 
-						<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+						<?php /* echo get_the_post_thumbnail( $post->ID, 'large' ); */ ?>
 
 						<div class="entry-content">
 
@@ -103,16 +103,15 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 
-							<?php if (isset($trail->meta['mtb_project_iframe']) && !empty($trail->meta['mtb_project_iframe'])){ ?>
 
-							<!-- BEGIN MTB Project -->
-							<iframe style="width:100%; max-width:1200px; height:410px;" frameborder="0" scrolling="no" src="<?php echo $trail->meta['mtb_project_iframe']; ?>"></iframe>
-							<!-- END MTB Project -->
 
-							<?php } ?>
+
 
 
 							<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+
+
+
 
 						</footer><!-- .entry-footer -->
 
@@ -123,7 +122,21 @@ $container   = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 		<!-- Do the right sidebar check -->
-		<?php /* get_template_part( 'global-templates/right-sidebar-check' );*/ ?>
+		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+
+
+
+
+        <?php if (isset($trail->meta['mtb_project_iframe']) && !empty($trail->meta['mtb_project_iframe'])){ ?>
+
+        <!-- BEGIN MTB Project -->
+        <iframe style="width:100%; max-width:1200px; height:410px;" frameborder="0" scrolling="no" src="<?php echo $trail->meta['mtb_project_iframe']; ?>"></iframe>
+        <!-- END MTB Project -->
+
+        <?php } ?>
+
+
+
 
 	</div><!-- .row -->
 
