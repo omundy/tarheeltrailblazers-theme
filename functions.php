@@ -300,20 +300,18 @@ function om_return_trail_status_html_header($trail){
 
     
     // status 
-    $str .= '<div class="col-md-3">';
+    $str .= '<div class="col-sm-12 col-md-6 col-lg-3 mb-2">';
 
-    $str .= '<button class="btn '. $trail->meta['statusInfo']['class'] .'">';
+    $str .= '<div onclick="location.href=\'/trail-status-mobile\'" title="Current status" class="btn trail-status-rect '. $trail->meta['statusInfo']['class'] .'">';
     $str .= $trail->meta['statusInfo']['text'];
-    $str .= '</button> ';
+    $str .= '</div> ';
     $str .= '<span class="headerTrailStatusUpdated">'. $trail->meta['updated'] . "</span>";
 
     $str .= '</div>';
 
 
     // data 
-    $str .= '<div class="col-md-4">';
-
-
+    $str .= '<div class="col-sm-12 col-md-6 col-lg-4 mb-2">';
     $str .= '<table class="table table-sm table-borderless">';
     $str .= '<tr>';
 
@@ -326,19 +324,15 @@ function om_return_trail_status_html_header($trail){
         } 
         $str .= "<td rowspan='2'><div class='difficulty' style='background-color:#". $color . "'> </div></td>";
     }
-
-
-
     if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
         $str .= "<td>" . $trail->meta['length'] . " miles</td>";
     }
     if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){ 
         $str .= "<td>" . "Ascent: " . $trail->meta['ascent'] ."'</td>";
     }
-    $str .= '</tr>';
 
+    $str .= '</tr><tr>';
 
-    $str .= '<tr>';
     if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
         $str .= "<td>" . $trail->meta['percentage_singletrack'] ."% Singletrack</td>";
     }
@@ -350,19 +344,18 @@ function om_return_trail_status_html_header($trail){
     $str .= '</div>';
 
 
-    // links 
-    $str .= '<div class="col-md-5 external-links">';
+    // external links 
+    $str .= '<div class="col-sm-12 col-lg-5 external-links mb-2">';
 
-    if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){ 
-        $str .= '<a href="https://maps.google.com/?daddr='. $trail->meta['lat_lng'] .'" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>';
-    }
     if (isset($trail->meta['mtb_project_page']) && !empty($trail->meta['mtb_project_page']) ){ 
-        $str .= '<a href="'. $trail->meta['mtb_project_page'] .'" target="_blank" class="btn btn-primary">MTB Project</a>';
+        $str .= '<a title="View on MTB Project" href="'. $trail->meta['mtb_project_page'] .'" target="_blank" class="btn btn-primary">MTB Project</a>';
     }
     if (isset($trail->meta['trailforks_page']) && !empty($trail->meta['trailforks_page']) ){ 
-        $str .= '<a href="'. $trail->meta['trailforks_page'] .'" target="_blank" class="btn btn-primary">Trailforks</a>';
+        $str .= '<a title="View on Trailforks" href="'. $trail->meta['trailforks_page'] .'" target="_blank" class="btn btn-primary">Trailforks</a>';
     }
-
+    if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){ 
+        $str .= '<a title="Driving directions to trail head" href="https://maps.google.com/?daddr='. $trail->meta['lat_lng'] .'" target="_blank" class="btn btn-primary" rel="noopener noreferrer"><i class="fas fa-map-marker-alt" style="padding-right:3px"></i> Google Maps</a>';
+    }
     $str .= '</div>';
 
 

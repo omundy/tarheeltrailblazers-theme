@@ -83,19 +83,20 @@ h3.callout, h4.callout { font-weight: normal; }
 .headerTrailStatus  {
     margin: 14px 0;
 }
-.headerTrailStatus button {
+.headerTrailStatus .trail-status-rect {
     color: white;
     padding: 6px 14px;
+}
+.headerTrailStatus .difficulty {
+    width: 38px;
+    height: 38px;
+}
+.headerTrailStatus .table {
+    margin:0 !important;
 }
 .headerTrailStatusUpdated {
     margin-left: 10px;
     color:#888;
-}
-
-
-.headerTrailStatus .difficulty {
-    width: 38px;
-    height: 38px;
 }
 
 
@@ -112,7 +113,8 @@ h3.callout, h4.callout { font-weight: normal; }
 }
 
 .headerTrailStatus .external-links a {
-    margin-right: 10px
+    margin-right: 10px;
+    margin-bottom: 5px;
 }
 
 
