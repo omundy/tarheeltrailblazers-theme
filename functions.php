@@ -40,6 +40,11 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 
 
+// add excerpt support to pages
+add_post_type_support( 'page', 'excerpt' );
+
+
+
 
 
 // Critical Web Design: CUSTOM FUNCTIONS
@@ -204,10 +209,20 @@ function om_return_post_meta($id){
         "mtb_project_page" => get_post_meta( $id, 'mtb_project_page', true ),
         "trailforks_page" => get_post_meta( $id, 'trailforks_page', true ),
         "mtb_project_iframe" => get_post_meta( $id, 'mtb_project_iframe', true ),
+
+        // trail data
+        "difficulty" => get_post_meta( $id, 'difficulty', true ),
+        "length" => get_post_meta( $id, 'length', true ),
+        "percentage_singletrack" => get_post_meta( $id, 'percentage_singletrack', true ),
+        "ascent" => get_post_meta( $id, 'ascent', true ),
+        "descent" => get_post_meta( $id, 'descent', true ),
+
         "status" => $status,
         "parking_lot" => null,
         "lat_lng" => null,
         "statusInfo" => om_return_trail_status_info($status),
+
+
         //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
         //"updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
         "updated" => $date->format('n/d - g:ia') // 4/23-3:36pm
@@ -273,19 +288,87 @@ function om_return_trail_status_html_tiny($trail){
     return $str;
 }
 
-// the trail status in the head of a page
+// the trail status in the head of a trail page
 function om_return_trail_status_html_header($trail){
     // print "<pre>";
     // print_r($trail);
     // print "</pre>";
 
+
     $str = "<div class='headerTrailStatus'>";
-    // $str .= 'Current Status: ';
+    $str .= '<div class="row">';
+
+    
+    // status 
+    $str .= '<div class="col-md-3">';
+
     $str .= '<button class="btn '. $trail->meta['statusInfo']['class'] .'">';
     $str .= $trail->meta['statusInfo']['text'];
     $str .= '</button> ';
-    $str .= '<span class="headerTrailStatusUpdated">'. $trail->meta['updated'];
-    $str .= "</div>";
+    $str .= '<span class="headerTrailStatusUpdated">'. $trail->meta['updated'] . "</span>";
+
+    $str .= '</div>';
+
+
+    // data 
+    $str .= '<div class="col-md-4">';
+
+
+    $str .= '<table class="table table-sm table-borderless">';
+    $str .= '<tr>';
+
+    if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){ 
+        $color = "588f00"; // default is easy
+        if ($trail->meta['difficulty'] == "INTERMEDIATE" || $trail->meta['difficulty'] == "INTERMEDIATE/DIFFICULT"){
+            $color = "0066cd";
+        } else if ($trail->meta['difficulty'] == "DIFFICULT" || $trail->meta['difficulty'] == "EXTREMELY DIFFICULT"){
+            $color = "000000";
+        } 
+        $str .= "<td rowspan='2'><div class='difficulty' style='background-color:#". $color . "'> </div></td>";
+    }
+
+
+
+    if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
+        $str .= "<td>" . $trail->meta['length'] . " miles</td>";
+    }
+    if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){ 
+        $str .= "<td>" . "Ascent: " . $trail->meta['ascent'] ."'</td>";
+    }
+    $str .= '</tr>';
+
+
+    $str .= '<tr>';
+    if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
+        $str .= "<td>" . $trail->meta['percentage_singletrack'] ."% Singletrack</td>";
+    }
+    if (isset($trail->meta['descent']) && !empty($trail->meta['descent']) ){ 
+        $str .= "<td>" . "Descent: " . $trail->meta['descent'] ."'</td>";
+    }
+    $str .= '</tr>';
+    $str .= '</table>';
+    $str .= '</div>';
+
+
+    // links 
+    $str .= '<div class="col-md-5 external-links">';
+
+    if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){ 
+        $str .= '<a href="https://maps.google.com/?daddr='. $trail->meta['lat_lng'] .'" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>';
+    }
+    if (isset($trail->meta['mtb_project_page']) && !empty($trail->meta['mtb_project_page']) ){ 
+        $str .= '<a href="'. $trail->meta['mtb_project_page'] .'" target="_blank" class="btn btn-primary">MTB Project</a>';
+    }
+    if (isset($trail->meta['trailforks_page']) && !empty($trail->meta['trailforks_page']) ){ 
+        $str .= '<a href="'. $trail->meta['trailforks_page'] .'" target="_blank" class="btn btn-primary">Trailforks</a>';
+    }
+
+    $str .= '</div>';
+
+
+
+    $str .= "</div>"; // .row
+    $str .= "</div>"; // .headerTrailStatus
     return $str;
 }
 
@@ -354,5 +437,63 @@ function getMonthShort($date){
 function getDayWithZero($date){
     return date("d", strtotime($date));
 }
+
+
+
+
+
+/**
+ * Generate breadcrumbs
+ * @author CodexWorld
+ * @authorURL www.codexworld.com
+ */
+function get_breadcrumb() {
+
+    $post = get_post();
+
+// print "<pre>";
+// print_r($post);
+// print "</pre>";
+
+
+    // don't show by default
+    $print_html = false;
+    // start breadcrumb
+    $html = "<div class='om-breadcrumb'>";
+    $html .= '<a href="' . home_url() . '" rel="nofollow">Home</a>';
+
+    if (is_category() || is_single()) {
+        $html .= "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        get_the_category(' &bull; ');
+        if (is_single()) {
+            $html .= " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+            get_the_title();
+        }
+        $print_html = true;
+    } elseif (is_page() && $post->post_parent) {
+        if ($post->post_parent){
+            $html .= "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+            $html .= '<a href="/' . get_post_field( 'post_name', $post->post_parent ) . '" rel="nofollow">'. get_the_title($post->post_parent) .'</a>';
+        }
+        $html .= "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        $html .= '<a href="./" rel="nofollow">'. get_the_title($post->ID) .'</a>';
+        $print_html = true;
+    } elseif (is_page()) {
+        $html .= "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        $html .= get_the_title();
+        $print_html = true;
+    } elseif (is_search()) {
+        $html .= "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+        $html .= '"<em>';
+        $html .= get_search_query();
+        $html .= '</em>"';
+        $print_html = true;
+    }
+    $html .= "</div>";
+
+    if ($print_html == true)
+        print $html;
+}
+
 
 

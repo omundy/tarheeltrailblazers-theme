@@ -40,7 +40,7 @@ pre { color: #090 !important; }
 
 
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Lato', sans-serif !important; font-weight: 700; line-height: normal;}
+h1,h2,h3,h4,h5,h6 { font-family: 'Lato', sans-serif !important; font-weight: 500; line-height: normal;}
 h3.callout, h4.callout { font-weight: normal; }
 
 
@@ -76,12 +76,45 @@ h3.callout, h4.callout { font-weight: normal; }
 }
 
 
-.headerTrailStatus {
+
+
+/* trail status in the header of the trail pages */
+
+.headerTrailStatus  {
+    margin: 14px 0;
+}
+.headerTrailStatus button {
+    color: white;
+    padding: 6px 14px;
 }
 .headerTrailStatusUpdated {
     margin-left: 10px;
-    color:#666;
+    color:#888;
 }
+
+
+.headerTrailStatus .difficulty {
+    width: 38px;
+    height: 38px;
+}
+
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+    line-height: 18px;
+    color:#888;
+    padding: .1rem;
+}
+
+.headerTrailStatus .external-links a {
+    margin-right: 10px
+}
+
 
 
 
@@ -94,9 +127,15 @@ h3.callout, h4.callout { font-weight: normal; }
 .btn, button, input, .form-control {
     border-radius: 0;
 }
+.btn:focus, .btn:active {    
+    border-color: transparent !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255, 0.25) !important;
+}
+
 .btn-primary {
-    background-color: #347458 !important;
-    border-color: #347458 !important;
+    background-color: #575757 !important;
+    border-color: #575757 !important;
     color: #fff !important;
 }
 .btn-primary:hover {
@@ -134,7 +173,6 @@ h3.callout, h4.callout { font-weight: normal; }
 .btn-primary.orange:hover {
   background-color: rgb(200, 58, 0) !important;
 }
-
 
 
 
@@ -270,6 +308,19 @@ a.menu:after, .dropdown-toggle:after {
     box-shadow: 0 0 0 0.2rem rgba(109, 159, 113, 0.25);
 }
 
+
+
+.om-breadcrumb {
+    margin: 0 0 20px 0;
+}
+.om-breadcrumb a {
+    color: #f26630 !important;
+}
+
+
+
+
+
 /* HERO
 ******************************************************************************/
 .hero-light {
@@ -329,7 +380,7 @@ a.menu:after, .dropdown-toggle:after {
 
 
 .wrapper {
-  padding: 30px 0; }
+  padding: 20px 0; }
 
 .wrapper-hero {
   padding: 0px !important; }

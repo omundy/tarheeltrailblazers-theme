@@ -27,7 +27,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 				<?php while ( have_posts() ) : the_post(); ?>
 
 
-
+                    <?php get_breadcrumb(); ?>
 
 
 					<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -42,9 +42,9 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="trailInfo">
+<!-- <div class="trailInfo"> -->
 
-	<div class="trailStatus">
+	<!-- <div class="trailStatus"> -->
 
 		<?php 
 
@@ -54,11 +54,11 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
         ?>
 
-	</div>
-
-</div>
 
 
+    <!-- </div> -->
+
+<!-- </div> -->
 
 
 
@@ -79,27 +79,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						<footer class="entry-footer">
 
 
-<div class="trailInfo">
 
-	<div class="trailStatus">
-
-	<?php if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){ ?>
-		<a href="https://maps.google.com/?daddr=<?php echo $trail->meta['lat_lng']; ?>" target="_blank" class="btn btn-primary" rel="noopener noreferrer">Driving directions</a>
-	<?php } ?>
-
-
-	<?php if (isset($trail->meta['mtb_project_page']) && !empty($trail->meta['mtb_project_page']) ){ ?>
-		<a href="<?php echo $trail->meta['mtb_project_page']; ?>" target="_blank" class="btn btn-primary">MTB Project</a>
-	<?php } ?>
-
-
-	<?php if (isset($trail->meta['trailforks_page']) && !empty($trail->meta['trailforks_page']) ){ ?>
-		<a href="<?php echo $trail->meta['trailforks_page']; ?>" target="_blank" class="btn btn-primary">Trailforks</a>
-	<?php } ?>
-
-	</div>
-
-</div>
 
 
 
