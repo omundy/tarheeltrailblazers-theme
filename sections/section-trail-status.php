@@ -35,6 +35,25 @@ if (count($trails)){
 
     // end section 
     print '</div>';
+
+?>
+
+<div class="col-12 pt-4">
+
+    <div class="mx-auto w-75 text-center">
+        <h4 style="display: inline-block;" class="text-center">Don't ride muddy trails!</h4>
+        <span class="tinyTrailStatusDot bg-success ml-3"></span> open 
+        <span class="tinyTrailStatusDot bg-warning ml-3"></span> caution 
+        <span class="tinyTrailStatusDot bg-danger ml-3"></span> closed 
+    </div>
+
+
+</div>
+
+
+<?php
+
+
     print '</div>';
     print '</div>';
 

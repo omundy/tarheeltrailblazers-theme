@@ -85,7 +85,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     
 
                     <li class="menu-item">
-                        <a class="nav-link" href="https://tarheeltrailblazers.square.site/" target="_blank">Shop <i style="font-size:.7rem; color: #999" class="fas fa-external-link-alt"></i></a>
+                        <a class="nav-link" href="https://tarheeltrailblazers.square.site/s/shop" target="_blank">Shop <i style="font-size:.7rem; color: #999" class="fas fa-external-link-alt"></i></a>
                     </li>
 
 					<li class="menu-item headerOpenSearch">

@@ -32,7 +32,7 @@
 
 
         <div class="row d-flex justify-content-center mb-3">
-            <button class="btn btn-outline-light darknavitem" type="button">GET INVOLVED</button>
+            <button onclick="location.href='/get-involved/';" class="btn btn-outline-light darknavitem" type="button">GET INVOLVED</button>
         </div>
 
     

@@ -85,7 +85,7 @@ if (count($posts) > 0){ ?>
 
                     <div class="row my-4">
                         <div class="col-12 d-flex justify-content-center">
-                            <a class="btn btn-outline-light dark rouded-0 mt-4" href="<?php echo esc_url( home_url( '/' ) ); ?>events" title="Events">SEE ALL EVENTS</a>
+                            <a href="/events/" class="btn btn-outline-light darknavitem rounded-0 mt-4" href="<?php echo esc_url( home_url( '/' ) ); ?>events" title="Events">SEE ALL EVENTS</a>
                         </div>
                     </div>
 
