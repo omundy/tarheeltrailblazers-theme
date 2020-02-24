@@ -288,12 +288,43 @@ function om_return_trail_status_html_tiny($trail){
     return $str;
 }
 
+
+$difficulty_arr = array(
+
+    "EASY" => array(
+        "color" => "#588f00",
+        "img" => "green.svg"
+    ),
+    "EASY/INTERMEDIATE" => array(
+        "color" => "#588f00",
+        "img" => "greenBlue.svg"
+    ),
+    "INTERMEDIATE" => array(
+        "color" => "#0066cd",
+        "img" => "blue.svg"
+    ),
+    "INTERMEDIATE/DIFFICULT" => array(
+        "color" => "#0066cd",
+        "img" => "blueBlack.svg"
+    ),
+    "DIFFICULT" => array(
+        "color" => "#000000",
+        "img" => "black.svg"
+    ),
+    "EXTREMELY DIFFICULT" => array(
+        "color" => "#000000",
+        "img" => "dblack.svg"
+    )
+);
+
+
 // the trail status in the head of a trail page
 function om_return_trail_status_html_header($trail){
     // print "<pre>";
     // print_r($trail);
     // print "</pre>";
 
+    global $difficulty_arr;
 
     $str = "<div class='headerTrailStatus'>";
     $str .= '<div class="row">';
@@ -316,13 +347,12 @@ function om_return_trail_status_html_header($trail){
     $str .= '<tr>';
 
     if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){ 
-        $color = "588f00"; // default is easy
-        if ($trail->meta['difficulty'] == "INTERMEDIATE" || $trail->meta['difficulty'] == "INTERMEDIATE/DIFFICULT"){
-            $color = "0066cd";
-        } else if ($trail->meta['difficulty'] == "DIFFICULT" || $trail->meta['difficulty'] == "EXTREMELY DIFFICULT"){
-            $color = "000000";
-        } 
-        $str .= "<td rowspan='2'><div class='difficulty' style='background-color:#". $color . "'> </div></td>";
+
+        $str .= "<td rowspan='2'>";
+        $str .= "<div class='difficulty' style='background:". $difficulty_arr[$trail->meta['difficulty']]["color"] . 
+            " url(". get_stylesheet_directory_uri() . "/img/difficulty/" . $difficulty_arr[$trail->meta['difficulty']]["img"] . "); background-size: contain;'";
+        $str .= " '> </div></td>";
+
     }
     if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
         $str .= "<td>" . $trail->meta['length'] . " miles</td>";
