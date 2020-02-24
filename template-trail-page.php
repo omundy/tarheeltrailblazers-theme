@@ -61,20 +61,27 @@ $container   = get_theme_mod( 'understrap_container_type' );
 <!-- </div> -->
 
 
+<div class="row">
+
+    <div class="col-12 col-md-6">
+        <?php echo get_the_post_thumbnail( $post->ID, 'large' ); /* */ ?>
+    </div>
 
 
+    <div class="col-12 col-md-6">
 
+        <div class="entry-content">
 
+            <?php the_content(); ?>
 
+        </div><!-- .entry-content -->
 
+    </div>
 
-						<?php /* echo get_the_post_thumbnail( $post->ID, 'large' ); */ ?>
+</div>
+						
 
-						<div class="entry-content">
-
-							<?php the_content(); ?>
-
-						</div><!-- .entry-content -->
+						
 
 						<footer class="entry-footer">
 

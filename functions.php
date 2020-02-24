@@ -353,7 +353,7 @@ function om_return_trail_status_html_header($trail){
 
         $str .= "<td rowspan='2'>";
         $str .= "<div data-toggle='tooltip' data-placement='top' title='". $trail->meta['difficulty'] ."' ";
-        $str .= " class='difficulty' style='background:". $difficulty_arr[$trail->meta['difficulty']]["color"]; 
+        $str .= " class='difficulty' style='background-image:";
         $str .= " url(". get_stylesheet_directory_uri() . "/img/difficulty/" . $difficulty_arr[$trail->meta['difficulty']]["img"] . "); background-size: contain;'";
         $str .= " '> </div></td>";
 
@@ -407,7 +407,9 @@ function om_return_trail_card_html($trail){
 
     $str = '<div>';
     $str .= '<div class="trail-card-img"><img src="'. $trail->thumbnail[0] .'" /></div>';
-    $str .= '<span class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+
+    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
+    $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
     $str .= '</div>';
