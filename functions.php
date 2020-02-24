@@ -257,10 +257,10 @@ function om_return_trail_status_info($status){
         $arr['text'] = "CLOSED";
     }
     // they decided they don't want yellow status
-    // else if ($status == "Caution"){
-    //     $arr['class'] = "bg-warning";
-    //     $arr['text'] = "CAUTION / SOME MUDDY AREAS";
-    // }
+    else if ($status == "Caution"){
+        $arr['class'] = "bg-warning";
+        $arr['text'] = "CAUTION";
+    }
      
     return $arr;
 }
@@ -281,13 +281,13 @@ function om_return_trail_status_html_tiny($trail){
     // print "<pre>";
     // print_r($trail);
     // print "</pre>";
-    
-    $str .= '<span class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+
+    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
+    $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
     return $str;
 }
-
 
 $difficulty_arr = array(
 
@@ -333,7 +333,9 @@ function om_return_trail_status_html_header($trail){
     // status 
     $str .= '<div class="col-sm-12 col-md-6 col-lg-3 mb-2">';
 
-    $str .= '<div onclick="location.href=\'/trail-status-mobile\'" title="Current status" class="btn trail-status-rect '. $trail->meta['statusInfo']['class'] .'">';
+    // add mobile button 
+    $str .= '<div data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
+    $str .= ' onclick="location.href=\'/trail-status-mobile\'" class="btn trail-status-rect '. $trail->meta['statusInfo']['class'] .'">';
     $str .= $trail->meta['statusInfo']['text'];
     $str .= '</div> ';
     $str .= '<span class="headerTrailStatusUpdated">'. $trail->meta['updated'] . "</span>";
@@ -346,11 +348,13 @@ function om_return_trail_status_html_header($trail){
     $str .= '<table class="table table-sm table-borderless">';
     $str .= '<tr>';
 
+    // DIFFICULTY
     if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){ 
 
         $str .= "<td rowspan='2'>";
-        $str .= "<div class='difficulty' style='background:". $difficulty_arr[$trail->meta['difficulty']]["color"] . 
-            " url(". get_stylesheet_directory_uri() . "/img/difficulty/" . $difficulty_arr[$trail->meta['difficulty']]["img"] . "); background-size: contain;'";
+        $str .= "<div data-toggle='tooltip' data-placement='top' title='". $trail->meta['difficulty'] ."' ";
+        $str .= " class='difficulty' style='background:". $difficulty_arr[$trail->meta['difficulty']]["color"]; 
+        $str .= " url(". get_stylesheet_directory_uri() . "/img/difficulty/" . $difficulty_arr[$trail->meta['difficulty']]["img"] . "); background-size: contain;'";
         $str .= " '> </div></td>";
 
     }

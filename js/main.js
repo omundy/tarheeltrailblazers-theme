@@ -47,4 +47,11 @@ $(document).ready(function() {
 	});
 
 
+
+
+    // run all bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip()
+
+
+
 });
