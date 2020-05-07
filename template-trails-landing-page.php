@@ -29,9 +29,7 @@ $trails = om_get_all_trails();
 // only proceed if trails are found
 if (count($trails)){
 
-    // starting position 
-    $col = 0;
-    $row = 0;
+    print '<div class="row">';
 
     // loop through all the trails
     foreach ($trails as $trail) {
@@ -41,33 +39,14 @@ if (count($trails)){
         // print_r($trail);
         // print "</pre>";
 
-        // if on the first col
-        if ($col == 0){
-            // print a new row
-            print '<div class="row">';
-            
-        }
-
         // print col and card
-        print '<div class="col-lg-4">';
+        print '<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">';
         print om_return_trail_card_html($trail);
         print '</div>';
 
-        // move to next col
-        $col ++;
-
-        // if we are on the last col 
-        if ($col >= 3){
-            // finish row
-            print "</div>";
-            // move to next row
-            $row++;
-            // start at col zero
-            $col=0;
-        }
-
      } // end foreach
 
+    print '</div>';
 }
 
 ?>

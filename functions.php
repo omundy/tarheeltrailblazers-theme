@@ -405,14 +405,45 @@ function om_return_trail_card_html($trail){
     // print_r($trail);
     // print "</pre>";
 
-    $str = '<div>';
-    $str .= '<div class="trail-card-img"><img src="'. $trail->thumbnail[0] .'" /></div>';
+    $str = '<div class="card text-white bg-dark mb-3 h-100" >';
 
-    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
-    $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
-    $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
-    $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
+        $str .= '<div class="w-100 img-fluid"><img src="'. $trail->thumbnail[0] .'" /></div>';
+
+        $str .= '<div class="card-body">';
+            $str .= '<a href="/trails/'. $trail->post_name .'" title="" class="stretched-link">';
+
+        
+                $str .= '<span class="card-title ">';
+                    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
+                    $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+                $str .= $trail->post_title .'</span> ';
+                
+                $str .= '<span class="card-text text-muted">';
+            // $trail->meta['updated']
+
+                    if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
+                        $str .= "<span>" . $trail->meta['length'] . " miles</span> • ";
+                    }
+                    if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
+                        $str .= '<span>'. $trail->meta['percentage_singletrack'] ."% Singletrack</span> • ";
+                    }
+                    if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){ 
+                        $str .= "<span>" . "Ascent: " . $trail->meta['ascent'] ."'</span>";
+                    }
+
+                $str .= '</span>';
+
+
+
+            $str .= '</a>';
+        $str .= '</div>';
+
     $str .= '</div>';
+
+
+  
+
+
     return $str;
 }
 
@@ -524,5 +555,17 @@ function get_breadcrumb() {
         print $html;
 }
 
+
+/**
+ * Remove the campaign summary block (funds raised, number of donors, etc).
+ */
+function en_remove_campaign_summary_block() {
+    remove_action( 'charitable_campaign_content_before', 'charitable_template_campaign_summary', 6 );
+
+    // If you still want to show a Donate button, uncomment the line below.
+    // add_action( 'charitable_campaign_content_before', 'charitable_template_donate_button', 6 );
+}
+
+add_action( 'after_setup_theme', 'en_remove_campaign_summary_block', 11 );
 
 
