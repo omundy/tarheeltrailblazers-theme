@@ -28,7 +28,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!-- 	<link rel="stylesheet" href="http://tarheeltrailblazers.dreamhosters.com/wp/wp-content/themes/understrap-child-ttb/css/style-miguel.css">
 	<link rel="stylesheet" href="http://tarheeltrailblazers.dreamhosters.com/wp/wp-content/themes/understrap-child-ttb/css/style-mary-nell.css"> -->
 
-
 	<?php wp_head(); ?>
 </head>
 
@@ -80,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php if ( 'container' == $container ) : ?>
 
 
-				<ul class="nav nabar-nav mr-auto">
+				<!--<ul class="nav nabar-nav mr-auto">
 
                     
 
@@ -99,9 +98,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</form>
 							<div class="headerCloseSearch">X</div>
 						</div>
-					</li>
+					</li>-->
 					<!--<li><a class="btn btn-primary nav-link header-join-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>join-us">GIVE TODAY</a></li>-->
-				</ul>
+				<!--</ul>-->
 
 
 			</div><!-- .container -->

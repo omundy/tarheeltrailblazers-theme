@@ -1,7 +1,6 @@
 
 
 
-
 <div class="container-fluid callout">
     <div class="container pt-3 pb-3">
         
@@ -11,7 +10,7 @@
             </div>
 
             <div class="col-lg-4 col-12 text-center">
-                <button class="btn btn-outline-light darknavitem" type="button">DONATE</button>
+                <a href="/campaigns/donate" class="btn btn-outline-light darknavitem" type="button">DONATE</button>
             </div>
         </div>
 

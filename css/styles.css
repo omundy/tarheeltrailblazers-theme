@@ -1,6 +1,5 @@
 
 
-
 /* GLOBAL
 ******************************************************************************/
 
@@ -922,7 +921,7 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
 }
 
 .card-body{
-  padding-bottom: 5em;
+  /*padding-bottom: 5em;*/ /*not sure why - messing up trail page*/
 }
 
 .pics {
@@ -1136,9 +1135,6 @@ li.unavailable {
     backface-visibility: visible;
   }
 
-  .extra-news {
-    display: none;
-  }
 
   .small-news .carousel-item {
     width: 100%;

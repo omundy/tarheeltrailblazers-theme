@@ -28,7 +28,7 @@ $container   = get_theme_mod('understrap_container_type');
             <h5 class="card-title">Plan Your Ride</h5>
 
             <p class="card-text">With over 150 miles of trail across 18 systems, we&#39;ve got a trail for you.</p>
-            <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
+            <button onclick="location.href='/trails'" class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ $container   = get_theme_mod('understrap_container_type');
             <h5 class="card-title">Get Dirty</h5>
 
             <p class="card-text">Find a local ride, come dig with us, or get the latest updates at our monthly meeting.</p>
-            <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE EVENTS</button>
+            <button onclick="location.href='/events'" class="btn btn-outline-light darknavitem" type="button">VIEW MORE EVENTS</button>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ $container   = get_theme_mod('understrap_container_type');
             <h5 class="card-title">Get Flow</h5>
 
             <p class="card-text">Cedar Valley Bike Park is the newest addition to the Fisher Farm Trail system, and currently offers two miles of jumps, flow, and more jumps.</p>
-            <button class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
+            <button onclick="location.href='/trails'" class="btn btn-outline-light darknavitem" type="button">VIEW MORE TRAILS</button>
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="containter-fluid wrapper-footer">
 	<div class="container footer pt-4 pb-2 pb-lg-4">
 		<div class="row">
-			<div class="col-5 col-xl-6">
+			<div class="col-xl-6 col-md-6 col-xs-12">
 <!-- 				<div>
 					<nav class="d-none d-lg-block navbar navbar-expand-lg">
 						<ul class="navbar-nav mr-2">
@@ -88,7 +88,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             // add header class
                             echo ' footer-menu-item-header';
                         }
-                        echo '"><a href="' . $item->url .'" title="'. $item->title .'">';
+                        echo '"><a href="' . $item->url .'" title="'. $item->title .'" class="menu-item-'. $item->title .'">';
                         echo $item->title . '</a></li>';
                     }
                     // print "<pre>";
@@ -119,7 +119,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="http://www.youtube.com/user/TarheelTrailBlazers" target="_blank">
                             <i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/')); ?>about/contact-us/">
+                        <li><a href="mailto:president@tarheeltrailblazers.com">
                             <i class="far fa-envelope" aria-hidden="true"></i></a></li>
                     </ul>
 
@@ -127,40 +127,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			</div>
 
-			<div class="d-none d-lg-block col-7 col-xl-6">
+			<div class="d-lg-block col-xl-6 col-md-6">
 				<div class="card">
-					<div class="green-line extra"></div>
+					<div class="green-line extra" style="display: block !important"></div>
 
-					<div class="card-body align-middle">
-						<table style="width:100%">
-							<tbody>
-								<tr class="align-middle">
-									<td class="align-middle mr-0 thin-td">
-										<p class="card-text" style="color:#fff;">Get our latest news and stay<br />
-											up to date about events!</p>
-									</td>
-									<td class="align-middle thick-td"><input class="mr-2" maxlength="30" minlength="5" name="signup" pattern="[a-zA-Z0-9]+@." required="" style="width: 68%;" type="text" value="EMAIL ADDRESS"/><button class="btn btn-primary orange" name="button"
-											type="button">Signup</button></td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="card-body align-middle" style="padding-bottom: 0;">
+						<p class="card-text" style="color:#fff;">Get our latest news and stay up to date about events!</p>
+						<p>
+							<?php echo do_shortcode('[mc4wp_form]'); ?>							
+						</p>
+
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="row small-nav">
 
-
-
-			<div class="d-lg-none offset-sm-1 col-5 col-sm-4 mt-2 mt-sm-0">
-				<p>Get our latest news and stay up to date about events!</p>
-				<button class="btn btn-outline-light pl-3 pr-3" type="button">SIGNUP</button>
-			</div>
-
-
-
-		</div>
 	</div>
 </div>
 <!--Footer 2-->

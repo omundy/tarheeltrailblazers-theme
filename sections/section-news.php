@@ -1,4 +1,12 @@
 <?php
+function console_log($output, $with_script_tags = true) {
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
+');';
+    if ($with_script_tags) {
+        $js_code = '<script>' . $js_code . '</script>';
+    }
+    echo $js_code;
+}
 /**
  *  A custom script to show events from The Event Calendar plugin as a full-width section
  */
@@ -53,13 +61,14 @@ foreach ( $posts as $post ){
 
 
             <div class="<?php if($i >0){echo "d-none d-md-block ";}?>card card-two pb-2 col-md-4 col-12" style="width: 100%;">
-                <img alt="become a member" class="card-img-top" src="<?php print($image[0]);?>" />
+				<a href="<?php echo $post->guid?>">
+                <img class="card-img-top" src="<?php print($image[0]);?>" />
+				</a>
                 <div class="card-body text-center">
                     <div>
                         <p class="card-text"><?php echo $post->post_title?></p>
                     </div>
-
-                    <div class="mt-2"><a class="btn btn-primary orange" href="#">READ MORE</a></div>
+                    <div class="mt-2"><a class="btn btn-primary orange" href="<?php echo $post->guid?>">READ MORE</a></div>
                 </div>
             </div>
 <?php
@@ -118,7 +127,7 @@ foreach ( $posts as $post ){
 
         <div class="row mt-4">
             <div class="col-12 text-center">
-                <button class="btn btn-outline-light darknavitem mb-2 mb-lg-0 pl-2 pr-2" type="button">MORE NEWS</button>
+                <button onclick="location.href='/category/news'" class="btn btn-outline-light darknavitem mb-2 mb-lg-0 pl-2 pr-2" type="button">MORE NEWS</button>
             </div>
         </div>
 
