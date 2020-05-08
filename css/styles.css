@@ -149,6 +149,47 @@ h3.callout, h4.callout { font-weight: normal; }
 
 
 
+/* Trail status
+******************************************************************************/
+
+.trail-status-wrapper {
+    background-color: rgb(37, 37, 37);
+    position: relative;
+}
+.trail-status-mobile-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+.trail-status-mobile-btn i {
+    font-size: 130%;
+    color: rgba(255,255,255,.5);
+}
+
+
+
+
+
+/* Trails landing page
+******************************************************************************/
+
+
+.trail-card {
+  background-color: rgba(5,5,5,.4) !important;
+}
+
+.trail-card .card-body{
+  padding:17px;
+  padding-top:15px;
+}
+
+.trail-card .difficulty {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+
 /* FORM ELEMENTS
 ******************************************************************************/
 
@@ -517,24 +558,6 @@ a.menu:after, .dropdown-toggle:after {
 
 
 
-/* Trail status
-******************************************************************************/
-
-.trail-status-wrapper {
-    background-color: rgb(37, 37, 37);
-    position: relative;
-}
-.trail-status-mobile-btn {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-}
-.trail-status-mobile-btn i {
-    font-size: 130%;
-    color: rgba(255,255,255,.5);
-}
-
-
 
 
 
@@ -608,9 +631,9 @@ p.event-text{
   font-weight: bold;
 }
 
-.card{
+/*.card{
   background-color: rgba(5,5,5,.4) !important;
-}
+}*/
 
 .section-events {
   background-image: url("../img/itusi-trail_PC-color.jpg");

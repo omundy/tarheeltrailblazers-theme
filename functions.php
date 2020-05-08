@@ -401,16 +401,18 @@ function om_return_trail_status_html_header($trail){
 
 // the trail info and thumbnail
 function om_return_trail_card_html($trail){
+    global $difficulty_arr; 
+    
     // print "<pre>";
     // print_r($trail);
     // print "</pre>";
 
-    $str = '<div class="card text-white bg-dark mb-3 h-100" >';
+    $str = '<div class="card text-white bg-dark mb-3 trail-card" >';
 
         $str .= '<div class="w-100 img-fluid"><img src="'. $trail->thumbnail[0] .'" /></div>';
 
         $str .= '<div class="card-body">';
-            $str .= '<a href="/trails/'. $trail->post_name .'" title="" class="stretched-link">';
+            $str .= '<a href="/trails/'. $trail->post_name .'" title="'. $trail->meta['statusInfo']['text'] .'" class="stretched-link">';
 
         
                 $str .= '<span class="card-title ">';
@@ -418,20 +420,32 @@ function om_return_trail_card_html($trail){
                     $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
                 $str .= $trail->post_title .'</span> ';
                 
-                $str .= '<span class="card-text text-muted">';
+                $str .= '<div class="card-text text-muted">';
             // $trail->meta['updated']
 
+
+                // DIFFICULTY
+    // if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){ 
+
+
+    //     $str .= "<span data-toggle='tooltip' data-placement='top' title='". $trail->meta['difficulty'] ."' ";
+    //     $str .= " class='difficulty' style='background-image:";
+    //     $str .= " url(". get_stylesheet_directory_uri() . "/img/difficulty/" . 
+    //         $difficulty_arr[$trail->meta['difficulty']]["img"] . "); background-size: contain;'";
+    //     $str .= " '> </span>";
+
+    // }
                     if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
                         $str .= "<span>" . $trail->meta['length'] . " miles</span> • ";
                     }
-                    if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
-                        $str .= '<span>'. $trail->meta['percentage_singletrack'] ."% Singletrack</span> • ";
-                    }
+                    // if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
+                    //     $str .= '<span>'. $trail->meta['percentage_singletrack'] ."% Singletrack</span> • ";
+                    // }
                     if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){ 
                         $str .= "<span>" . "Ascent: " . $trail->meta['ascent'] ."'</span>";
                     }
 
-                $str .= '</span>';
+                $str .= '</div>';
 
 
 

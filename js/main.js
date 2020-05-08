@@ -50,8 +50,8 @@ $(document).ready(function() {
 
 
     // run all bootstrap tooltips
-    $('[data-toggle="tooltip"]').tooltip()
-
+    // $('[data-toggle="tooltip"]').tooltip()
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
 
 });
