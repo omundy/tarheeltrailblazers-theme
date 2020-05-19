@@ -181,7 +181,9 @@ function om_return_post_thumbnail($id){
         // print get_post_thumbnail_id( $id ) ."<br>";
 
         // store thumbnail and resolution data
-        $arr = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
+        $arr = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' );
+
+        // print_r($arr);
     }
     return $arr;
 }
