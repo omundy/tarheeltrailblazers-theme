@@ -252,7 +252,9 @@ h3.callout, h4.callout { font-weight: normal; }
 ******************************************************************************/
 
 .navbar {
-    margin: 0 auto 10px;
+    /*not sure why the 10px*/
+    /*margin: 0 auto 10px;*/ 
+    margin: 0 auto 0;
     background-color: #202020;
 }
 .navbar a {
@@ -930,7 +932,7 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
 
 .card-one {
   position: absolute !important;
-  top: 45%;
+  top: 65%;
   z-index: 1;
   text-align: center;
   font-size: 1.3rem;
@@ -1194,7 +1196,7 @@ li.unavailable {
     font-size: 0.8rem;
   }
   .card-one{
-    top: 15%;
+    top: 25%;
   }
 }
 

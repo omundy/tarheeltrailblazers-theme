@@ -20,7 +20,7 @@ $container   = get_theme_mod('understrap_container_type');
 
   <div class="carousel-inner header">
     <div class="carousel-item pics active"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
-      <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
+      <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
         <div class="row">
           <div class="green-line extra-news"></div>
 
@@ -35,7 +35,7 @@ $container   = get_theme_mod('understrap_container_type');
     </div>
 
     <div class="carousel-item pics"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
-      <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
+      <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
         <div class="row">
           <div class="green-line extra-news"></div>
 
@@ -50,7 +50,7 @@ $container   = get_theme_mod('understrap_container_type');
     </div>
 
     <div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
-      <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
+      <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
         <div class="row">
           <div class="green-line extra-news"></div>
 
