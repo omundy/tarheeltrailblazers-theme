@@ -25,35 +25,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-     
 
-
-
-
-
-
-
-
-<div class="containter-fluid wrapper-footer">
+<div class="container-fluid wrapper-footer">
 	<div class="container footer pt-4 pb-2 pb-lg-4">
 		<div class="row">
 			<div class="col-xl-6 col-md-6 col-xs-12">
-<!-- 				<div>
-					<nav class="d-none d-lg-block navbar navbar-expand-lg">
-						<ul class="navbar-nav mr-2">
-							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Trails</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">News</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Shop </a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Get Involved</a></li>
-						</ul>
-					</nav>
-				</div> -->
-
-
-
-
 
             <?php
             $items = wp_get_nav_menu_items('main-nav-2019');
@@ -64,22 +40,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                 $first_run = true;
                 $parent = null;
                 // start new col
-                // echo '<div class="col-12 col-md-2">';
                 echo '<ul class="footer-menu">';
-                //echo '<ul id="menu-main-top-navigation">';
                 foreach ($items as $index => $item) {
-                    // // if we are starting a new column...
-                    // if ($item->menu_item_parent == 0) {
-                    //     $parent = $item->ID;
-                    //     if ($first_run == false) {
-                    //         // close previous col
-                    //         echo '</ul>';
-                    //         // open new col
-                    //         echo '<ul class="footer-menu">';
-                    //     }
-                    //     // reset
-                    //     $first_run = false;
-                    // }
                     // if this is a parent or a child of the parent (not a grandchild)
                     if ($item->menu_item_parent == 0 || $parent == $item->menu_item_parent) {
                         // add link
@@ -99,29 +61,23 @@ $container = get_theme_mod( 'understrap_container_type' );
                     $parent = null;
                 }
                 echo '</ul>';
-                // echo '</div>';
             }
             ?>
 
 
 
-
-
-
-
-
-                    <ul class="share_links">
-                        <li><a href="https://www.instagram.com/tarheel_trailblazers/" target="_blank">
-                            <i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.facebook.com/groups/50342108471/" target="_blank">
-                            <i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="http://twitter.com/Theel_Trlblazer" target="_blank">
-                            <i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="http://www.youtube.com/user/TarheelTrailBlazers" target="_blank">
-                            <i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-                        <li><a href="mailto:president@tarheeltrailblazers.com">
-                            <i class="far fa-envelope" aria-hidden="true"></i></a></li>
-                    </ul>
+                <ul class="share_links">
+                    <li><a href="https://www.instagram.com/tarheel_trailblazers/" target="_blank">
+                        <i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.facebook.com/groups/50342108471/" target="_blank">
+                        <i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="http://twitter.com/Theel_Trlblazer" target="_blank">
+                        <i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="http://www.youtube.com/user/TarheelTrailBlazers" target="_blank">
+                        <i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href="mailto:president@tarheeltrailblazers.com">
+                        <i class="far fa-envelope" aria-hidden="true"></i></a></li>
+                </ul>
 
 
 
@@ -155,19 +111,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row align-middle mt-4">
 			<div class="col-6 col-md-4 align-middle">
-                <img alt="Tarheel Trailblazers Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est-1000w.png" />
+                <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+                    <img alt="Tarheel Trailblazers Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est-1000w.png" />
+                </a>
             </div>
 
 			<div class="col-6 col-md-4 align-middle pt-1">
-                <img alt="Work X Ride Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-wXr-only-white-clear.png" />
+                <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>/get-involved">
+                    <img alt="Work X Ride Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-wXr-only-white-clear.png" />
+                </a>
             </div>
 
 			<div class="col-6 col-md-3 align-middle pt-4 pt-md-0">
-                <img alt="IMBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/imba-logo-white-clear.png" />
+                <a class="nav-link" href="https://www.imba.com/" target="_blank">                
+                    <img alt="IMBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/imba-logo-white-clear.png" />
+                </a>
             </div>
 
 			<div class="col-3 col-md-1 align-middle offset-3 offset-md-0 pt-1" style="height: 65%;">
-                <img alt="SORBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/sorba-logo.png" />
+                <a class="nav-link" href="https://sorba.org/" target="_blank">    
+                    <img alt="SORBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/sorba-logo.png" />
+                </a>
             </div>
 		</div>
 
