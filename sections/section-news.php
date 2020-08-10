@@ -41,14 +41,18 @@ if (count($posts) > 0){
           <div class="row">
             <?php
 
-foreach ( $posts as $post ){
-  $i = 0;
+foreach ($posts as $key => $data) {
+    // print "<pre>";
+    // print_r($key);
+    // print_r($data);
+    // print "</pre>";
+
 
             // var for the background image from the post
         $bgimage = "";
         // check if the post has a Post Thumbnail assigned to it.
-        if ( has_post_thumbnail($recent['ID']) ) {
-            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $recent['ID'] ), 'single-post-thumbnail' );
+        if ( has_post_thumbnail($data->ID) ) {
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $data->ID ), 'single-post-thumbnail' );
             //print_r($image);
             $bgimage = "style='background-image:url(". $image[0] .");'";
         }
@@ -57,8 +61,6 @@ foreach ( $posts as $post ){
 
 
 ?>
-
-
 
             <div class="<?php if($i >0){echo "d-none d-md-block ";}?>card card-two pb-2 col-md-4 col-12" style="width: 100%;">
 				<a href="<?php echo $post->guid?>">
@@ -71,10 +73,10 @@ foreach ( $posts as $post ){
                     <div class="mt-2"><a class="btn btn-primary orange" href="<?php echo $post->guid?>">READ MORE</a></div>
                 </div>
             </div>
-<?php
-  $i++;
-}
 
+<?php
+
+    }
 }
 
 ?>
