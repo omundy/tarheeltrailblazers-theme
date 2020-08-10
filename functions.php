@@ -280,6 +280,7 @@ function om_return_trail_status_info($status){
 
 // the trail status section
 function om_return_trail_status_html_tiny($trail){
+    $str = "";
     // print "<pre>";
     // print_r($trail);
     // print "</pre>";
