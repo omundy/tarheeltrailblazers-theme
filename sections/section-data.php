@@ -9,7 +9,7 @@
         <div class="row align-top">
 
             <div class="col-lg-3 col-6 text-center">
-                <h1>434</h1>
+                <h1>540</h1>
                 &nbsp;
                 <h4>Active Members</h4>
             </div>
