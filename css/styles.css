@@ -77,11 +77,27 @@ h3.callout, h4.callout { font-weight: normal; }
   border-radius: 50%;
   margin-right: 4px;
   display: inline-block;
+
 }
 .tinyTrailStatusTitle {}
 .tinyTrailStatusUpdated {
     color:#666;
 }
+
+.bg-warning,.bg-danger {
+    position:relative;
+}
+
+.tinyTrailStatusDot.bg-danger:after {
+   content: "✕";
+   font-size: .50em;
+   left:4px;
+   position:absolute;
+   top:1px;
+   font-weight: bold;
+   color: black;
+}
+
 
 
 
@@ -143,7 +159,7 @@ h3.callout, h4.callout { font-weight: normal; }
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
- 
+
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
@@ -208,7 +224,7 @@ h3.callout, h4.callout { font-weight: normal; }
 .btn, button, input, .form-control {
     border-radius: 0;
 }
-.btn:focus, .btn:active {    
+.btn:focus, .btn:active {
     border-color: transparent !important;
     outline: 0 !important;
     box-shadow: 0 0 0 0.2rem rgba(255,255,255, 0.25) !important;
@@ -297,7 +313,7 @@ h3.callout, h4.callout { font-weight: normal; }
 
 .navbar {
     /*not sure why the 10px*/
-    /*margin: 0 auto 10px;*/ 
+    /*margin: 0 auto 10px;*/
     margin: 0 auto 0;
     background-color: #202020;
 }
@@ -470,8 +486,8 @@ a.menu:after, .dropdown-toggle:after {
 
 
 .text-page-image-header {
-    height:300px; 
-    background-size: cover, contain; 
+    height:300px;
+    background-size: cover, contain;
     background-repeat:no-repeat;
     background-position: center center;
 }
@@ -1283,4 +1299,3 @@ li.unavailable {
 .single-tribe_events .tribe-events-event-meta {
     background-color: transparent !important;
 }
-
