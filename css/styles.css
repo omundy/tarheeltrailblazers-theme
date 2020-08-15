@@ -84,10 +84,10 @@ h3.callout, h4.callout { font-weight: normal; }
     color:#666;
 }
 
+/* make closed circles obvious regardless of color blindness */
 .bg-warning,.bg-danger {
     position:relative;
 }
-
 .tinyTrailStatusDot.bg-danger:after {
    content: "✕";
    font-size: .50em;

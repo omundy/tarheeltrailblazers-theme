@@ -11,7 +11,7 @@ $trails = om_get_all_trails();
 // only proceed if trails are found
 if (count($trails)){
 
-    // start section 
+    // start section
     print '<div class="container-fluid trail-status-wrapper py-4">';
     print '<div class="trail-status-mobile-btn"><a href="/trail-status-mobile/"><i class="fa fa-mobile" aria-hidden="true"></i></a></div>';
     print '<div class="container">';
@@ -33,7 +33,7 @@ if (count($trails)){
 
      } // end foreach
 
-    // end section 
+    // end section
     print '</div>';
 
 ?>
@@ -42,9 +42,9 @@ if (count($trails)){
 
     <div class="mx-auto w-75 text-center">
         <h4 style="display: inline-block;" class="text-center">Don't ride muddy trails!</h4>
-        <span class="tinyTrailStatusDot bg-success ml-3"></span> open 
-        <span class="tinyTrailStatusDot bg-warning ml-3"></span> caution
-        <span class="tinyTrailStatusDot bg-danger ml-3"></span> closed 
+        <span data-toggle="tooltip" data-placement="top" title="All trails are open!" class="tinyTrailStatusDot bg-success ml-3"></span> open 
+        <span data-toggle="tooltip" data-placement="top" title="Some trails are open" class="tinyTrailStatusDot bg-warning ml-3"></span> caution
+        <span data-toggle="tooltip" data-placement="top" title="All trails are closed" class="tinyTrailStatusDot bg-danger ml-3"></span> closed
     </div>
 
 
@@ -57,9 +57,6 @@ if (count($trails)){
     print '</div>';
     print '</div>';
 
-} // end if 
+} // end if
 
 ?>
-
-
-
