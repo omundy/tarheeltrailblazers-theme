@@ -63,10 +63,10 @@ function om_get_usnwc_status(){
     $doc = new DOMDocument();
     // load file, @ = suppresses warnings
     @$doc->loadHTMLFile($url);
-    // create xpath obj    
+    // create xpath obj
     $xpath = new DOMXPath($doc);
     // get all matching elements
-    $nodes = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " trails-current ")]/a/img/@src');  
+    $nodes = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " trails-current ")]/a/img/@src');
 
     // testing
     // print "<pre>";
@@ -77,7 +77,7 @@ function om_get_usnwc_status(){
     // default
     $status = "Closed";
 
-    foreach ($nodes as $node) { 
+    foreach ($nodes as $node) {
         // for some reason their site uses the trails-current class on the activity schedule link
         if ($i++ == 0) continue;
 
@@ -86,7 +86,7 @@ function om_get_usnwc_status(){
         // print_r($node->nodeValue);
         // print "</pre>";
 
-        // if the 
+        // if the
         if (strpos($node->nodeValue, 'Trails_Open') !== false) {
             // echo 'trails Open';
             $status = "Open";
@@ -95,14 +95,14 @@ function om_get_usnwc_status(){
             $status = "Closed";
         }
 
-    } 
+    }
 
     // update post meta
-    update_post_meta(80,'trail-status',$status);
+//    update_post_meta(80,'trail-status',$status);
 
     // update post_modified date/time on post
-    $update = array( 'ID' => 80 );
-    wp_update_post( $update );
+//    $update = array( 'ID' => 80 );
+//    wp_update_post( $update );
 }
 
 
@@ -115,15 +115,15 @@ function om_get_one_trail($id) {
     // get the post
     $post = get_post($id);
     // save all the post metadata
-    $post->meta = om_return_post_meta($post->ID);        
+    $post->meta = om_return_post_meta($post->ID);
     // save all the post metadata
-    $post->thumbnail = om_return_post_thumbnail($post->ID);        
+    $post->thumbnail = om_return_post_thumbnail($post->ID);
 
     // print "<pre>";
     // print_r($post);
     // print "</pre>";
 
-    return $post; 
+    return $post;
 }
 
 
@@ -152,9 +152,9 @@ function om_get_all_trails() {
         //print $post->post_title . "<br>";
 
         // save all the post metadata
-        $post->meta = om_return_post_meta($post->ID);        
+        $post->meta = om_return_post_meta($post->ID);
         // save all the post metadata
-        $post->thumbnail = om_return_post_thumbnail($post->ID);        
+        $post->thumbnail = om_return_post_thumbnail($post->ID);
         // store post with key
         $arr[$post->post_name] = $post;
     }
@@ -263,7 +263,7 @@ function om_return_trail_status_info($status){
         $arr['class'] = "bg-warning";
         $arr['text'] = "CAUTION";
     }
-     
+
     return $arr;
 }
 
@@ -287,6 +287,7 @@ function om_return_trail_status_html_tiny($trail){
 
     $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
     $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+	$str .= '<span class="sr-only">'. $trail->meta['statusInfo']['text'] .'</span>';
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
     return $str;
@@ -332,11 +333,11 @@ function om_return_trail_status_html_header($trail){
     $str = "<div class='headerTrailStatus'>";
     $str .= '<div class="row">';
 
-    
-    // status 
+
+    // status
     $str .= '<div class="col-sm-12 col-md-6 col-lg-3 mb-2">';
 
-    // add mobile button 
+    // add mobile button
     $str .= '<div data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
     $str .= ' onclick="location.href=\'/trail-status-mobile\'" class="btn trail-status-rect '. $trail->meta['statusInfo']['class'] .'">';
     $str .= $trail->meta['statusInfo']['text'];
@@ -346,13 +347,13 @@ function om_return_trail_status_html_header($trail){
     $str .= '</div>';
 
 
-    // data 
+    // data
     $str .= '<div class="col-sm-12 col-md-6 col-lg-4 mb-2">';
     $str .= '<table class="table table-sm table-borderless">';
     $str .= '<tr>';
 
     // DIFFICULTY
-    if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){ 
+    if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){
 
         $str .= "<td rowspan='2'>";
         $str .= "<div data-toggle='tooltip' data-placement='top' title='". $trail->meta['difficulty'] ."' ";
@@ -361,19 +362,19 @@ function om_return_trail_status_html_header($trail){
         $str .= " '> </div></td>";
 
     }
-    if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
+    if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){
         $str .= "<td>" . $trail->meta['length'] . " miles</td>";
     }
-    if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){ 
+    if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){
         $str .= "<td>" . "Ascent: " . $trail->meta['ascent'] ."'</td>";
     }
 
     $str .= '</tr><tr>';
 
-    if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
+    if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){
         $str .= "<td>" . $trail->meta['percentage_singletrack'] ."% Singletrack</td>";
     }
-    if (isset($trail->meta['descent']) && !empty($trail->meta['descent']) ){ 
+    if (isset($trail->meta['descent']) && !empty($trail->meta['descent']) ){
         $str .= "<td>" . "Descent: " . $trail->meta['descent'] ."'</td>";
     }
     $str .= '</tr>';
@@ -381,16 +382,16 @@ function om_return_trail_status_html_header($trail){
     $str .= '</div>';
 
 
-    // external links 
+    // external links
     $str .= '<div class="col-sm-12 col-lg-5 external-links mb-2">';
 
-    if (isset($trail->meta['mtb_project_page']) && !empty($trail->meta['mtb_project_page']) ){ 
+    if (isset($trail->meta['mtb_project_page']) && !empty($trail->meta['mtb_project_page']) ){
         $str .= '<a title="View on MTB Project" href="'. $trail->meta['mtb_project_page'] .'" target="_blank" class="btn btn-primary">MTB Project</a>';
     }
-    if (isset($trail->meta['trailforks_page']) && !empty($trail->meta['trailforks_page']) ){ 
+    if (isset($trail->meta['trailforks_page']) && !empty($trail->meta['trailforks_page']) ){
         $str .= '<a title="View on Trailforks" href="'. $trail->meta['trailforks_page'] .'" target="_blank" class="btn btn-primary">Trailforks</a>';
     }
-    if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){ 
+    if (isset($trail->meta['lat_lng']) && !empty($trail->meta['lat_lng']) ){
         $str .= '<a title="Driving directions to trail head" href="https://maps.google.com/?daddr='. $trail->meta['lat_lng'] .'" target="_blank" class="btn btn-primary" rel="noopener noreferrer"><i class="fas fa-map-marker-alt" style="padding-right:3px"></i> Google Maps</a>';
     }
     $str .= '</div>';
@@ -404,8 +405,8 @@ function om_return_trail_status_html_header($trail){
 
 // the trail info and thumbnail
 function om_return_trail_card_html($trail){
-    global $difficulty_arr; 
-    
+    global $difficulty_arr;
+
     // print "<pre>";
     // print_r($trail);
     // print "</pre>";
@@ -417,34 +418,34 @@ function om_return_trail_card_html($trail){
         $str .= '<div class="card-body">';
             $str .= '<a href="/trails/'. $trail->post_name .'" title="'. $trail->meta['statusInfo']['text'] .'" class="stretched-link">';
 
-        
+
                 $str .= '<span class="card-title ">';
                     $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
                     $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
                 $str .= $trail->post_title .'</span> ';
-                
+
                 $str .= '<div class="card-text text-muted">';
             // $trail->meta['updated']
 
 
                 // DIFFICULTY
-    // if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){ 
+    // if (isset($trail->meta['difficulty']) && !empty($trail->meta['difficulty']) ){
 
 
     //     $str .= "<span data-toggle='tooltip' data-placement='top' title='". $trail->meta['difficulty'] ."' ";
     //     $str .= " class='difficulty' style='background-image:";
-    //     $str .= " url(". get_stylesheet_directory_uri() . "/img/difficulty/" . 
+    //     $str .= " url(". get_stylesheet_directory_uri() . "/img/difficulty/" .
     //         $difficulty_arr[$trail->meta['difficulty']]["img"] . "); background-size: contain;'";
     //     $str .= " '> </span>";
 
     // }
-                    if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){ 
+                    if (isset($trail->meta['length']) && !empty($trail->meta['length']) ){
                         $str .= "<span>" . $trail->meta['length'] . " miles</span> • ";
                     }
-                    // if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){ 
+                    // if (isset($trail->meta['percentage_singletrack']) && !empty($trail->meta['percentage_singletrack']) ){
                     //     $str .= '<span>'. $trail->meta['percentage_singletrack'] ."% Singletrack</span> • ";
                     // }
-                    if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){ 
+                    if (isset($trail->meta['ascent']) && !empty($trail->meta['ascent']) ){
                         $str .= "<span>" . "Ascent: " . $trail->meta['ascent'] ."'</span>";
                     }
 
@@ -458,7 +459,7 @@ function om_return_trail_card_html($trail){
     $str .= '</div>';
 
 
-  
+
 
 
     return $str;
@@ -584,5 +585,3 @@ function en_remove_campaign_summary_block() {
 }
 
 add_action( 'after_setup_theme', 'en_remove_campaign_summary_block', 11 );
-
-
