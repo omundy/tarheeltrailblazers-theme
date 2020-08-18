@@ -22,11 +22,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<!--<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-<!-- 	<link rel="stylesheet" href="http://tarheeltrailblazers.dreamhosters.com/wp/wp-content/themes/understrap-child-ttb/css/style-miguel.css">
-	<link rel="stylesheet" href="http://tarheeltrailblazers.dreamhosters.com/wp/wp-content/themes/understrap-child-ttb/css/style-mary-nell.css"> -->
 
 	<?php wp_head(); ?>
 </head>
@@ -81,7 +78,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<!--<ul class="nav nabar-nav mr-auto">
 
-                    
+
 
                     <li class="menu-item">
                         <a class="nav-link" href="https://tarheeltrailblazers.square.site/s/shop" target="_blank">Shop <i style="font-size:.7rem; color: #999" class="fas fa-external-link-alt"></i></a>

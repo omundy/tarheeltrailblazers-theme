@@ -42,9 +42,15 @@ if (count($trails)){
 
     <div class="mx-auto w-75 text-center">
         <h4 style="display: inline-block;" class="text-center">Don't ride muddy trails!</h4>
-        <span data-toggle="tooltip" data-placement="top" title="All trails are open!" class="tinyTrailStatusDot bg-success ml-3"></span> open 
-        <span data-toggle="tooltip" data-placement="top" title="Some trails are open" class="tinyTrailStatusDot bg-warning ml-3"></span> caution
-        <span data-toggle="tooltip" data-placement="top" title="All trails are closed" class="tinyTrailStatusDot bg-danger ml-3"></span> closed
+        <span data-toggle="tooltip" data-placement="top" title="All trails are open!" class="ml-3">
+            <i class="fas fa-check-circle tinyTrailStatusIcon success"></i>
+        </span> open
+        <span data-toggle="tooltip" data-placement="top" title="Some trails are open" class="ml-3">
+            <i class="fas fa-exclamation-triangle tinyTrailStatusIcon warning"></i>
+        </span> caution
+        <span data-toggle="tooltip" data-placement="top" title="All trails are closed" class="ml-3">
+            <i class="fas fa-times-circle tinyTrailStatusIcon danger"></i>
+        </span> closed
     </div>
 
 

@@ -338,7 +338,22 @@ function om_return_trail_status_html_tiny($trail)
     // print "</pre>";
 
     $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
-    $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+
+    // old circles
+    // $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> ';
+
+    // new icons
+    if ($trail->meta['statusInfo']['class'] == "bg-success"){
+        $str .= '><i class="fas fa-check-circle tinyTrailStatusIcon success"></i>';
+    } else if ($trail->meta['statusInfo']['class'] == "bg-warning"){
+        $str .= '><i class="fas fa-exclamation-triangle tinyTrailStatusIcon warning"></i>';
+    } else if ($trail->meta['statusInfo']['class'] == "bg-danger"){
+        $str .= '><i class="fas fa-times-circle tinyTrailStatusIcon danger"></i>';
+    }
+
+
+
+    $str .= ' </span> ';
     $str .= '<span class="sr-only">'. $trail->meta['statusInfo']['text'] .'</span>';
     $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
     $str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
