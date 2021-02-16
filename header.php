@@ -15,6 +15,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,6 +26,37 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+
+	<!-- meta tags -->
+	<meta name="description" content="Protecting improving and maintaining the numerous trail systems available for our use in and around Metro-Charlotte">
+	<meta name="keywords" content="Tarheel Trailblazers Mountain Bike Association, Protecting improving and maintaining the numerous trail systems available for our use in and around Metro-Charlotte">
+
+	<!--  open graph tags -->
+	<meta property="og:title" content="Tarheel Trailblazers">
+	<meta property="og:description" content="Protecting improving and maintaining the numerous trail systems available for our use in and around Metro-Charlotte">
+	<meta property="og:image" content="https://tarheeltrailblazers.com/wp/wp-content/themes/understrap-child-ttb/img/hero_bike_one.jpg">
+	<meta property="og:url" content="https://tarheeltrailblazers.com/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Tarheel Trailblazers">
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://tarheeltrailblazers.com/">
+	<meta name="twitter:title" content="Tarheel Trailblazers">
+	<meta name="twitter:description" content="Protecting improving and maintaining the numerous trail systems available for our use in and around Metro-Charlotte">
+	<meta name="twitter:creator" content="@Theel_Trlblazer">
+	<meta name="twitter:site" content="@Theel_Trlblazer">
+	<meta name="twitter:image" content="https://tarheeltrailblazers.com/wp/wp-content/themes/understrap-child-ttb/img/hero_bike_one.jpg">
+	<meta name="twitter:image:alt" content="Tarheel Trailblazers">
+
+	<!-- favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 
 
 	<?php wp_head(); ?>
