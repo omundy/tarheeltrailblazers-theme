@@ -15,7 +15,17 @@ if (count($trails)){
     print '<div class="container-fluid trail-status-wrapper py-4">';
     print '<div class="trail-status-mobile-btn"><a href="/trail-status-mobile/"><i class="fa fa-mobile" aria-hidden="true"></i></a></div>';
     print '<div class="container">';
+
+
+
+    // start row
     print '<div class="row align-items-center">';
+
+     $count = count($trails);
+    $rowsPerCol = $count / 3;
+  
+    $row = 1;
+    $col = 1;
 
     // loop through all the trails
     foreach ($trails as $trail) {
@@ -25,12 +35,31 @@ if (count($trails)){
         // print_r($trails);
         // print "</pre>";
 
-        // print div and returned html
-        print '<div class="col-12 col-md-6 col-xl-4">';
-        print om_return_trail_status_html_tiny($trail);
-        print "</div>";
+        // // print each column first, then each row
+        // print '<div class="col-12 col-md-6 col-xl-4">';
+        // print om_return_trail_status_html_tiny($trail);
+        // print "</div>";
 
 
+
+
+        // print each row first, then each column
+        if ($row <= 1){
+            print '<div class="col-12 col-lg-4">';
+        }
+        // trail
+        print '<div>';
+        // print $row . '/'. $col; 
+        print om_return_trail_status_html_tiny($trail) . '</div>';
+        // end of col
+        if ($row >= $rowsPerCol){
+            print '</div>';
+            $row = 0;
+            $col ++;
+        }        
+        $row ++;
+
+        
      } // end foreach
 
     // end section

@@ -230,7 +230,9 @@ h3.callout, h4.callout { font-weight: normal; }
     font-size: 130%;
     color: rgba(255,255,255,.5);
 }
-
+.trail-status-mobile-btn i.fa-mobile {
+    font-size: 2.5em;
+}
 
 
 
