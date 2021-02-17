@@ -353,11 +353,15 @@ h3.callout, h4.callout { font-weight: normal; }
 /* HEADER / NAVBAR
 ******************************************************************************/
 
+.main-nav {
+
+}
 .navbar {
-    /*not sure why the 10px*/
-    /*margin: 0 auto 10px;*/
     margin: 0 auto 0;
     background-color: #202020;
+}
+.navbar-brand {
+	height:100%;
 }
 .navbar a {
     /* color: #347458 !important;
@@ -366,9 +370,7 @@ h3.callout, h4.callout { font-weight: normal; }
 
     line-height: 1.4rem;
 }
-.header-logo {
-    width: 260px !important;
-}
+
 .bg-primary {
     background-color: #fff !important;
 }
@@ -389,6 +391,7 @@ h3.callout, h4.callout { font-weight: normal; }
 
 
 
+/* PHONE / DEFAULT >= 0px  */
 @media (min-width: 0px) {
     .header-logo {
         width: 150px !important;
@@ -399,10 +402,10 @@ h3.callout, h4.callout { font-weight: normal; }
         line-height: 1rem;
     }
 }
+/* >= 576px  */
 @media (min-width: 576px) {
     .header-logo {
         width: 260px !important;
-
     }
     .navbar .btn-primary {
         line-height: 1.4rem;
@@ -411,6 +414,7 @@ h3.callout, h4.callout { font-weight: normal; }
         padding:8px 16px;
     }
 }
+/* >= 768px && <= 992px  */
 @media (min-width: 768px) and (max-width: 992px) {
     .header-logo {
         width: 170px !important;
@@ -422,8 +426,10 @@ h3.callout, h4.callout { font-weight: normal; }
         line-height: 1.2rem;
     }
 }
+/* >= 992px  */
 @media (min-width: 992px) {
 }
+/* >= 1200px  */
 @media (min-width: 1200px) {
 }
 

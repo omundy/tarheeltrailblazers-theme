@@ -4,17 +4,19 @@ $ = jQuery.noConflict();
 $(document).ready(function() {
 
 
-
-	$(".headerOpenSearch").on("click", function() {
+	/**
+	 *	Show / hide header search field
+	 */
+	$(document).on("click", ".headerOpenSearch", function(e) {
 		if ($(".headerSearchDiv").css("display") == "none") {
 			$(".headerSearchDiv").css("display", "block");
 			$(".headerSearchDiv input").focus();
 		} else
 			$(".headerSearchDiv").css("display", "none");
-		event.preventDefault();
+		e.preventDefault();
 	});
-	$(".headerCloseSearch").on("click", function() {
-		hideHeaderSearch();
+	$(document).on("click", ".headerCloseSearch", function() {
+		fadeHeaderSearch();
 	});
 	// click outside of the form
 	$(document).on("click", function(e) {
@@ -22,24 +24,22 @@ $(document).ready(function() {
 		if (!$(e.target).hasClass('headerSearchIcon') && !$(e.target).hasClass('headerOpenSearch') &&
 			!$(e.target).hasClass('header-search-btn') && !$(e.target).hasClass('headerSearchForm') &&
 			!$(e.target).hasClass('headerSearchFormInput')) {
-			hideHeaderSearch();
+			fadeHeaderSearch();
 		}
 	});
-
-	function showHeaderSearch() {}
-
-	function hideHeaderSearch() {
+	// fade search box 
+	function fadeHeaderSearch() {
 		$(".headerSearchDiv").fadeOut("2000");
 	}
 
 
 
 	// add dropdown toggle to submenu on mobile
-	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(e) {
 		// Avoid following the href location when clicking
-		event.preventDefault();
+		e.preventDefault();
 		// Avoid having the menu to close when clicking
-		event.stopPropagation();
+		e.stopPropagation();
 		// If a menu is already open we close it
 		$('ul.dropdown-menu [data-toggle=dropdown]').parent().removeClass('open');
 		// opening the one you clicked on
