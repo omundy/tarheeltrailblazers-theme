@@ -257,6 +257,9 @@ h3.callout, h4.callout { font-weight: normal; }
 }
 
 
+
+
+
 /* FORM ELEMENTS
 ******************************************************************************/
 
@@ -543,7 +546,7 @@ a.menu:after, .dropdown-toggle:after {
 
 
 
-/* NUMBER ROW
+/* WRAPPERS
 ******************************************************************************/
 
 .wrapper-dark {
@@ -608,6 +611,74 @@ a.menu:after, .dropdown-toggle:after {
 
 
 
+
+
+
+
+
+
+
+/* NEWS SECTION 
+******************************************************************************/
+
+
+.wrapper-news-section {
+    background-image: url(../img/bg-topo.png);
+    background-color: #153040;
+}
+.wrapper-news-section {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    /* vertical align center */
+    display:flex;
+    align-items:center;
+}
+
+.wrapper-news-section a, .wrapper-news-section a:visited {
+    color:#fff !important;
+}
+
+.news-card {
+    width: 100%;
+    background-color: #00000055 !important;
+    border: none !important;
+    height: 100%;
+}
+
+
+.news-card-img { 
+    height: 230px; 
+    width: 100%; 
+    background: center center no-repeat;
+    background-size: cover;
+    /* plus a little extra */
+    background-size: 115%; 
+}
+
+/*.news-card .card-img-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 80%;
+    width: 100%;
+    background: center center no-repeat;
+    background-size: cover;
+    background-size: auto 115%; 
+}*/
+
+
+.news-card .card-body {
+    padding: .25rem !important;
+    padding-bottom: .25rem !important;
+}
+
+
+
+
+/* CALLOUT
+******************************************************************************/
 
 .callout {
   background-color: rgb(242, 102, 48);
@@ -679,26 +750,6 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 
-
-.wrapper-news-section {
-    background-image: url(../img/bg-topo.png);
-    background-color: #153040;
-}
-.wrapper-news-section {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 600px;
-    /* vertical align center */
-    display:flex;
-    align-items:center;
-}
-.wrapper-news-section .btn {
-    margin: 20px 12px;
-}
-.wrapper-news-section a, .wrapper-news-section a:visited {
-    color:#fff !important;
-}
 
 
 
@@ -776,17 +827,11 @@ p.event-text{
 
 /* miguel */
 
-
-
 .date{
   background-color: rgb(242, 102, 48);
   height: 5rem;
   font-weight: bold;
 }
-
-/*.card{
-  background-color: rgba(5,5,5,.4) !important;
-}*/
 
 .section-events {
   background-image: url("../img/itusi-trail_PC-color.jpg");
@@ -861,14 +906,6 @@ ul.footer-menu li {
 }
 li.footer-menu-item-header { font-weight: 400; }
 li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
-
-
-
-
-
-
-
-
 
 
 
@@ -1031,16 +1068,6 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
 
 /* the last of the code segments from mary nell's CSS - need to incorporate / merge / delete */
 
-.thin-td{
-  width: 45%;
-}
-
-.thick-td{
-  width: 55%;
-}
-
-
-
 
 
 .card-two {
@@ -1055,6 +1082,33 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
   font-size: 1.1rem;
   line-height: 1.3rem;
 }
+@media (max-width: 991px) {
+  .card-two {
+
+    font-size: 0.8rem;
+  }
+  .card-one{
+    top: 25%;
+  }
+}
+
+
+
+
+
+
+
+.thin-td{
+  width: 45%;
+}
+
+.thick-td{
+  width: 55%;
+}
+
+
+
+
 
 
 
@@ -1092,9 +1146,7 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
   font-size: 1.5rem;
 }
 
-.card-body{
-  /*padding-bottom: 5em;*/ /*not sure why - messing up trail page*/
-}
+
 
 .pics {
   height: 100%;
@@ -1187,13 +1239,15 @@ li.unavailable {
   background: rgb(37, 37, 37);
 }
 
-.extra-news {
+/* marked for deletion */
+/*.extra-news {
   display: flex;
 }
-
 .small-news {
   display: none;
 }
+*/
+
 
 .small-nav {
   display: none;
@@ -1320,15 +1374,7 @@ li.unavailable {
 
 }
 
-@media (max-width: 991px) {
-  .card-two {
 
-    font-size: 0.8rem;
-  }
-  .card-one{
-    top: 25%;
-  }
-}
 
 @media (min-width:483px) {
   .phone-slider {
