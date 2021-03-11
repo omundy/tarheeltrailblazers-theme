@@ -104,7 +104,7 @@ $container   = get_theme_mod('understrap_container_type');
 <!-- Section: Data -->
 <?php include(get_theme_file_path() . '/sections/section-data.php'); ?>
 
-<div class="green-line extra"></div>
+<div class="green-line"></div>
 
 <!-- Section: Data -->
 <?php include(get_theme_file_path() . '/sections/section-callout-email-signup.php'); ?>

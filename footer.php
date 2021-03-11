@@ -85,7 +85,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="d-lg-block col-xl-6 col-md-6">
 				<div class="card">
-					<div class="green-line extra" style="display: block !important"></div>
+					<div class="green-line"></div>
 
 					<div class="card-body align-middle" style="padding-bottom: 0;">
 						<p class="card-text" style="color:#111;">Get our latest news and stay up to date about events!</p>
