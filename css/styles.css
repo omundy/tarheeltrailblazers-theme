@@ -630,7 +630,7 @@ a.menu:after, .dropdown-toggle:after {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 600px;
+    min-height: 500px;
     /* vertical align center */
     display:flex;
     align-items:center;
@@ -1148,11 +1148,6 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
 
 
 
-.pics {
-  height: 100%;
-  overflow: hidden;
-  max-height: 45rem;
-}
 
 
 
@@ -1285,9 +1280,17 @@ li.unavailable {
 
 
 
+.carousel-item-home {
+    height: 100%;
+    overflow: hidden;
+    max-height: 45rem;
+}
+.carousel-item-home-img {
+    object-fit: cover;
+    min-height: 32em;
+}
 
-
-  .carousel-item.pic1 {
+/*.carousel-item.pic1 {
     background-image: url(../img/hero_bike_one.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -1295,9 +1298,9 @@ li.unavailable {
     min-height: 800px;
     display: flex;
     align-items: center;
-  }
+}
 
-  .carousel-item.pic2 {
+.carousel-item.pic2 {
     background-image: url(../img/hero_bike_two.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -1305,9 +1308,9 @@ li.unavailable {
     min-height: 800px;
     display: flex;
     align-items: center;
-  }
+}
 
-  .carousel-item.pic3 {
+.carousel-item.pic3 {
     background-image: url(../img/hero_work_one.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -1315,12 +1318,13 @@ li.unavailable {
     min-height: 800px;
     display: flex;
     align-items: center;
-  }
+}
+*/
 
-  .img-c {
-    object-fit: cover;
-    min-height: 32em;
-  }
+
+
+
+
 
 
 

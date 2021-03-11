@@ -16,7 +16,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 <!-- Section: Donate Callout -->
-<?php include(get_theme_file_path() . '/sections/section-callout-donate-orange'); ?>
+<?php include(get_theme_file_path() . '/sections/section-callout-donate-orange.php'); ?>
 
 <!-- Section: Trail status -->
 <?php include(get_theme_file_path() . '/sections/section-trail-status.php'); ?>

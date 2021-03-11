@@ -11,16 +11,24 @@ $container   = get_theme_mod('understrap_container_type');
 ?>
 
 
+
+
 <div class="carousel slide" data-pause="hover" data-ride="carousel" id="carouselExampleIndicators">
+
+
+
 	<ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
 		<li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
 		<li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
 	</ol>
 
+
+
   <div class="carousel-inner header">
 
-    <div class="carousel-item pics active"><img alt="Volunteer Working" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
+    <div class="carousel-item carousel-item-home active">
+      <img alt="Volunteer Working" class="img-fluid carousel-item-home-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" />
       <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
         <div class="row">
           <div class="green-line extra-news"></div>
@@ -35,7 +43,9 @@ $container   = get_theme_mod('understrap_container_type');
       </div>
     </div>
 
-    <div class="carousel-item pics"><img alt="Biker Jumping" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
+
+    <div class="carousel-item carousel-item-home">
+      <img alt="Biker Jumping" class="img-fluid carousel-item-home-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg" />
       <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
         <div class="row">
           <div class="green-line extra-news"></div>
@@ -50,7 +60,8 @@ $container   = get_theme_mod('understrap_container_type');
       </div>
     </div>
 
-    <div class="carousel-item pics"><img alt="Biker In Nature" class="img-fluid img-c" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
+    <div class="carousel-item carousel-item-home">
+      <img alt="Biker In Nature" class="img-fluid carousel-item-home-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" />
       <div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
         <div class="row">
           <div class="green-line extra-news"></div>
@@ -73,6 +84,9 @@ $container   = get_theme_mod('understrap_container_type');
 
 
 
+<!-- Section: News -->
+<?php include(get_theme_file_path() . '/sections/section-news.php'); ?>
+
 
 <!-- Section: Donate Callout -->
 <?php include(get_theme_file_path() . '/sections/section-callout-donate-orange.php'); ?>
@@ -94,9 +108,6 @@ $container   = get_theme_mod('understrap_container_type');
 
 <!-- Section: Data -->
 <?php include(get_theme_file_path() . '/sections/section-callout-email-signup.php'); ?>
-
-<!-- Section: News -->
-<?php include(get_theme_file_path() . '/sections/section-news.php'); ?>
 
 
 

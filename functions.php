@@ -235,12 +235,50 @@ function om_return_post_thumbnail($id)
     return $arr;
 }
 
+
+
+
+$trailStatusInfo_arr = array(
+
+	'Open' => array(
+        'class' => "success",
+        'text' => "OPEN",
+        'fullText' => "All trails are open!"
+    ),
+	'Caution' => array(
+        'class' => "warning",
+        'text' => "CAUTION",
+        'fullText' => "Some trails are open"
+    ),
+	'Closed' => array(
+        'class' => "danger",
+        'text' => "CLOSED",
+        'fullText' => "All trails are closed"
+    )
+);
+
+
+/**
+ * Returns the trail status display info
+ * @return Array
+ */
+function om_return_trail_status_info($status)
+{
+    global $trailStatusInfo_arr;
+    if (!isset($status)) {
+        return;
+    }
+    return $trailStatusInfo_arr[$status];
+}
+
+
 /**
  * Return all meta data for a post
  * @return Array
  */
 function om_return_post_meta($id)
 {
+    global $trailStatusInfo_arr;
 
     // get meta for this trail
     $parking_lot = get_post_meta($id, 'parking_lot', true);
@@ -270,7 +308,7 @@ function om_return_post_meta($id)
         "status" => $status,
         "parking_lot" => null,
         "lat_lng" => null,
-        "statusInfo" => om_return_trail_status_info($status),
+        "statusInfo" => $trailStatusInfo_arr[$status],
 
 
         //"updated" => $date->format('Y-m-d h:i:s T') // 2019-04-23 03:36:28 EDT
@@ -290,33 +328,13 @@ function om_return_post_meta($id)
     return $arr;
 }
 
-/**
- * Returns the trail status display info
- * @return Array
- */
-function om_return_trail_status_info($status)
-{
-    if (!isset($status)) {
-        return;
-    }
 
-    // defaults
-    $arr = array(
-        'class' => "bg-success",
-        'text' => "OPEN",
-    );
-    if ($status == "Closed") {
-        $arr['class'] = "bg-danger";
-        $arr['text'] = "CLOSED";
-    }
-    // they decided they don't want yellow status
-    elseif ($status == "Caution") {
-        $arr['class'] = "bg-warning";
-        $arr['text'] = "CAUTION";
-    }
 
-    return $arr;
-}
+
+
+
+
+
 
 
 
@@ -337,17 +355,18 @@ function om_return_trail_status_html_tiny($trail)
     // print_r($trail);
     // print "</pre>";
 
-    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
+    // show fullText on hover
+    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['fullText'] .'"';
 
     // old circles
     // $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> ';
 
     // new icons
-    if ($trail->meta['statusInfo']['class'] == "bg-success"){
+    if ($trail->meta['statusInfo']['class'] == "success"){
         $str .= '><i class="fas fa-check-circle tinyTrailStatusIcon success"></i>';
-    } else if ($trail->meta['statusInfo']['class'] == "bg-warning"){
+    } else if ($trail->meta['statusInfo']['class'] == "warning"){
         $str .= '><i class="fas fa-exclamation-triangle tinyTrailStatusIcon warning"></i>';
-    } else if ($trail->meta['statusInfo']['class'] == "bg-danger"){
+    } else if ($trail->meta['statusInfo']['class'] == "danger"){
         $str .= '><i class="fas fa-times-circle tinyTrailStatusIcon danger"></i>';
     }
 
@@ -405,9 +424,9 @@ function om_return_trail_status_html_header($trail)
     // status
     $str .= '<div class="col-sm-12 col-md-6 col-lg-3 mb-2">';
 
-    // add mobile button
-    $str .= '<div data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
-    $str .= ' onclick="location.href=\'/trail-status-mobile\'" class="btn trail-status-rect '. $trail->meta['statusInfo']['class'] .'">';
+    // add mobile button - show fullText on hover
+    $str .= '<div data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['fullText'] .'"';
+    $str .= ' onclick="location.href=\'/trail-status-mobile\'" class="btn trail-status-rect bg-'. $trail->meta['statusInfo']['class'] .'">';
     $str .= $trail->meta['statusInfo']['text'];
     $str .= '</div> ';
     $str .= '<span class="headerTrailStatusUpdated">'. $trail->meta['updated'] . "</span>";
@@ -483,12 +502,13 @@ function om_return_trail_card_html($trail)
     $str .= '<div class="w-100 img-fluid"><img src="'. $trail->thumbnail[0] .'" /></div>';
 
     $str .= '<div class="card-body">';
-    $str .= '<a href="/trails/'. $trail->post_name .'" title="'. $trail->meta['statusInfo']['text'] .'" class="stretched-link">';
+    // show fullText on hover
+    $str .= '<a href="/trails/'. $trail->post_name .'" title="'. $trail->meta['statusInfo']['fullText'] .'" class="stretched-link">';
 
 
     $str .= '<span class="card-title ">';
-    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['text'] .'"';
-    $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> </span> ';
+    $str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['fullText'] .'"';
+    $str .= ' class="tinyTrailStatusDot bg-'. $trail->meta['statusInfo']['class'] .'"> </span> ';
     $str .= $trail->post_title .'</span> ';
 
     $str .= '<div class="card-text text-muted">';
