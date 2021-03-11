@@ -64,6 +64,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="manifest" href="/site.webmanifest">
 
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SE6RFP6W2P"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-SE6RFP6W2P');
+	</script>
+
+
 	<?php wp_head(); ?>
 </head>
 
