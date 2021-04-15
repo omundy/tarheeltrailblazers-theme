@@ -120,7 +120,7 @@ function om_get_usnwc_status_old()
 function om_get_usnwc_status()
 {
     $status = "Closed";
-    $url = 'http://usnwc.org/visit/facility-map/';
+    $url = 'https://whitewater.org/plan-your-visit/facility-map/';
     $page_source = file_get_contents($url); //or use curl
 
     if (preg_match("/Trails Open/i", $page_source)) {
