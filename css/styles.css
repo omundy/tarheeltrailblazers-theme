@@ -619,7 +619,7 @@ a.menu:after, .dropdown-toggle:after {
 
 
 
-/* NEWS SECTION 
+/* NEWS SECTION
 ******************************************************************************/
 
 
@@ -649,13 +649,13 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 
-.news-card-img { 
-    height: 230px; 
-    width: 100%; 
+.news-card-img {
+    height: 230px;
+    width: 100%;
     background: center center no-repeat;
     background-size: cover;
     /* plus a little extra */
-    background-size: 115%; 
+    background-size: 115%;
 }
 
 /*.news-card .card-img-top {
@@ -666,7 +666,7 @@ a.menu:after, .dropdown-toggle:after {
     width: 100%;
     background: center center no-repeat;
     background-size: cover;
-    background-size: auto 115%; 
+    background-size: auto 115%;
 }*/
 
 
@@ -1076,6 +1076,7 @@ li.footer-menu-item { line-height: 1.35rem; margin-top: 6px;}
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* marked for deletion */
 .news .carousel-item .card-two {
   margin-left: 27.5%;
 }
@@ -1270,81 +1271,9 @@ li.unavailable {
 
 
 
-.carousel-item-home {
-    height: 100%;
-    min-height: 300px;
-    max-height: 500px;
-    overflow: hidden;
-    /*max-height: 45rem;*/
-}
-.carousel-item-home-img {
-    object-fit: cover;
-    min-height: 32em;
-    max-height: 45em;
-}
-
-/*.carousel-item.pic1 {
-    background-image: url(../img/hero_bike_one.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-item.pic2 {
-    background-image: url(../img/hero_bike_two.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-item.pic3 {
-    background-image: url(../img/hero_work_one.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-}
-*/
-
-
-.carousel-inner.header>.item {
-  /*disables white flash*/
-  -webkit-transition: -webkit-transform .4s ease-in-out;
-  -o-transition: -o-transform .4s ease-in-out;
-  transition: transform .4s ease-in-out;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-}
-
-.carousel-inner.header {
-  /*just incase the flash (style above) comes back*/
-  background: rgb(37, 37, 37);
-}
-
-
-
-  .carousel-inner.header>.item {
-    /*disables white flash*/
-    -webkit-transition: -webkit-transform .2s ease-in-out;
-    -o-transition: -o-transform .2s ease-in-out;
-    transition: transform .2s ease-in-out;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
-  }
-
-
-
 /*
 
-MARKED FOR DELETION - can find none of these in any php templates or sections 
+MARKED FOR DELETION - can find none of these in any php templates or sections
 
 
   .extra {
