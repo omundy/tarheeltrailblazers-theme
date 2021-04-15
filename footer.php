@@ -57,7 +57,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     // print_r($item->menu_item_parent);
                     // print "</pre>";
 
-                    // reset 
+                    // reset
                     $parent = null;
                 }
                 echo '</ul>';
@@ -90,7 +90,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="card-body align-middle" style="padding-bottom: 0;">
 						<p class="card-text" style="color:#111;">Get our latest news and stay up to date about events!</p>
 						<p>
-							<?php echo do_shortcode('[mc4wp_form]'); ?>							
+							<?php echo do_shortcode('[mc4wp_form]'); ?>
 						</p>
 
 					</div>
@@ -110,26 +110,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 		<div class="row align-middle mt-4">
+
 			<div class="col-6 col-md-4 align-middle">
-                <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+                <a class="nav-link footer-icon-link" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
                     <img alt="Tarheel Trailblazers Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est-1000w.png" />
                 </a>
             </div>
 
 			<div class="col-6 col-md-4 align-middle pt-1">
-                <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>/get-involved">
+                <a class="nav-link footer-icon-link" href="<?php echo esc_url( home_url( '/' ) ); ?>/get-involved">
                     <img alt="Work X Ride Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-wXr-only-white-clear.png" />
                 </a>
             </div>
 
 			<div class="col-6 col-md-3 align-middle pt-4 pt-md-0">
-                <a class="nav-link" href="https://www.imba.com/" target="_blank">                
+                <a class="nav-link footer-icon-link" href="https://www.imba.com/" target="_blank">
                     <img alt="IMBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/imba-logo-white-clear.png" />
                 </a>
             </div>
 
 			<div class="col-3 col-md-1 align-middle offset-3 offset-md-0 pt-1" style="height: 65%;">
-                <a class="nav-link" href="https://sorba.org/" target="_blank">    
+                <a class="nav-link footer-icon-link" href="https://sorba.org/" target="_blank">
                     <img alt="SORBA Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/sorba-logo.png" />
                 </a>
             </div>
