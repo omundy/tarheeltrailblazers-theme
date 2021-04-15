@@ -1,5 +1,9 @@
+
+
 /* GLOBAL
 ******************************************************************************/
+
+
 html, body {
 	/* border: 1px solid #900; */
 	font-family: 'Source Sans Pro', sans-serif !important;
@@ -7,25 +11,38 @@ html, body {
 	color: #d6e5e3 !important;
 }
 
-a {
-	color: #fff;
+
+
+a, a:link, a:visited {
+	color: #f26630;
 	text-decoration: none !important;
 	background-color: transparent !important;
 }
-
 a:hover {
 	color: #f26630;
 	text-decoration: underline;
 }
 
+
+
 .darknavitem {
 	color: #fff;
 	font-size: 1.2rem;
 }
-
+ul.share_links li a, ul.share_links li a:link, ul.share_links li a:visited,
+a.darknavitem, a.darknavitem:link, a.darknavitem:visited {
+	color: #fff;
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+ul.share_links li a:hover,
 a.darknavitem:hover, button.darknavitem:hover {
 	color: #707070 !important;
 }
+
+
+
+
 
 pre {
 	color: #090 !important;
@@ -217,11 +234,22 @@ h3.callout, h4.callout {
 	visibility: visible;
 }
 
+
+
 /* Trail status
 ******************************************************************************/
 .trail-status-wrapper {
 	background-color: rgb(37, 37, 37);
 	position: relative;
+}
+.trail-status-wrapper a, .trail-status-wrapper a:link, .trail-status-wrapper a:visited {
+	color: #fff;
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+.trail-status-wrapper a:hover {
+	color: #fff;
+	text-decoration: underline;
 }
 
 .trail-status-mobile-btn {
@@ -926,12 +954,9 @@ li.footer-menu-item {
 	margin-top: 20px;
 	margin-right: 1rem !important;
 	font-size: 1.0rem;
-	/*color: rgb(242, 102, 48);*/
 }
 
-.wrapper-footer ul.share_links li a {
-	color: #f26630 !important;
-}
+
 
 .wrapper-footer ul.share_links li i {
 	font-size: 180%;
