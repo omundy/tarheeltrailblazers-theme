@@ -26,11 +26,12 @@ function theme_enqueue_styles()
 
 
 	wp_enqueue_style('cwd-styles', get_stylesheet_directory_uri() . '/css/styles.css', $the_theme->get('Version'));
-	wp_enqueue_style('cwd-styles-carousel', get_stylesheet_directory_uri() . '/css/styles-carousel.css', $the_theme->get('Version'));
 	wp_enqueue_script('cwd-scripts', get_stylesheet_directory_uri() . '/js/main.js', array(), $the_theme->get('Version'), true);
 
-
-	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get('Version'), true);
+	// using the altered child-theme.js because there was a bug that caused the navbar to collapse on mobile
+	// to test
+	// ?foo='. rand()
+	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.js', array(), $the_theme->get('Version'), true);
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}

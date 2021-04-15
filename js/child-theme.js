@@ -1193,6 +1193,9 @@
   /*#__PURE__*/
   function () {
     function Collapse(element, config) {
+
+		// console.log(this);
+
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
@@ -1230,8 +1233,10 @@
     // Public
     _proto.toggle = function toggle() {
       if ($(this._element).hasClass(ClassName$3.SHOW)) {
+		  // console.log(2,this);
         this.hide();
       } else {
+		   // console.log(3,this);
         this.show();
       }
     };
@@ -1295,12 +1300,16 @@
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $(_this._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).addClass(ClassName$3.SHOW);
+		  // REMOVED -> .addClass(ClassName$3.COLLAPSE) WTF?
+        $(_this._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.SHOW);
         _this._element.style[dimension] = '';
 
-        _this.setTransitioning(false);
+// console.log("dimension",dimension)
 
+        _this.setTransitioning(false);
         $(_this._element).trigger(Event$3.SHOWN);
+
+		// console.log("complete",_this)
       };
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
