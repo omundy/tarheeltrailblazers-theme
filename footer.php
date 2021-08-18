@@ -69,7 +69,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <ul class="share_links">
                     <li><a href="https://www.instagram.com/tarheel_trailblazers/" target="_blank">
                         <i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.facebook.com/groups/50342108471/" target="_blank">
+                    <li><a href="https://facebook.com/TarheelTrailblazersNC" target="_blank">
                         <i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="http://twitter.com/Theel_Trlblazer" target="_blank">
                         <i class="fab fa-twitter" aria-hidden="true"></i></a></li>
