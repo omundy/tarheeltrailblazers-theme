@@ -138,7 +138,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 			<div class="col-12 text-center colophon mt-4 mb-4">
-				<p>&copy; 2019 Tarheel Trailblazers 182 Saddle Road, Mooresville, NC 28115 | Contact us<br />
+				<p>&copy; 1990–<?php echo date("Y"); ?> Tarheel Trailblazers | <a href="<?php echo esc_url( home_url( '/' ) ); ?>about/contact-us/">Contact us</a></p>
 
                 <p>Website designed and developed by <a href="https://owenmundy.com/site/critical-web-design" target="_blank">Critical Web Design</a> at Davidson College</p>
 
