@@ -26,8 +26,8 @@ $container = get_theme_mod('understrap_container_type');
 	<div class="carousel-inner">
 
 		<div class="carousel-item active">
-			<img class="d-block w-100" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" alt="Volunteer Working">
-			<div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
+			<img class="d-block w-100 carousel-image" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_work_one.jpg" alt="Volunteer Working">
+			<div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
 				<div class="row">
 					<div class="green-line extra-news"></div>
 
@@ -43,8 +43,8 @@ $container = get_theme_mod('understrap_container_type');
 
 
 		<div class="carousel-item">
-			<img class="d-block w-100" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg"  alt="Biker Jumping">
-			<div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
+			<img class="d-block w-100 carousel-image" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_one.jpg"  alt="Biker Jumping">
+			<div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
 				<div class="row">
 					<div class="green-line extra-news"></div>
 
@@ -59,8 +59,8 @@ $container = get_theme_mod('understrap_container_type');
 		</div>
 
 		<div class="carousel-item">
-			<img class="d-block w-100" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" alt="Biker in nature">
-			<div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-7 col-lg-4">
+			<img class="d-block w-100 carousel-image" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hero_bike_two.jpg" alt="Biker in nature">
+			<div class="card card-one offset-2 col-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
 				<div class="row">
 					<div class="green-line extra-news"></div>
 

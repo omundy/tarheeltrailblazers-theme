@@ -1,5 +1,3 @@
-
-
 /* GLOBAL
 ******************************************************************************/
 
@@ -40,6 +38,19 @@ a.darknavitem:hover, button.darknavitem:hover {
 	color: #707070 !important;
 }
 
+
+.menu-item-has-children .nav-item a, 
+.menu-item-has-children .nav-item a:active, 
+.menu-item-has-children .nav-item a:hover, 
+.menu-item-has-children .nav-item a:link, 
+.menu-item-has-children .nav-item a:visited {
+	color: #000;
+}
+
+
+.carousel-image {
+	min-height: 350px;
+}
 
 
 
@@ -729,6 +740,10 @@ a.menu:after, .dropdown-toggle:after {
 	/* orange */
 }
 
+.donate-callout-homepage {
+	height: 35px;
+}
+
 .signup-callout {
 	background-color: #252525;
 }
@@ -737,7 +752,7 @@ a.menu:after, .dropdown-toggle:after {
 	background-color: transparent;
 	border: 1px solid #fff;
 	margin: 0 10px;
-	color: #fff;
+	color: #fff !important;
 	vertical-align: 3px;
 }
 
@@ -1075,7 +1090,7 @@ li.footer-menu-item {
 	}
 
 	.card-one {
-		top: 25%;
+		top: 5% !important;
 	}
 }
 
@@ -1096,7 +1111,7 @@ li.footer-menu-item {
 
 .card-one {
 	position: absolute !important;
-	top: 65%;
+	top: 40%;
 	z-index: 1;
 	text-align: center;
 	font-size: 1.3rem;
