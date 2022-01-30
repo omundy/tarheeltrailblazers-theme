@@ -284,6 +284,7 @@ function om_return_post_meta($id)
 
 	// get meta for this trail
 	$parking_lot = get_post_meta($id, 'parking_lot', true);
+	$parking_lot_api_override_lat_lng = get_post_meta($id, 'parking_lot_api_override_lat_lng', true);
 	$status = get_post_meta($id, 'trail-status', true);
 	// get date (in UTC)
 	$date = new DateTime(get_post_modified_time('F j, Y g:i a', null, $id), new DateTimeZone('UTC'));
@@ -309,6 +310,7 @@ function om_return_post_meta($id)
 
 		"status" => $status,
 		"parking_lot" => null,
+		"parking_lot_override" => null,
 		"lat_lng" => null,
 		"statusInfo" => $trailStatusInfo_arr[$status],
 
@@ -317,7 +319,12 @@ function om_return_post_meta($id)
 		//"updated" => $date->format('F d, Y') .' at '. $date->format('g:i a') // April 23, 2019 at 3:36 pm
 		"updated" => $date->format('n/d - g:ia') // 4/23-3:36pm
 	);
-	if ($parking_lot) {
+	if ($parking_lot_api_override_lat_lng){
+		$arr["parking_lot"] = $parking_lot_api_override_lat_lng;
+		$arr["parking_lot_override"] = $parking_lot_api_override_lat_lng;
+		$arr["lat_lng"] = $parking_lot_api_override_lat_lng;
+	}
+	else if ($parking_lot) {
 		$arr["parking_lot"] = $parking_lot;
 		if ($parking_lot['lat'] && $parking_lot['lng']) {
 			$arr["lat_lng"] = $parking_lot['lat'] .','. $parking_lot['lng'];
@@ -325,6 +332,7 @@ function om_return_post_meta($id)
 	}
 	// print "<pre>";
 	// print_r($arr);
+	// print_r($parking_lot_api_override_lat_lng);
 	// print "</pre>";
 
 	return $arr;
@@ -681,3 +689,9 @@ function en_remove_campaign_summary_block()
 }
 
 add_action('after_setup_theme', 'en_remove_campaign_summary_block', 11);
+
+
+
+
+
+
