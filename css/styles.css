@@ -222,8 +222,11 @@ h3.callout, h4.callout {
 .tooltip {
 	position: relative;
 	display: inline-block;
-	border-bottom: 1px dotted black;
+	
+	/*border-bottom: 1px dotted black;*/
 	/* If you want dots under the hoverable text */
+
+	border-bottom: 0px solid !important;
 }
 
 /* Tooltip text */
@@ -244,6 +247,8 @@ h3.callout, h4.callout {
 .tooltip:hover .tooltiptext {
 	visibility: visible;
 }
+
+
 
 
 

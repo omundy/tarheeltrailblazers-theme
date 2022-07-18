@@ -286,6 +286,7 @@ function om_return_post_meta($id)
 	$parking_lot = get_post_meta($id, 'parking_lot', true);
 	$parking_lot_api_override_lat_lng = get_post_meta($id, 'parking_lot_api_override_lat_lng', true);
 	$status = get_post_meta($id, 'trail-status', true);
+	$status_details = get_post_meta($id, 'trail-status-details', true);
 	// get date (in UTC)
 	$date = new DateTime(get_post_modified_time('F j, Y g:i a', null, $id), new DateTimeZone('UTC'));
 	// print "<pre>";
@@ -309,6 +310,7 @@ function om_return_post_meta($id)
 		"descent" => get_post_meta($id, 'descent', true),
 
 		"status" => $status,
+		"status_details" => $status_details,
 		"parking_lot" => null,
 		"parking_lot_override" => null,
 		"lat_lng" => null,
@@ -365,8 +367,14 @@ function om_return_trail_status_html_tiny($trail)
 	// print_r($trail);
 	// print "</pre>";
 
+	// show extra info for status
+	$statusInfo = $trail->meta['statusInfo']['fullText'];
+	if ($trail->meta['status_details'] && $trail->meta['status_details'] != "") {
+		$statusInfo .= ": " . $trail->meta['status_details'];
+	}
+
 	// show fullText on hover
-	$str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['fullText'] .'"';
+	$str .= '<span data-toggle="tooltip" data-placement="top" title="'. $statusInfo .'"';
 
 	// old circles
 	// $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> ';
@@ -434,8 +442,14 @@ function om_return_trail_status_html_header($trail)
 	// status
 	$str .= '<div class="col-sm-12 col-md-6 col-lg-3 mb-2">';
 
+	// show extra info for status
+	$statusInfo = $trail->meta['statusInfo']['fullText'];
+	if ($trail->meta['status_details'] && $trail->meta['status_details'] != "") {
+		$statusInfo .= ": " . $trail->meta['status_details'];
+	}
+
 	// add mobile button - show fullText on hover
-	$str .= '<div data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['fullText'] .'"';
+	$str .= '<div data-toggle="tooltip" data-placement="top" title="'. $statusInfo .'"';
 	$str .= ' onclick="location.href=\'/trail-status-mobile\'" class="btn trail-status-rect bg-'. $trail->meta['statusInfo']['class'] .'">';
 	$str .= $trail->meta['statusInfo']['text'];
 	$str .= '</div> ';
@@ -516,8 +530,14 @@ function om_return_trail_card_html($trail)
 	$str .= '<a href="/trails/'. $trail->post_name .'" title="'. $trail->meta['statusInfo']['fullText'] .'" class="stretched-link">';
 
 
+	// show extra info for status
+	$statusInfo = $trail->meta['statusInfo']['fullText'];
+	if ($trail->meta['status_details'] && $trail->meta['status_details'] != "") {
+		$statusInfo .= ": " . $trail->meta['status_details'];
+	}
+
 	$str .= '<span class="card-title ">';
-	$str .= '<span data-toggle="tooltip" data-placement="top" title="'. $trail->meta['statusInfo']['fullText'] .'"';
+	$str .= '<span data-toggle="tooltip" data-placement="top" title="'. $statusInfo .'"';
 	$str .= ' class="tinyTrailStatusDot bg-'. $trail->meta['statusInfo']['class'] .'"> </span> ';
 	$str .= $trail->post_title .'</span> ';
 
