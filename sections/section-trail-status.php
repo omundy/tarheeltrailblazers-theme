@@ -24,6 +24,9 @@ if (count($trails)) { ?>
 
         <div class="row"> 
 
+                <!-- flow down then right -->
+                <div class='threeTwoOneColumns'>
+
             <?php        
 
             $count = count($trails);
@@ -35,6 +38,8 @@ if (count($trails)) { ?>
             $row = 1;
             $col = 1;
 
+
+
             // loop through all the trails
             foreach ($trails as $trail) {
                 //print $trail->post_title . "<br>";
@@ -44,37 +49,50 @@ if (count($trails)) { ?>
                 // print "</pre>";
 
                 // // print each column first, then each row
-                // print '<div class="col-12 col-md-6 col-xl-4">';
+                // print "<div class='col-12 col-md-6 col-xl-4'>\n";
                 // print om_return_trail_status_html_tiny($trail);
-                // print "</div>";
+                // print "</div>\n\n";
 
 
-
-                // open a column
-                // print each row first, then each column
-                if ($row <= 1){
-                    print '<div class="col-12 col-md-6 col-lg-4">';
-                }
-                // trail
-                print '<div>';
-                // print $row . '/'. $col; 
+                // flow down then right
+                print "<div>\n";
                 print om_return_trail_status_html_tiny($trail);
-                print '</div>';
+                print "</div>\n\n";
 
-                // end col
-                if ($row >= $rowsPerCol){
-                    print '</div>';
-                    $row = 0;
-                    $col ++;
-                }      
-                $row ++;
 
-                if ($row >= $count-1){
-                    print '</div>';
-                }
+
+                // // open a column
+                // // print each row first, then each column
+                // if ($row <= 1){
+                //     print '<div class="col-12 col-md-6 col-lg-4">';
+                // }
+                // // trail
+                // print '<div>';
+                // // print $row . '/'. $col; 
+                // print om_return_trail_status_html_tiny($trail);
+                // print '</div>';
+
+                // // end col
+                // if ($row >= $rowsPerCol){
+                //     print '</div>';
+                //     $row = 0;
+                //     $col ++;
+                // }      
+                // $row ++;
+
+                // if ($row >= $count-1){
+                //     print '</div>';
+                // }
+
+
+
              }
 
             ?>
+
+
+                <!-- </div> -->
+
             </div><!-- / .col-12 -->
         </div><!-- / .row -->
 

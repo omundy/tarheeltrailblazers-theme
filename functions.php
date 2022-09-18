@@ -390,10 +390,10 @@ function om_return_trail_status_html_tiny($trail)
 
 
 
-	$str .= ' </span> ';
-	$str .= '<span class="sr-only">'. $trail->meta['statusInfo']['text'] .'</span>';
-	$str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title .'</a></span> ';
-	$str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] .'</span>';
+	$str .= " </span> \n";
+	$str .= '<span class="sr-only">'. $trail->meta['statusInfo']['text'] ." </span> \n";
+	$str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail->post_name .'">'. $trail->post_title ."</a> </span> \n";
+	$str .= '<span class="tinyTrailStatusUpdated">'. $trail->meta['updated'] ." </span> \n";
 	return $str;
 }
 

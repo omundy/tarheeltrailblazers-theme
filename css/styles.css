@@ -53,6 +53,30 @@ a.darknavitem:hover, button.darknavitem:hover {
 }
 
 
+/* flow content across 1, 2, or 3 columns */
+.threeTwoOneColumns {
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+}
+@media (min-width: 768px) { 
+  .threeTwoOneColumns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (min-width: 992px) {
+  .threeTwoOneColumns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
 
 
 pre {

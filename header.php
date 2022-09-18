@@ -100,7 +100,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-				<h1 class="navbar-brand mb-0 " id="main-nav-label" class="sr-only">
+				<h1 class="navbar-brand mb-0 sr-only" id="main-nav-label">
 					<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
 						<!-- <?php bloginfo( 'name' ); ?> -->
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est-1000w.png" alt="Tarheel Trailblazers logo" class="header-logo">
