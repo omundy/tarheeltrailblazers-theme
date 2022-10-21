@@ -95,13 +95,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark" aria-labelledby="main-nav-label">
 
 		<?php if ( 'container' == $container ) : ?>
-			<div class="container" >
+			<div class="container-fluid" >
 		<?php endif; ?>
 
 
 
 				<h1 class="navbar-brand mb-0" id="main-nav-label">
-					<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+					<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						<!-- <?php bloginfo( 'name' ); ?> -->
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est.svg" alt="Tarheel Trailblazers logo" class="header-logo">
 					</a>

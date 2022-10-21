@@ -1,0 +1,61 @@
+
+
+/* GLOBAL
+****************************************************************/
+
+
+html, body {
+	font-family: 'Source Sans Pro', sans-serif !important;
+	background-color: #252525 !important;
+	color: #d6e5e3 !important;
+}
+
+a, a:active, a:link, a:visited {
+	color: #f26630;
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+a:hover {
+	color: #f26630;
+	text-decoration: underline;
+}
+
+
+/* NAVITEM
+****************************************************************/
+/* links, buttons on dark backgrounds */
+
+.darknavitem {
+	color: #fff;
+	font-size: 1.2rem;
+}
+ul.share_links li a, 
+ul.share_links li a:active,
+ul.share_links li a:link, 
+ul.share_links li a:visited,
+a.darknavitem, 
+a.darknavitem:active, 
+a.darknavitem:link, 
+a.darknavitem:visited {
+	color: #fff;
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+ul.share_links li a:hover,
+a.darknavitem:hover, 
+button.darknavitem:hover {
+	color: #707070 !important;
+}
+
+/* navbar items with drop downs */
+.menu-item-has-children .nav-item a, 
+.menu-item-has-children .nav-item a:active, 
+.menu-item-has-children .nav-item a:hover, 
+.menu-item-has-children .nav-item a:link, 
+.menu-item-has-children .nav-item a:visited {
+	color: #000;
+}
+
+
+
+

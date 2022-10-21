@@ -25,6 +25,7 @@ function theme_enqueue_styles()
 	wp_enqueue_script('jquery');
 
 
+	wp_enqueue_style('cwd-styles-global', get_stylesheet_directory_uri() . '/css/styles-global.css', $the_theme->get('Version'));
 	wp_enqueue_style('cwd-styles', get_stylesheet_directory_uri() . '/css/styles.css', $the_theme->get('Version'));
 	wp_enqueue_script('cwd-scripts', get_stylesheet_directory_uri() . '/js/main.js', array(), $the_theme->get('Version'), true);
 

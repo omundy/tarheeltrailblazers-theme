@@ -68,16 +68,18 @@ foreach ($posts as $key => $data) {
 
 						<div class="news-card-img" style="<?php echo $bgimage ?>"></div>
 
-						<div class="card-body">
-							<div class="card-text">
-		                        <div class="my-3"><?php echo $data->post_title; ?></div>
-		                   
-			                    <div class="my-3">
-			                    	<a class="btn btn-primary orange" href="<?php echo $data->guid; ?>">READ MORE</a>
-			                    </div>
-							</div>
-						</div><!-- / card-body -->
-					</a>
+                    </a>    
+
+					<div class="card-body">
+						<div class="card-text">
+	                        <div class="my-3"><?php echo $data->post_title; ?></div>
+	                   
+		                    <div class="my-3">
+		                    	<a class="btn btn-primary orange" href="<?php echo $data->guid; ?>">READ MORE</a>
+		                    </div>
+						</div>
+					</div><!-- / card-body -->
+					
 
 				</div>
 				

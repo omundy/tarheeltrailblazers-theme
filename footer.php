@@ -84,14 +84,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 
 			<div class="d-lg-block col-xl-6 col-md-6">
-				<div class="card">
-					<div class="green-line"></div>
+				<div class="card green-line-top">
 
 					<div class="card-body align-middle" style="padding-bottom: 0;">
 						<p class="card-text" style="color:#111;">Get our latest news and stay up to date about events!</p>
-						<p>
-							<?php echo do_shortcode('[mc4wp_form]'); ?>
-						</p>
+					
+						<?php echo do_shortcode('[mc4wp_form]'); ?>
+					
 
 					</div>
 				</div>
@@ -112,7 +111,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row align-middle mt-4">
 
 			<div class="col-6 col-md-4 align-middle">
-                <a class="nav-link footer-icon-link" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+                <a class="nav-link footer-icon-link" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                     <img alt="Tarheel Trailblazers Logo" class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logos/ttb-logo-full-white-clear-no-est.svg" />
                 </a>
             </div>

@@ -1,57 +1,28 @@
-/* GLOBAL
-******************************************************************************/
 
 
-html, body {
-	/* border: 1px solid #900; */
-	font-family: 'Source Sans Pro', sans-serif !important;
-	background-color: #252525 !important;
-	color: #d6e5e3 !important;
+
+
+
+
+/* CAROUSEL
+****************************************************************/
+
+.carousel {
+	min-height: 250px;
+	max-height: 650px; 
+	overflow:hidden;
 }
-
-
-
-a, a:link, a:visited {
-	color: #f26630;
-	text-decoration: none !important;
-	background-color: transparent !important;
+.carousel-item {
+    height:100%;
 }
-a:hover {
-	color: #f26630;
-	text-decoration: underline;
-}
-
-
-
-.darknavitem {
-	color: #fff;
-	font-size: 1.2rem;
-}
-ul.share_links li a, ul.share_links li a:link, ul.share_links li a:visited,
-a.darknavitem, a.darknavitem:link, a.darknavitem:visited {
-	color: #fff;
-	text-decoration: none !important;
-	background-color: transparent !important;
-}
-ul.share_links li a:hover,
-a.darknavitem:hover, button.darknavitem:hover {
-	color: #707070 !important;
-}
-
-
-.menu-item-has-children .nav-item a, 
-.menu-item-has-children .nav-item a:active, 
-.menu-item-has-children .nav-item a:hover, 
-.menu-item-has-children .nav-item a:link, 
-.menu-item-has-children .nav-item a:visited {
-	color: #000;
-}
-
-
 .carousel-image {
-	min-height: 350px;
+	 min-height: 250px;
 }
 
+
+
+/* FLOW TEXT ACROSS COLUMNS
+****************************************************************/
 
 /* flow content across 1, 2, or 3 columns */
 .threeTwoOneColumns {
@@ -307,6 +278,8 @@ h3.callout, h4.callout {
 	font-size: 2.5em;
 }
 
+
+
 /* Trails landing page
 ******************************************************************************/
 .trail-card {
@@ -323,6 +296,9 @@ h3.callout, h4.callout {
 	height: 18px;
 	display: inline-block;
 }
+
+
+
 
 /* FORM ELEMENTS
 ******************************************************************************/
@@ -461,18 +437,17 @@ h3.callout, h4.callout {
 	top: 80%;
 }
 
-/* PHONE / DEFAULT >= 0px  */
-@media (min-width: 0px) {
-	.header-logo {
-		width: 150px !important;
-	}
 
-	.navbar .btn-primary {
-		padding: 5px 7px;
-		font-size: 80%;
-		line-height: 1rem;
-	}
+.header-logo {
+	width: 150px !important;
 }
+
+.navbar .btn-primary {
+	padding: 5px 7px;
+	font-size: 80%;
+	line-height: 1rem;
+}
+
 
 /* >= 576px  */
 @media (min-width: 576px) {
@@ -613,6 +588,8 @@ a.menu:after, .dropdown-toggle:after {
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+
+
 
 /* WRAPPERS
 ******************************************************************************/
@@ -804,6 +781,7 @@ a.menu:after, .dropdown-toggle:after {
 	background-color: #6d9f71;
 	color: #ffffff;
 	padding: 0 0 20px 0;
+	margin: 10px 0;
 }
 
 .callout-wrapper-light-green img {
@@ -820,11 +798,7 @@ a.menu:after, .dropdown-toggle:after {
 
 .btn-callout {}
 
-@media (min-width: 0px) {
-	.callout-wrapper-light-green {
-		margin: 10px 0;
-	}
-}
+
 
 @media (min-width: 576px) {
 	.btn-callout {
@@ -838,14 +812,17 @@ a.menu:after, .dropdown-toggle:after {
 	}
 }
 
-@media (min-width: 992px) {}
 
-@media (min-width: 1200px) {}
+
 
 /* SIDEBAR
 ******************************************************************************/
+
+
+
 /* CALENDAR > SEE SEPARATE CSS
 ******************************************************************************/
+
 .section-events-image {
 	/*background-image: url("../img/Protect-Monarch-Butterflies-1500w.jpg");*/
 	background-position: center center;
@@ -1026,11 +1003,9 @@ li.footer-menu-item {
 	background-color: #fff;
 }
 
-.green-line {
-	height: 5px;
-	width: 100%;
-	background-color: #8dc63f;
-	display: block !important;
+
+.green-line-top {
+	border-top: 5px solid #8dc63f;
 }
 
 .dark-green-line {
@@ -1141,12 +1116,15 @@ li.footer-menu-item {
 .card-one {
 	position: absolute !important;
 	top: 40%;
+	right: 5%;
 	z-index: 1;
 	text-align: center;
 	font-size: 1.3rem;
 	background-color: rgba(32, 32, 32, .5);
 	color: #fff;
 	font-size: 1.2rem;
+
+	border: none;
 }
 
 .card-one h5 {
@@ -1225,9 +1203,7 @@ li.unavailable {
 }
 
 /* marked for deletion */
-/*.extra-news {
-  display: flex;
-}
+/*
 .small-news {
   display: none;
 }
