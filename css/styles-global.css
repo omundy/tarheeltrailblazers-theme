@@ -59,3 +59,18 @@ button.darknavitem:hover {
 
 
 
+.nav-link-shop {
+    padding-right: 10px;
+}
+
+.menu-item-shop > a{
+    display: inline-block;
+}
+.menu-item-shop:after{
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-size: 12px;
+    vertical-align: super;
+}
+
+

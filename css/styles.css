@@ -9,7 +9,7 @@
 
 .carousel {
 	min-height: 250px;
-	max-height: 650px; 
+	/*max-height: 650px;*/ 
 	overflow:hidden;
 }
 .carousel-item {
@@ -418,9 +418,9 @@ h3.callout, h4.callout {
 	color: white !important;
 }
 
-.nav-link-shop {
-	padding-right: 10px;
-}
+
+
+
 .footer .footer-icon-link {
 	padding: 0;
 	text-align: center;
@@ -907,6 +907,12 @@ p.event-text {
 	font-size: 1.4rem;
 }
 
+
+
+
+
+
+
 /* /miguel */
 /* BLOG POSTS
 ******************************************************************************/
@@ -1289,8 +1295,4 @@ MARKED FOR DELETION - can find none of these in any php templates or sections
 */
 }
 
-/* / mary nell */
-/* TRIBE EVENTS */
-.single-tribe_events .tribe-events-event-meta {
-	background-color: transparent !important;
-}
+

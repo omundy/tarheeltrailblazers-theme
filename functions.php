@@ -185,7 +185,7 @@ function om_get_all_trails()
 
 	// query
 	$args = array(
-		'posts_per_page' => 30,
+		'posts_per_page' => 50,
 		'post_status' => 'publish',
 		'post_type' => 'page',
 		'order'=> 'ASC',

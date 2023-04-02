@@ -24,6 +24,26 @@ $posts = $query->posts;
 
 
 
+// // TEST USING tribe_get_events() instead
+
+// $events = tribe_get_events( [ 
+//     'posts_per_page' => 3,
+//     'start_date'     => 'now',
+// ] );
+// // print_r($events);
+// // if there are posts, display the section
+// if (count($events) > 0){ 
+//     foreach ( $events as $post ){
+//         setup_postdata( $post );
+//         // print_r($post);
+//         // print_r($post->post_title);
+//         echo '<h4>' . $post->post_title . '</h4>';
+//         echo ' ' . tribe_get_start_date( $post ) . ' ';
+//     }
+// }
+
+
+
 // if there are posts, display the section
 if (count($posts) > 0){ ?>
 
@@ -42,25 +62,30 @@ if (count($posts) > 0){ ?>
                             <h5 class="card-title text-center">Tarheel Trailblazer Events</h5>
                         </div>
                     </div>
+
 <?php
     foreach ( $posts as $post ){
         // if there is post data
         if ($post->post_title && $post->post_title == "") continue;
-            //print_r($post);
-            //print_r($post->post_title);
-            //echo the_permalink();
-            // make postdata available, not needed?
-            //setup_postdata( $post );
+            
+            // tests
+            // print_r($post);
+            // print_r($post->post_title);
+            // echo the_permalink();
+
+            // make postdata available
+            setup_postdata( $post );
 ?>
+
                     <a href="<?php the_permalink(); ?>" class="event-link" title="<?php the_title(); ?>">
                         <div class="row date-event ">
                             <div class="col-2">
                                 <div class="date-box date">
                                     <div class="date-day text-center">
-                                    <h4><?php echo getDayWithZero($post->EventStartDate); ?></h4>
+                                    <h4><?php echo getDayWithZero(tribe_get_start_date( $post )); ?></h4>
                                     </div>
                                     <div class="date-month text-center">
-                                    <p>    <?php echo getMonthShort($post->EventStartDate); ?> </p>
+                                    <p>    <?php echo getMonthShort(tribe_get_start_date( $post )); ?> </p>
                                     </div>
                                 </div>
                             </div>
@@ -83,6 +108,9 @@ if (count($posts) > 0){ ?>
                     </a>
 <?php } /* /foreach */ ?>
 
+
+
+
                     <div class="row my-4">
                         <div class="col-12 d-flex justify-content-center">
                             <a href="/events/" class="btn btn-outline-light darknavitem rounded-0 mt-4" href="<?php echo esc_url( home_url( '/' ) ); ?>events" title="Events">SEE ALL EVENTS</a>
@@ -104,68 +132,3 @@ if (count($posts) > 0){ ?>
 
 
 
-
-<!--
-
-<div class="container-fluid section-events" id="section-events">
-<div class="container pt-5">
-<div class="row mt-5">
-<div class="col-10 col-md-8 col-lg-5 col-xl-4 offset-1 offset-md-2 offset-lg-7 offset-xl-8">
-<div class="card section-event-card">
-
-
-<div class="card-body">
-<h5 class="card-title text-center">Tarheel Trailblazer Events</h5>
-
-<p class="card-text"></p>
-
-<div class="row event">
-<div class="col-2 date text-center mb-4 pr-0 pl-0 mt-1">
-<h4>01</h4>
-
-<p>SEP</p>
-</div>
-
-<div class="col-10 adress">
-<p>Mountain island Lake Trail Workday</p>
-
-<p class="mb-0">400 Mountain Island Rd., Mt. Holly, NC</p>
-</div>
-</div>
-
-<div class="row event">
-<div class="col-2 date text-center mb-4 pr-0 pl-0 mt-1">
-<h4>01</h4>
-
-<p>SEP</p>
-</div>
-
-<div class="col-10 adress">
-<p>Mountain island Lake Trail Workday</p>
-
-<p class="mb-0">North Mecklenburg Park, Huntersville, NC</p>
-</div>
-</div>
-
-<div class="row event">
-<div class="col-2 date text-center pr-0 pl-0 mt-1">
-<h4>04</h4>
-
-<p>SEP</p>
-</div>
-
-<div class="col-10 adress">
-<p>Club Meeting</p>
-
-<p class="mb-0">NC Velo, Charlotte, NC</p>
-</div>
-</div>
-
-<div class="row d-flex justify-content-center"><button class="btn btn-outline-light dark rounded-0 mt-4" name="allevents" type="button">SEE ALL EVENTS</button></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
--->

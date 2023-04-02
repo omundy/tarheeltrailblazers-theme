@@ -1,0 +1,23 @@
+
+
+/* 
+
+https://theeventscalendar.com/knowledgebase/k/basic-font-and-color-changes-with-css/  
+
+*/
+
+
+.tribe-common {
+    background-color: #ccc;
+}
+
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+    padding-bottom: 0;
+}
+
+
+.tribe-events-single {
+    background-color: #ccc;
+    padding: 20px;
+}

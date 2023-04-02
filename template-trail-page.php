@@ -107,6 +107,15 @@ $container   = get_theme_mod( 'understrap_container_type' );
         <iframe style="width:100%; max-width:1200px; height:410px;" frameborder="0" scrolling="no" src="<?php echo $trail->meta['mtb_project_iframe']; ?>"></iframe>
         <!-- END MTB Project -->
 
+
+<!-- 
+< 2023 FORMAT
+https://www.mtbproject.com/widget?v=3&amp;map=1&amp;type=trail&amp;id=1103692&amp;x=-11724124&amp;y=4867023&amp;z=6
+>=2023 FORMAT
+https://mtbproject.com/widget/trail?v=3&map=1&type=trail&id=1103692&x=-12194010&y=4663858&z=6
+ -->
+
+
         <?php } ?>
 
 
