@@ -116,14 +116,40 @@ function om_get_usnwc_status_old()
 }
 
 
+function url_get_contents ($Url) {
+    if (!function_exists('curl_init')){ 
+        die('CURL is not installed!');
+    }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $Url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    return $output;
+}
+
+
 /**
  * Scrape the USNWC trail status and saves in WP DB
  */
 function om_get_usnwc_status()
 {
+    // turning off for now May 2023 and using "Anne Springs method"
+    return;
+
+
 	$status = "Closed";
-	$url = 'https://whitewater.org/plan-your-visit/facility-map/';
-	$page_source = file_get_contents($url); //or use curl
+    $url = 'https://center.whitewater.org/plan-your-visit/facility-map/';
+    $url = 'https://center.whitewater.org/sitemap/';
+    // May 2023 WWC is finally using a CDN, but thankfully many ways to bypass 
+    // https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/
+    $url = 'https://webcache.googleusercontent.com/search?q=cache:https://center.whitewater.org/sitemap/';
+	$page_source = url_get_contents($url); // or use curl
+
+    // if (is_admin()){
+    //     print "owen";
+    //     print_r($page_source);
+    // }
 
 	if (preg_match("/Trails Open/i", $page_source)) {
 		// Trails Open
@@ -137,8 +163,11 @@ function om_get_usnwc_status()
 	// get current status
 	// $wwc_post = get_post(80);
 	$wwc_current_status = get_post_meta(80, 'trail-status', true);
-	// print_r($wwc_post);
-	// print_r($wwc_current_status);
+
+    // if (is_admin()){
+    // 	print_r($wwc_post);
+    // 	print_r($wwc_current_status);
+    // }
 
 	// if the status has changed
 	if ($wwc_current_status != $status){
