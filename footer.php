@@ -139,7 +139,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-12 text-center colophon mt-4 mb-4">
 				<p>&copy; 1990–<?php echo date("Y"); ?> Tarheel Trailblazers | <a href="<?php echo esc_url( home_url( '/' ) ); ?>about/contact-us/">Contact us</a></p>
 
-                <p>Website designed and developed by <a href="https://owenmundy.com/site/critical-web-design" target="_blank">Critical Web Design</a> at Davidson College</p>
+                <p>Website designed and developed by <a href="https://owenmundy.com/site/design-social-impact#tarheel-trailblazers" target="_blank">Critical Web Design</a> at Davidson College</p>
 
 			</div>
 		</div>

@@ -248,6 +248,76 @@ function om_get_all_trails()
 }
 
 /**
+ *  Export all trail data as CSV
+ *  - Used for Trailbot May 2024
+ */
+function om_export_trails_csv (){
+
+    // get all the trails
+    $trails = om_get_all_trails();
+    // print "<pre>";
+    // print_r($trails);
+    // print "</pre>";
+
+    $arr = array();
+
+    $headers = array(
+        "id",
+        "post_name",
+        "post_title",
+        "url",
+        "mtb_project_page",
+        "trailforks_page",
+        "difficulty",
+        "length",
+        "percentage_singletrack",
+        "ascent",
+        "descent",
+        "status",
+        "lat_lng",
+        "thumbnail",
+        "post_date",
+        "post_modified"
+    );
+
+    array_push($arr,  $headers);
+
+    $csv = implode("\t",$headers);
+
+    foreach($trails as $post){
+        // print $post->post_title . "<br>";
+
+        $row = array(
+            "ID" => $post->ID,
+            "post_name" => $post->post_name,
+            "post_title" => $post->post_title,
+            "url" => "https://tarheeltrailblazers.com/trails/".$post->post_name,
+            "mtb_project_page" => $post->mtb_project_page,
+            "trailforks_page" => $post->trailforks_page,
+            "difficulty" => $post->difficulty,
+            "length" => $post->length,
+            "percentage_singletrack" => $post->percentage_singletrack,
+            "ascent" => $post->ascent,
+            "descent" => $post->descent,
+            "status" => $post->meta["status"],
+            "lat_lng" => $post->meta["lat_lng"],
+            "thumbnail" => $post->thumbnail[0],
+            "post_date" => $post->post_date,
+            "post_modified" => $post->post_modified
+        );
+
+        $csv .= "\n". implode("\t",$row);
+
+        array_push($arr, $row);
+    }
+    // return $arr;
+    return $csv;
+}
+
+
+
+
+/**
  * Return the thumbnail for a post
  * @return Array
  */
@@ -383,39 +453,107 @@ function om_return_post_meta($id)
 
 
 
-
-
-
 /* VIEWS */
+
+
+// determine status of trailbot string
+function interpret_trailbot_status($trailStatus){
+    // default
+    $status = "Closed"; 
+    if (empty($trailStatus) || $trailStatus == "Closed") {
+        $status = "Closed";
+    } 
+    else if (str_contains($trailStatus, "Partially") ||
+        str_contains($trailStatus, "Freeze") || str_contains($trailStatus, "Caution")){
+        $status = "Caution";
+    } 
+    else if (str_contains($trailStatus, "Open")){
+        $status = "Open";
+    } 
+    // print $status;
+    return $status;
+}
+
+
+// the trail status section
+function om_return_trail_status_html_tiny_trailbot($trail)
+{
+    // print "<pre>";
+    // print_r($trail);
+    // print $trail["trailId"] ." - ". $trail["trailStatus"];
+    // print "</pre>";
+
+    $status = interpret_trailbot_status($trail['trailStatus']);
+    $statusInfo = om_return_trail_status_info($status);
+    $timeStamp = 0;
+    if (isset($trail['updatedAt'])){
+        // print "<br>".$trail['updatedAt'];
+        $timeStamp = ceil($trail['updatedAt'] / 1000);
+    }
+    // if (isset($trail['remindedAt'])) {
+    //  // print "<br>".$trail['remindedAt'];
+    //     $timeStamp = $trail['remindedAt'];
+    // }
+    // print_r($statusInfo);
+
+    // show extra info for status
+    if (count($trail['statusTags']) > 0){
+        $statusInfo['fullText'] .= " [". join(",", $trail['statusTags']) ."] ";
+    }
+    if ($trail['description'] && $trail['description'] != "") {
+        $statusInfo['fullText'] .= " - " . $trail['description'] ."";
+    }
+
+    // start return string
+    // show fullText on hover
+    $str = '<span data-toggle="tooltip" data-placement="top" title="'. $statusInfo['fullText'] .'">';
+
+    // add icon
+    if ($statusInfo['class'] == "success"){
+        $str .= '<i class="fas fa-check-circle tinyTrailStatusIcon success"></i>';
+    } else if ($statusInfo['class'] == "warning"){
+        $str .= '<i class="fas fa-exclamation-triangle tinyTrailStatusIcon warning"></i>';
+    } else if ($statusInfo['class'] == "danger"){
+        $str .= '<i class="fas fa-times-circle tinyTrailStatusIcon danger"></i>';
+    }
+    $str .= " </span> \n";
+    
+    $str .= '<span class="sr-only">'. $statusInfo['text'] ." </span> \n";
+    $str .= '<span class="tinyTrailStatusTitle"><a href="/trails/'. $trail['trailName'] .'">'. $trail['trailName'] ."</a> </span> \n";
+    $str .= '<span class="tinyTrailStatusUpdated">'. date( "n/d - g:ia", $timeStamp) ." </span> \n";
+    return $str;
+}
+
+
 
 
 // the trail status section
 function om_return_trail_status_html_tiny($trail)
 {
-	$str = "";
 	// print "<pre>";
 	// print_r($trail);
 	// print "</pre>";
 
 	// show extra info for status
-	$statusInfo = $trail->meta['statusInfo']['fullText'];
+	$statusInfo = $trail->meta['statusInfo']['fullstr'];
 	if ($trail->meta['status_details'] && $trail->meta['status_details'] != "") {
-		$statusInfo .= ": " . $trail->meta['status_details'];
+		$statusInfo .= " - " . $trail->meta['status_details'];
 	}
 
+    // start return string
 	// show fullText on hover
-	$str .= '<span data-toggle="tooltip" data-placement="top" title="'. $statusInfo .'"';
+	$str .= '<span data-toggle="tooltip" data-placement="top" title="'. $statusInfo .'">';
 
 	// old circles
 	// $str .= ' class="tinyTrailStatusDot '. $trail->meta['statusInfo']['class'] .'"> ';
 
-	// new icons
+    // add icon
 	if ($trail->meta['statusInfo']['class'] == "success"){
-		$str .= '><i class="fas fa-check-circle tinyTrailStatusIcon success"></i>';
+		$str .= '<i class="fas fa-check-circle tinyTrailStatusIcon success"></i>';
 	} else if ($trail->meta['statusInfo']['class'] == "warning"){
-		$str .= '><i class="fas fa-exclamation-triangle tinyTrailStatusIcon warning"></i>';
+		$str .= '<i class="fas fa-exclamation-triangle tinyTrailStatusIcon warning"></i>';
 	} else if ($trail->meta['statusInfo']['class'] == "danger"){
-		$str .= '><i class="fas fa-times-circle tinyTrailStatusIcon danger"></i>';
+		$str .= '<i class="fas fa-times-circle tinyTrailStatusIcon danger"></i>';
 	}
 
 
